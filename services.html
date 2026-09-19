@@ -4,10 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Services — Amplio</title>
-  <meta name="description" content="Découvrez les services publicitaires et de communication proposés par Amplio.">
+  <meta name="description" content="Stratégie, identité, communication digitale et campagnes : découvrez les services publicitaires et de communication d'Amplio.">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/header.css">
   <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/services.css">
   <script src="assets/js/includes.js" defer></script>
   <script src="assets/js/nav.js" defer></script>
 </head>
@@ -16,12 +17,95 @@
   <div data-include="partials/header.html"></div>
 
   <main id="main-content">
-    <section aria-labelledby="page-title">
-      <h1 id="page-title">Nos services</h1>
-      <p>Sélectionnez le service dont vous avez besoin.</p>
+
+    <!-- ================= INTRODUCTION ================= -->
+    <section class="services-hero" aria-labelledby="page-title">
+      <div class="container services-hero__container">
+        <p class="services-eyebrow">Nos services</p>
+        <h1 id="page-title" class="services-hero__title">De la stratégie à la diffusion.</h1>
+        <p class="services-hero__intro">Nous construisons les éléments qui donnent à une marque une présence claire, cohérente et mémorable — du positionnement à la campagne.</p>
+      </div>
     </section>
 
-    <!-- T09/T14 : cartes et sélecteur de services. -->
+    <!-- ================= GRILLE DES SERVICES ================= -->
+    <section class="services-cards" aria-label="Les quatre expertises d'Amplio">
+      <div class="container">
+        <ol class="services-cards__list">
+          <li class="services-cards__item">
+            <article class="service-card">
+              <div class="service-card__top">
+                <p class="service-card__index" aria-hidden="true">01</p>
+                <span class="service-card__mark service-card__mark--square" aria-hidden="true"></span>
+              </div>
+              <h2 class="service-card__title">Stratégie &amp; communication</h2>
+              <p class="service-card__description">Positionnement, axes de message et plans de communication : nous définissons ce que la marque doit dire avant de passer à la création.</p>
+              <ul class="service-card__scope">
+                <li>Positionnement</li>
+                <li>Plans de communication</li>
+                <li>Conseil de marque</li>
+              </ul>
+            </article>
+          </li>
+          <li class="services-cards__item">
+            <article class="service-card">
+              <div class="service-card__top">
+                <p class="service-card__index" aria-hidden="true">02</p>
+                <span class="service-card__mark service-card__mark--ring" aria-hidden="true"></span>
+              </div>
+              <h2 class="service-card__title">Identité &amp; création</h2>
+              <p class="service-card__description">Logos, chartes graphiques et supports print : une identité cohérente et reconnaissable au premier regard.</p>
+              <ul class="service-card__scope">
+                <li>Logo &amp; charte</li>
+                <li>Supports print</li>
+                <li>Direction artistique</li>
+              </ul>
+            </article>
+          </li>
+          <li class="services-cards__item">
+            <article class="service-card">
+              <div class="service-card__top">
+                <p class="service-card__index" aria-hidden="true">03</p>
+                <span class="service-card__mark service-card__mark--cross" aria-hidden="true"></span>
+              </div>
+              <h2 class="service-card__title">Communication digitale</h2>
+              <p class="service-card__description">Sites, réseaux sociaux et contenus : une présence régulière et cohérente dans tous les espaces où se trouve votre audience.</p>
+              <ul class="service-card__scope">
+                <li>Sites web</li>
+                <li>Réseaux sociaux</li>
+                <li>Contenus</li>
+              </ul>
+            </article>
+          </li>
+          <li class="services-cards__item">
+            <article class="service-card">
+              <div class="service-card__top">
+                <p class="service-card__index" aria-hidden="true">04</p>
+                <span class="service-card__mark service-card__mark--dot" aria-hidden="true"></span>
+              </div>
+              <h2 class="service-card__title">Publicité &amp; campagnes</h2>
+              <p class="service-card__description">Des campagnes pensées de la conception à la diffusion, dans le but de susciter l'envie et l'action.</p>
+              <ul class="service-card__scope">
+                <li>Conception</li>
+                <li>Diffusion</li>
+                <li>Événementiel</li>
+              </ul>
+            </article>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= APPEL À L'ACTION ================= -->
+    <section class="services-cta" aria-labelledby="services-cta-title">
+      <div class="container services-cta__container">
+        <div class="services-cta__content">
+          <h2 id="services-cta-title" class="services-cta__title">Un besoin à préciser ?</h2>
+          <p class="services-cta__text">Décrivez-nous votre projet : nous vous orienterons vers l'expertise la plus adaptée.</p>
+        </div>
+        <a class="services-link" href="contact.html">Parler de mon projet<span class="services-link__arrow" aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
   </main>
 
   <!-- Footer injecté par includes.js à partir de partials/footer.html. -->
