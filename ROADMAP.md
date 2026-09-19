@@ -119,7 +119,7 @@ Une branche par tâche, y compris en solo, afin que chaque changement passe par 
 
 **Protection de `main` (à configurer dans T01) :** Pull Request obligatoire, au moins 1 approbation, pas de push direct, pas de force-push.
 
-> **État actuel (19 septembre 2026) :** T01 reste `En review` jusqu'à la configuration effective de la protection de `main`, suivie dans l'issue #10. T08 et T09 sont livrés ; T10 est la prochaine tâche de développement.
+> **État actuel (19 septembre 2026) :** T01 reste `En review` jusqu'à la configuration effective de la protection de `main`, suivie dans l'issue #10. T08 et T09 sont livrés ; T10 est la prochaine tâche de développement et son suivi est ouvert dans l'issue #19. Le modèle `.github/pull_request_template.md` est maintenu comme configuration du dépôt ; les outils et instructions d'agents restent locaux.
 
 ---
 

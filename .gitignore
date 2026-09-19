@@ -68,6 +68,9 @@ test-results/
 .windsurfrules
 
 # Métadonnées de dépôt/outillage locales
-/.github/
-/docs/
+/.github/*
+!/.github/
+!/.github/pull_request_template.md
+/docs/*
+!/docs/
 /documents/
