@@ -18,28 +18,6 @@
   padding-block: var(--space-8) var(--space-10);
 }
 
-.services-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-3);
-  margin-block: 0;
-  font-family: var(--font-mono);
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-semibold);
-  line-height: var(--line-height-base);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-}
-
-.services-eyebrow::before {
-  content: "";
-  display: inline-block;
-  width: var(--space-6);
-  height: 2px;
-  background-color: var(--color-accent);
-}
-
 .services-hero__title {
   max-width: 18ch;
   margin-block: 0;
@@ -132,13 +110,13 @@
 }
 
 .service-card__mark--cross::before {
-  width: 0.875rem;
+  width: var(--font-size-sm);
   height: 2px;
 }
 
 .service-card__mark--cross::after {
   width: 2px;
-  height: 0.875rem;
+  height: var(--font-size-sm);
 }
 
 .service-card__mark--dot {
@@ -183,60 +161,6 @@
   background-color: var(--color-accent);
 }
 
-/* ------------------------- Appel à l'action ------------------------ */
-
-.services-cta {
-  background-color: var(--color-primary);
-}
-
-.services-cta__container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--space-5);
-  padding-block: var(--space-10);
-}
-
-.services-cta__content {
-  max-width: 34rem;
-}
-
-.services-cta__title {
-  margin-block: 0;
-  font-size: var(--font-size-2xl);
-  letter-spacing: -0.01em;
-  color: var(--color-bg);
-}
-
-.services-cta__text {
-  margin-block: var(--space-3) 0;
-  color: var(--color-surface);
-}
-
-.services-link {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  padding-block: var(--space-1);
-  border-bottom: 2px solid var(--color-accent);
-  color: var(--color-bg);
-  font-weight: var(--font-weight-semibold);
-  text-decoration: none;
-}
-
-.services-link:hover {
-  color: var(--color-accent);
-}
-
-.services-link__arrow {
-  display: inline-block;
-  transition: transform 0.15s ease;
-}
-
-.services-link:hover .services-link__arrow {
-  transform: translateX(var(--space-2));
-}
-
 /* --------------------------- Responsive ---------------------------- */
 
 @media (min-width: 40rem) {
@@ -258,15 +182,6 @@
 }
 
 @media (min-width: 64rem) {
-  .services-cta__container {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-8);
-    padding-block: var(--space-12);
-  }
-
   .service-card__title {
     font-size: var(--font-size-xl);
   }
