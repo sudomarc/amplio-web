@@ -119,6 +119,9 @@ Une branche par tâche, y compris en solo, afin que chaque changement passe par 
 
 **Protection de `main` (à configurer dans T01) :** Pull Request obligatoire, au moins 1 approbation, pas de push direct, pas de force-push.
 
+> **État actuel du dépôt :** les livrables T01 (modèle de PR et `.gitignore`) sont présents, mais la protection de `main` reste à configurer dans GitHub. T01 reste donc `En review` jusqu'à cette configuration.
+
+
 ---
 
 ## 4. Tableau des tâches
@@ -129,12 +132,12 @@ Une branche par tâche, y compris en solo, afin que chaque changement passe par 
 
 | # | Tâche | Statut | Dépendances |
 |---|---|---|---|
-| T01 | Configuration du repo : protection de `main`, modèle de PR, `.gitignore` | Terminé | — |
+| T01 | Configuration du repo : protection de `main`, modèle de PR, `.gitignore` | En review | — |
 | T02 | Structure des dossiers et squelettes HTML des pages | Terminé | T01 |
-| T03 | Feuille de styles globale : variables (couleurs, espacements, typo), reset, utilitaires | En review | T02 |
+| T03 | Feuille de styles globale : variables (couleurs, espacements, typo), reset, utilitaires | Terminé | T02 |
 | T04 | Header : markup et styles (logo cliquable vers l'accueil, menu desktop) | Terminé | T03 |
-| T05 | Header : burger mobile et état actif du lien de la page courante | À faire | T04 |
-| T06 | Footer : markup et styles | À faire | T03 |
+| T05 | Header : burger mobile et état actif du lien de la page courante | Terminé | T04 |
+| T06 | Footer : markup et styles | Terminé | T03 |
 | T07 | Injection des partials header/footer sur toutes les pages | À faire | T05, T06 |
 
 ### Phase 2 — Pages (contenu et mise en page statiques)
