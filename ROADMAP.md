@@ -119,6 +119,8 @@ Une branche par tâche, y compris en solo, afin que chaque changement passe par 
 
 **Protection de `main` (à configurer dans T01) :** Pull Request obligatoire, au moins 1 approbation, pas de push direct, pas de force-push.
 
+> **État actuel (19 septembre 2026) :** T07 est livré et le jalon M1 est atteint. T01 reste `En review` jusqu'à la configuration effective de la protection de `main`, suivie dans l'issue #10. T08 est la prochaine tâche de développement.
+
 ---
 
 ## 4. Tableau des tâches
@@ -129,7 +131,7 @@ Une branche par tâche, y compris en solo, afin que chaque changement passe par 
 
 | # | Tâche | Statut | Dépendances |
 |---|---|---|---|
-| T01 | Configuration du repo : protection de `main`, modèle de PR, `.gitignore` | Terminé | — |
+| T01 | Configuration du repo : protection de `main`, modèle de PR, `.gitignore` | En review | — |
 | T02 | Structure des dossiers et squelettes HTML des pages | Terminé | T01 |
 | T03 | Feuille de styles globale : variables (couleurs, espacements, typo), reset, utilitaires | Terminé | T02 |
 | T04 | Header : markup et styles (logo cliquable vers l'accueil, menu desktop) | Terminé | T03 |
