@@ -23,28 +23,6 @@
   gap: var(--space-4);
 }
 
-.home-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-3);
-  margin-block: 0;
-  font-family: var(--font-mono);
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-semibold);
-  line-height: var(--line-height-base);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-}
-
-.home-eyebrow::before {
-  content: "";
-  display: inline-block;
-  width: var(--space-6);
-  height: 2px;
-  background-color: var(--color-accent);
-}
-
 .home-hero__title {
   max-width: 16ch;
   margin-block: 0;
@@ -260,28 +238,6 @@
   margin-block: var(--space-6) 0;
 }
 
-.home-link {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  color: var(--color-primary);
-  font-weight: var(--font-weight-semibold);
-  text-decoration: none;
-}
-
-.home-link:hover {
-  color: var(--color-primary);
-}
-
-.home-link__arrow {
-  display: inline-block;
-  transition: transform 0.15s ease;
-}
-
-.home-link:hover .home-link__arrow {
-  transform: translateX(var(--space-2));
-}
-
 /* ---------------------------- Services ----------------------------- */
 
 .home-services__list {
@@ -443,41 +399,6 @@
   color: var(--color-text-muted);
 }
 
-/* --------------------------- CTA final ----------------------------- */
-
-.home-cta {
-  background-color: var(--color-primary);
-}
-
-.home-cta__container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-8);
-  padding-block: var(--space-10);
-}
-
-.home-cta__content {
-  max-width: 34rem;
-}
-
-.home-cta__title {
-  margin-block: 0;
-  font-size: var(--font-size-2xl);
-  letter-spacing: -0.01em;
-  color: var(--color-bg);
-}
-
-.home-cta__text {
-  margin-block: var(--space-3) 0;
-  color: var(--color-surface);
-}
-
-.home-cta__actions {
-  flex-shrink: 0;
-}
-
 /* --------------------------- Responsive ---------------------------- */
 
 @media (min-width: 40rem) {
@@ -499,10 +420,6 @@
 
   .home-work__grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .home-cta__container {
-    padding-block: var(--space-12);
   }
 }
 

@@ -1,0 +1,188 @@
+/* ------------------------------------------------------------------ */
+/*  Services — Amplio Web                                              */
+/*  Styles spécifiques à la page Services. Variables de base.css.      */
+/* ------------------------------------------------------------------ */
+
+/* ------------------------ En-tête de page -------------------------- */
+
+.services-hero {
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.services-hero__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding-block: var(--space-8) var(--space-10);
+}
+
+.services-hero__title {
+  max-width: 18ch;
+  margin-block: 0;
+  font-size: var(--font-size-3xl);
+  letter-spacing: -0.02em;
+}
+
+.services-hero__intro {
+  max-width: 52ch;
+  margin-block: 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-md);
+}
+
+/* ------------------------- Grille des cartes ----------------------- */
+
+.services-cards {
+  padding-block: var(--space-10);
+}
+
+.services-cards__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.services-cards__item {
+  display: flex;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  width: 100%;
+  padding: var(--space-5);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.service-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.service-card__index {
+  margin-block: 0;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+}
+
+.service-card__mark {
+  width: var(--space-4);
+  height: var(--space-4);
+}
+
+.service-card__mark--square {
+  border: 2px solid var(--color-accent);
+  border-radius: var(--radius-sm);
+  opacity: 0.7;
+}
+
+.service-card__mark--ring {
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+  opacity: 0.35;
+}
+
+.service-card__mark--cross {
+  position: relative;
+  opacity: 0.5;
+}
+
+.service-card__mark--cross::before,
+.service-card__mark--cross::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--color-primary);
+}
+
+.service-card__mark--cross::before {
+  width: var(--font-size-sm);
+  height: 2px;
+}
+
+.service-card__mark--cross::after {
+  width: 2px;
+  height: var(--font-size-sm);
+}
+
+.service-card__mark--dot {
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  opacity: 0.5;
+}
+
+.service-card__title {
+  margin-block: 0;
+  font-size: var(--font-size-lg);
+}
+
+.service-card__description {
+  margin-block: 0;
+  color: var(--color-text-muted);
+}
+
+.service-card__scope {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-3);
+  padding: 0;
+  margin: var(--space-2) 0 0;
+  list-style: none;
+}
+
+.service-card__scope li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.service-card__scope li::before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+}
+
+/* --------------------------- Responsive ---------------------------- */
+
+@media (min-width: 40rem) {
+  .services-hero__container {
+    padding-block: var(--space-10) var(--space-12);
+  }
+
+  .services-hero__title {
+    font-size: var(--font-size-4xl);
+  }
+
+  .services-cards {
+    padding-block: var(--space-12);
+  }
+
+  .services-cards__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 64rem) {
+  .service-card__title {
+    font-size: var(--font-size-xl);
+  }
+}

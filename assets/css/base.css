@@ -216,3 +216,103 @@ textarea {
   white-space: nowrap;
   border: 0;
 }
+
+/* ----------------------- Composants partagés ------------------------ */
+/*  Composants d'interface réutilisés par plusieurs feuilles de page.   */
+
+/* Sur-titre mono avec filet d'introduction. */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-block: 0;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-base);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: var(--space-6);
+  height: 2px;
+  background-color: var(--color-accent);
+}
+
+/* Lien d'action avec flèche. */
+.arrow-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+}
+
+.arrow-link:hover {
+  color: var(--color-primary);
+}
+
+.arrow-link__arrow {
+  display: inline-block;
+  transition: transform 0.15s ease;
+}
+
+.arrow-link:hover .arrow-link__arrow {
+  transform: translateX(var(--space-2));
+}
+
+/* Variante du lien flèche sur fond foncé. */
+.arrow-link--accent {
+  padding-block: var(--space-1);
+  border-bottom: 2px solid var(--color-accent);
+  color: var(--color-bg);
+}
+
+.arrow-link--accent:hover {
+  color: var(--color-accent);
+}
+
+/* Bandeau final d'appel à l'action. */
+.cta-band {
+  background-color: var(--color-primary);
+}
+
+.cta-band__container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+  padding-block: var(--space-10);
+}
+
+.cta-band__content {
+  max-width: 34rem;
+}
+
+.cta-band__title {
+  margin-block: 0;
+  font-size: var(--font-size-2xl);
+  letter-spacing: -0.01em;
+  color: var(--color-bg);
+}
+
+.cta-band__text {
+  margin-block: var(--space-3) 0;
+  color: var(--color-surface);
+}
+
+.cta-band__actions {
+  flex-shrink: 0;
+}
+
+@media (min-width: 40rem) {
+  .cta-band__container {
+    padding-block: var(--space-12);
+  }
+}

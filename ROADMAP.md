@@ -119,7 +119,7 @@ Une branche par tâche, y compris en solo, afin que chaque changement passe par 
 
 **Protection de `main` (à configurer dans T01) :** Pull Request obligatoire, au moins 1 approbation, pas de push direct, pas de force-push.
 
-> **État actuel (19 septembre 2026) :** T07 est livré et le jalon M1 est atteint. T01 reste `En review` jusqu'à la configuration effective de la protection de `main`, suivie dans l'issue #10. T08 est livré et T09 est la prochaine tâche de développement.
+> **État actuel (19 septembre 2026) :** T01 reste `En review` jusqu'à la configuration effective de la protection de `main`, suivie dans l'issue #10. T08 et T09 sont livrés ; T10 est la prochaine tâche de développement.
 
 ---
 
@@ -144,7 +144,7 @@ Une branche par tâche, y compris en solo, afin que chaque changement passe par 
 | # | Tâche | Statut | Dépendances |
 |---|---|---|---|
 | T08 | Page Accueil : hero, aperçu des services, réalisations mises en avant, appel à l'action | Terminé | T07 |
-| T09 | Page Services : mise en page et structure des cartes de services | À faire | T07 |
+| T09 | Page Services : mise en page et structure des cartes de services | Terminé | T07 |
 | T10 | Page Portfolio : mise en page de la grille d'études de cas | À faire | T07 |
 | T11 | Page Contact : structure du formulaire (champs, libellés, bloc coordonnées) | À faire | T07 |
 | T12 | Page À propos (optionnelle) : présentation de l'agence et de l'équipe | À faire | T07 |
