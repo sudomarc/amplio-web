@@ -2,8 +2,12 @@
 
 Instructions spécifiques au projet Amplio Web. `ROADMAP.md` est la référence principale : architecture, tâches, conventions et processus de livraison.
 
-La gouvernance générale des agents de code est fournie par le système externe **Vibe Coding Instructions** :
-https://github.com/sudomarc/vibe-coding-instructions
+La gouvernance générale des agents de code est fournie par le système **Vibe Coding Instructions**, vendorisé localement dans `docs/vibe-coding-instructions/` (upstream : https://github.com/sudomarc/vibe-coding-instructions).
+
+- En début de session, lire `docs/vibe-coding-instructions/AGENTS.md` puis `docs/vibe-coding-instructions/MASTER-PROMPT.md`.
+- Charger ensuite uniquement les skills nécessaires à la tâche (progressive disclosure) : `.ai/skills/<domaine>/SKILL.md`, approfondissements dans `references/`, exemples dans `examples/`.
+- Profils agents réutilisables : `.ai/agents/` (reviewer, ui-reviewer, responsive-reviewer, accessibility-reviewer, visual-qa…). Dans Amplio, le reviewer projet reste `.opencode/agents/reviewer.md`.
+- Pour actualiser la copie : `git -C` sur le dépôt upstream, ou re-vendoriser depuis le README source (section « Using it in another repository »).
 
 Ce fichier ne contient que les règles propres à Amplio Web ; il ne recopie pas la gouvernance générale.
 
