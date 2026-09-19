@@ -4,10 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Amplio — Agence de publicité</title>
-  <meta name="description" content="Amplio, agence de publicité et de communication.">
+  <meta name="description" content="Amplio, agence de publicité et de communication. Stratégie, identité, communication digitale et campagnes.">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/header.css">
   <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/home.css">
   <script src="assets/js/includes.js" defer></script>
   <script src="assets/js/nav.js" defer></script>
 </head>
@@ -16,12 +17,141 @@
   <div data-include="partials/header.html"></div>
 
   <main id="main-content">
-    <section aria-labelledby="page-title">
-      <h1 id="page-title">Amplio</h1>
-      <p>Agence de publicité et de communication.</p>
+
+    <!-- ================= HERO ================= -->
+    <section class="home-hero" aria-labelledby="home-title">
+      <div class="container home-hero__container">
+        <div class="home-hero__content">
+          <p class="home-eyebrow">Amplio — Publicité &amp; communication</p>
+          <h1 id="home-title" class="home-hero__title">Une idée mérite plus que de la visibilité.</h1>
+          <p class="home-hero__intro">Amplio conçoit des messages, des identités et des campagnes qui donnent du sens à une marque — du premier brief jusqu'à la diffusion.</p>
+          <div class="home-hero__actions">
+            <a class="btn btn--primary" href="services.html">Découvrir nos services</a>
+            <a class="btn btn--secondary" href="portfolio.html">Voir nos réalisations</a>
+          </div>
+        </div>
+
+        <div class="home-hero__visual" aria-hidden="true">
+          <div class="home-hero-visual__stack">
+            <p class="home-hero-visual__word">A.</p>
+            <p class="home-hero-visual__mono">Amplio — publicité &amp; communication</p>
+          </div>
+          <div class="home-hero-visual__tile home-hero-visual__tile--accent">
+            <p class="home-hero-visual__tile-label">Stratégie</p>
+          </div>
+          <div class="home-hero-visual__tile home-hero-visual__tile--light">
+            <p class="home-hero-visual__tile-label">Création</p>
+          </div>
+          <div class="home-hero-visual__tile home-hero-visual__tile--outline">
+            <p class="home-hero-visual__tile-label">Digital</p>
+          </div>
+          <span class="home-hero-visual__dot" aria-hidden="true"></span>
+        </div>
+      </div>
     </section>
 
-    <!-- T08 : hero, aperçu des services et réalisations mises en avant. -->
+    <!-- ================= SERVICES ================= -->
+    <section class="home-section home-services" aria-labelledby="services-title">
+      <div class="container">
+        <header class="home-section__header">
+          <p class="home-eyebrow">Nos expertises</p>
+          <h2 id="services-title" class="home-section__title">Quatre métiers, une même ambition : rendre votre marque visible et mémorable.</h2>
+          <p class="home-section__lede">Chaque projet débute par un brief clair. Nous construisons ensuite la stratégie, l'identité et les supports qui la portent.</p>
+        </header>
+
+        <ol class="home-services__list">
+          <li class="home-services__item">
+            <p class="home-services__index">01</p>
+            <h3 class="home-services__name">Stratégie &amp; communication</h3>
+            <p class="home-services__text">Positionnement, axes de message et plans de communication : nous posons les fondations avant de créer.</p>
+          </li>
+          <li class="home-services__item">
+            <p class="home-services__index">02</p>
+            <h3 class="home-services__name">Identité &amp; création</h3>
+            <p class="home-services__text">Logos, chartes graphiques et supports print : une identité cohérente et reconnaissable au premier regard.</p>
+          </li>
+          <li class="home-services__item">
+            <p class="home-services__index">03</p>
+            <h3 class="home-services__name">Communication digitale</h3>
+            <p class="home-services__text">Sites, réseaux sociaux et contenus : une présence régulière là où se trouve votre audience.</p>
+          </li>
+          <li class="home-services__item">
+            <p class="home-services__index">04</p>
+            <h3 class="home-services__name">Publicité &amp; campagnes</h3>
+            <p class="home-services__text">Des campagnes pensées de la conception à la diffusion, dans le but de susciter l'envie et l'action.</p>
+          </li>
+        </ol>
+
+        <p class="home-section__footer">
+          <a class="home-link" href="services.html">Voir tous les services<span class="home-link__arrow" aria-hidden="true">→</span></a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= RÉALISATIONS ================= -->
+    <section class="home-section home-section--surface home-work" aria-labelledby="work-title">
+      <div class="container">
+        <header class="home-section__header">
+          <p class="home-eyebrow">Portfolio</p>
+          <h2 id="work-title" class="home-section__title">Quelques réalisations</h2>
+          <p class="home-section__lede">Nos études de cas détaillées arrivent prochainement. Voici un aperçu des catégories de projets que la page Portfolio documentera.</p>
+        </header>
+
+        <ul class="home-work__grid">
+          <li class="home-work__card">
+            <div class="home-work__media" aria-hidden="true">
+              <span class="home-work__media-shape home-work__media-shape--square"></span>
+              <span class="home-work__media-shape home-work__media-shape--line"></span>
+            </div>
+            <div class="home-work__body">
+              <p class="home-work__tag">Identité</p>
+              <h3 class="home-work__title">Programme d'identité</h3>
+              <p class="home-work__status">Projet à venir</p>
+            </div>
+          </li>
+          <li class="home-work__card">
+            <div class="home-work__media" aria-hidden="true">
+              <span class="home-work__media-shape home-work__media-shape--circle"></span>
+              <span class="home-work__media-shape home-work__media-shape--rule"></span>
+            </div>
+            <div class="home-work__body">
+              <p class="home-work__tag">Campagne digitale</p>
+              <h3 class="home-work__title">Campagne de lancement</h3>
+              <p class="home-work__status">Sélection à venir</p>
+            </div>
+          </li>
+          <li class="home-work__card">
+            <div class="home-work__media" aria-hidden="true">
+              <span class="home-work__media-shape home-work__media-shape--cross"></span>
+              <span class="home-work__media-shape home-work__media-shape--dot"></span>
+            </div>
+            <div class="home-work__body">
+              <p class="home-work__tag">Contenus &amp; print</p>
+              <h3 class="home-work__title">Série éditoriale</h3>
+              <p class="home-work__status">Étude de cas à venir</p>
+            </div>
+          </li>
+        </ul>
+
+        <p class="home-section__footer">
+          <a class="home-link" href="portfolio.html">Voir toutes nos réalisations<span class="home-link__arrow" aria-hidden="true">→</span></a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= CTA FINAL ================= -->
+    <section class="home-cta" aria-labelledby="contact-title">
+      <div class="container home-cta__container">
+        <div class="home-cta__content">
+          <h2 id="contact-title" class="home-cta__title">Un projet en tête ?</h2>
+          <p class="home-cta__text">Transformons votre idée en communication qui compte. Décrivez-nous votre projet en quelques lignes : nous vous répondrons rapidement.</p>
+        </div>
+        <div class="home-cta__actions">
+          <a class="btn btn--accent" href="contact.html">Parler de mon projet</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- Footer injecté par includes.js à partir de partials/footer.html. -->

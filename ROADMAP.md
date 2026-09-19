@@ -141,7 +141,7 @@ Une branche par tâche, y compris en solo, afin que chaque changement passe par 
 
 | # | Tâche | Statut | Dépendances |
 |---|---|---|---|
-| T08 | Page Accueil : hero, aperçu des services, réalisations mises en avant, appel à l'action | À faire | T07 |
+| T08 | Page Accueil : hero, aperçu des services, réalisations mises en avant, appel à l'action | Terminé | T07 |
 | T09 | Page Services : mise en page et structure des cartes de services | À faire | T07 |
 | T10 | Page Portfolio : mise en page de la grille d'études de cas | À faire | T07 |
 | T11 | Page Contact : structure du formulaire (champs, libellés, bloc coordonnées) | À faire | T07 |
