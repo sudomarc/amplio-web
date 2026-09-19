@@ -28,6 +28,43 @@ dist/
 build/
 .cache/
 coverage/
+.playwright/
+playwright-report/
+test-results/
+.lighthouseci/
 
 # Serveurs / logs locaux
 *.log
+
+# Déploiement / hébergement — état local généré
+.vercel/
+.netlify/
+.wrangler/
+
+# Outils IA / agents de code — ne font pas partie du site
+.ai/
+.opencode/
+.claude/
+.cursor/
+.windsurf/
+.gemini/
+.continue/
+.kilocode/
+.roo/
+.factory/
+.agents/
+
+# Configurations IA racine — garder le dépôt centré sur le code du site
+MASTER-PROMPT.md
+CLAUDE.md
+GEMINI.md
+CURSOR.md
+COPILOT.md
+.cursorrules
+.clinerules
+.windsurfrules
+
+# GitHub — conserver uniquement le modèle de Pull Request du projet
+.github/**
+!.github/
+!.github/pull_request_template.md
