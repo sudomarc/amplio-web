@@ -64,7 +64,33 @@ COPILOT.md
 .clinerules
 .windsurfrules
 
-# GitHub — conserver uniquement le modèle de Pull Request du projet
-.github/**
-!.github/
-!.github/pull_request_template.md
+# LOCAL ONLY — outils IA, instructions et métadonnées d’agent
+# Ces éléments restent volontairement sur le PC et ne doivent jamais être publiés sur GitHub.
+.ai/
+.ia/
+.opencode/
+.claude/
+.cursor/
+.windsurf/
+.gemini/
+.continue/
+.kilocode/
+.roo/
+.factory/
+.agents/
+
+# Fichiers d’instructions IA locaux
+**/AGENTS.md
+**/CLAUDE.md
+**/MASTER-PROMPT.md
+**/GEMINI.md
+**/CURSOR.md
+**/COPILOT.md
+.cursorrules
+.clinerules
+.windsurfrules
+
+# Métadonnées de dépôt/outillage locales
+/.github/
+/docs/
+/documents/
