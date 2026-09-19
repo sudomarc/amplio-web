@@ -129,9 +129,9 @@ Une branche par tâche, y compris en solo, afin que chaque changement passe par 
 
 | # | Tâche | Statut | Dépendances |
 |---|---|---|---|
-| T01 | Configuration du repo : protection de `main`, modèle de PR, `.gitignore` | À faire | — |
-| T02 | Structure des dossiers et squelettes HTML des pages | À faire | T01 |
-| T03 | Feuille de styles globale : variables (couleurs, espacements, typo), reset, utilitaires | À faire | T02 |
+| T01 | Configuration du repo : protection de `main`, modèle de PR, `.gitignore` | Terminé | — |
+| T02 | Structure des dossiers et squelettes HTML des pages | Terminé | T01 |
+| T03 | Feuille de styles globale : variables (couleurs, espacements, typo), reset, utilitaires | En review | T02 |
 | T04 | Header : markup et styles (logo cliquable vers l'accueil, menu desktop) | À faire | T03 |
 | T05 | Header : burger mobile et état actif du lien de la page courante | À faire | T04 |
 | T06 | Footer : markup et styles | À faire | T03 |
