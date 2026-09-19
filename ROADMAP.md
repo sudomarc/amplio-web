@@ -129,7 +129,7 @@ Une branche par tâche, y compris en solo, afin que chaque changement passe par 
 
 | # | Tâche | Statut | Dépendances |
 |---|---|---|---|
-| T01 | Configuration du repo : protection de `main`, modèle de PR, `.gitignore` | Terminé | — |
+| T01 | Configuration du repo : protection de `main`, modèle de PR, `.gitignore` | En review | — |
 | T02 | Structure des dossiers et squelettes HTML des pages | Terminé | T01 |
 | T03 | Feuille de styles globale : variables (couleurs, espacements, typo), reset, utilitaires | Terminé | T02 |
 | T04 | Header : markup et styles (logo cliquable vers l'accueil, menu desktop) | Terminé | T03 |
