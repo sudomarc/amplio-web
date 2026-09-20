@@ -277,6 +277,16 @@ textarea {
   color: var(--color-accent);
 }
 
+/* État d'erreur d'un bloc rendu dynamiquement. */
+.services-error {
+  margin-block: var(--space-4) 0;
+  padding: var(--space-4) var(--space-5);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  color: var(--color-text-muted);
+}
+
 /* Bandeau final d'appel à l'action. */
 .cta-band {
   background-color: var(--color-primary);

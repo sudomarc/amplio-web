@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="assets/css/home.css">
   <script src="assets/js/includes.js" defer></script>
   <script src="assets/js/nav.js" defer></script>
+  <script src="assets/js/services.js" defer></script>
 </head>
 <body>
   <!-- Header injecté par includes.js à partir de partials/header.html. -->
@@ -59,28 +60,7 @@
           <p class="home-section__lede">Chaque projet débute par un brief clair. Nous construisons ensuite la stratégie, l'identité et les supports qui la portent.</p>
         </header>
 
-        <ol class="home-services__list">
-          <li class="home-services__item">
-            <p class="home-services__index">01</p>
-            <h3 class="home-services__name">Stratégie &amp; communication</h3>
-            <p class="home-services__text">Positionnement, axes de message et plans de communication : nous posons les fondations avant de créer.</p>
-          </li>
-          <li class="home-services__item">
-            <p class="home-services__index">02</p>
-            <h3 class="home-services__name">Identité &amp; création</h3>
-            <p class="home-services__text">Logos, chartes graphiques et supports print : une identité cohérente et reconnaissable au premier regard.</p>
-          </li>
-          <li class="home-services__item">
-            <p class="home-services__index">03</p>
-            <h3 class="home-services__name">Communication digitale</h3>
-            <p class="home-services__text">Sites, réseaux sociaux et contenus : une présence régulière là où se trouve votre audience.</p>
-          </li>
-          <li class="home-services__item">
-            <p class="home-services__index">04</p>
-            <h3 class="home-services__name">Publicité &amp; campagnes</h3>
-            <p class="home-services__text">Des campagnes pensées de la conception à la diffusion, dans le but de susciter l'envie et l'action.</p>
-          </li>
-        </ol>
+        <ol class="home-services__list"><!-- Rendu dynamique via data/services.json --></ol>
 
         <p class="home-section__footer">
           <a class="arrow-link" href="services.html">Voir tous les services<span class="arrow-link__arrow" aria-hidden="true">→</span></a>
