@@ -119,7 +119,7 @@ Une branche par tâche, y compris en solo, afin que chaque changement passe par 
 
 **Protection de `main` (à configurer dans T01) :** Pull Request obligatoire, au moins 1 approbation, pas de push direct, pas de force-push.
 
-> **État actuel (20 septembre 2026) :** T01 reste `En review` jusqu'à la configuration effective de la protection de `main`, suivie dans l'issue #10. T08 à T13 sont livrés et `Terminé`. T14 est `Terminé` depuis le merge de la PR #35. Une maintenance globale et une passe d'assurance qualité (audit d'accessibilité avec skip-link, refonte responsive du menu mobile, synchronisation des options de service du formulaire de contact, enrichissement ARIA `aria-describedby` sur les cartes de services et intégration du favicon SVG) ont été réalisées avec succès. Le modèle `.github/pull_request_template.md` est maintenu comme configuration du dépôt. Le bootstrap OpenCode `AGENTS.md` est versionné ; il impose le chargement préalable des Vibe Coding Instructions canoniques avant toute modification.
+> **État actuel (20 septembre 2026) :** T01 reste `En review` jusqu'à la configuration effective de la protection de `main`, suivie dans l'issue #10. T08 à T14 sont livrés et `Terminé`. T14 est `Terminé` depuis le merge de la PR #35. Une maintenance globale et une passe d'assurance qualité ont ensuite été mergées via la PR #36 (skip-link, responsive du menu mobile, synchronisation des options de service du formulaire de contact, enrichissement ARIA des cartes de services et favicon SVG). T15 est maintenant la prochaine tâche de développement, suivie dans l'issue #38. Le modèle `.github/pull_request_template.md` est maintenu comme configuration du dépôt. Le bootstrap OpenCode `AGENTS.md` est versionné ; il impose le chargement préalable des Vibe Coding Instructions canoniques avant toute modification.
 
 ---
 
@@ -181,7 +181,7 @@ Une branche par tâche, y compris en solo, afin que chaque changement passe par 
 | T28 | Recette finale (checklist de la section 8) | À faire | T21, T22, T27 |
 | T29 | Mise en ligne v1.0 et tag `v1.0.0` | À faire | T28 |
 
-> T12 est planifiée et devient obligatoire dans l'état actuel du dépôt : `partials/header.html` et `partials/footer.html` exposent déjà le lien `a-propos.html`, qui doit correspondre à une page réelle. Si le produit décide ultérieurement d'abandonner cette page, il faudra retirer ces liens et ajuster le roadmap avant de passer à T13.
+> T12 a été livrée et mergée via la PR #28. La page `a-propos.html` est désormais présente et reliée au header/footer.
 
 ---
 

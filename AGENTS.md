@@ -37,6 +37,15 @@ Source canonique :
 14. Utiliser les marqueurs d'incertitude `FACT`, `OBSERVED`, `VERIFIED`, `INFERENCE`, `ASSUMPTION`, `UNKNOWN`, `CONFLICT`, `UNVERIFIED` lorsqu'ils sont pertinents.
 15. Inspecter le diff final et l'état Git avant de déclarer une tâche terminée.
 
+## CONTINUITÉ DU BOOTSTRAP VIBE
+
+Le bootstrap Vibe est une **précondition de chaque tâche**, pas seulement de chaque lancement d'OpenCode.
+
+- Au début de chaque nouvelle tâche, revalider le clone local et son SHA courant avant toute action applicative.
+- Si le SHA du clone Vibe a changé depuis la dernière tâche, recharger les fichiers racine requis avant de continuer.
+- Ne jamais considérer une preuve de bootstrap provenant d'une autre tâche comme suffisante pour la tâche courante.
+- Le premier accès au dépôt Amplio doit servir à établir le bootstrap Vibe ; toute exploration applicative vient ensuite.
+
 ## INTERDICTION DE CONTOURNEMENT PAR SOUS-AGENT
 
 Le hard gate Vibe s'applique au processus OpenCode **et à tous ses agents, sous-agents, reviewers et outils délégués**.
