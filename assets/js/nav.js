@@ -23,6 +23,12 @@
           toggle.focus();
         }
       });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 640 && header.classList.contains('is-menu-open')) {
+          setMenuOpen(false);
+        }
+      });
     }
 
     const menu = document.querySelector('.site-header__menu');
