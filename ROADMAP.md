@@ -119,7 +119,7 @@ Une branche par tâche, y compris en solo, afin que chaque changement passe par 
 
 **Protection de `main` (à configurer dans T01) :** Pull Request obligatoire, au moins 1 approbation, pas de push direct, pas de force-push.
 
-> **État actuel (20 septembre 2026) :** T01 reste `En review` jusqu'à la configuration effective de la protection de `main`, suivie dans l'issue #10. T08 et T09 sont livrés ; T10 est `Terminé` depuis le merge de la PR #21, suivi dans l'issue #19. T11 est `Terminé` depuis le merge de la PR #24, suivie dans l'issue #22. T12 est `Terminé` depuis le merge de la PR #28, suivie dans l'issue #26. La page `a-propos.html` est désormais présente et reliée au header/footer. T13 est `Terminé` après correction de l'encodage de `data/services.json` (issue #32), après le merge de la PR #31. Les services sont centralisés dans `data/services.json` et rendus dynamiquement sur les pages Services et Accueil. T14 est `En review` (issue #33) : la page Services est un sélecteur de service (radios natives `name=service`, état visuel multi-indicateurs, bouton « Continuer » désactivé jusqu'à sélection, ID métier transmis via `data-service-id`, aucune redirection — T15 couvrira `contact.html?service=…`). Le modèle `.github/pull_request_template.md` est maintenu comme configuration du dépôt. Le bootstrap OpenCode `AGENTS.md` est versionné ; il impose le chargement préalable des Vibe Coding Instructions canoniques avant toute modification.
+> **État actuel (20 septembre 2026) :** T01 reste `En review` jusqu'à la configuration effective de la protection de `main`, suivie dans l'issue #10. T08 à T13 sont livrés et `Terminé`. T14 est `Terminé` depuis le merge de la PR #35. Une maintenance globale et une passe d'assurance qualité (audit d'accessibilité avec skip-link, refonte responsive du menu mobile, synchronisation des options de service du formulaire de contact, enrichissement ARIA `aria-describedby` sur les cartes de services et intégration du favicon SVG) ont été réalisées avec succès. Le modèle `.github/pull_request_template.md` est maintenu comme configuration du dépôt. Le bootstrap OpenCode `AGENTS.md` est versionné ; il impose le chargement préalable des Vibe Coding Instructions canoniques avant toute modification.
 
 ---
 
@@ -154,7 +154,7 @@ Une branche par tâche, y compris en solo, afin que chaque changement passe par 
 | # | Tâche | Statut | Dépendances |
 |---|---|---|---|
 | T13 | `data/services.json` et rendu dynamique des services (Services, Accueil) | Terminé | T08, T09, T12 |
-| T14 | Sélecteur de services : sélection au clic, état visuel, bouton « Continuer » | En review | T13 |
+| T14 | Sélecteur de services : sélection au clic, état visuel, bouton « Continuer » | Terminé | T13 |
 | T15 | Redirection vers `contact.html?service=…` et pré-remplissage du formulaire (avec repli si paramètre absent ou invalide) | À faire | T11, T14 |
 | T16 | `data/projects.json` et rendu des études de cas | À faire | T10 |
 | T17 | Filtres du portfolio par catégorie | À faire | T16 |

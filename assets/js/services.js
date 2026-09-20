@@ -103,6 +103,7 @@
       radio.name = 'service';
       radio.value = service.id;
       radio.setAttribute('aria-labelledby', 'service-card-title-' + service.id);
+      radio.setAttribute('aria-describedby', 'service-card-desc-' + service.id + ' service-card-scope-' + service.id);
 
       var top = document.createElement('span');
       top.className = 'service-card__top';
@@ -137,10 +138,12 @@
 
       var description = document.createElement('span');
       description.className = 'service-card__description';
+      description.id = 'service-card-desc-' + service.id;
       description.textContent = service.description;
 
       var scope = document.createElement('span');
       scope.className = 'service-card__scope';
+      scope.id = 'service-card-scope-' + service.id;
       scope.setAttribute('role', 'list');
 
       service.scope.forEach(function (itemName) {
