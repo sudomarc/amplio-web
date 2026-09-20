@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/header.css">
   <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/contact.css">
   <script src="assets/js/includes.js" defer></script>
   <script src="assets/js/nav.js" defer></script>
 </head>
@@ -16,12 +17,60 @@
   <div data-include="partials/header.html"></div>
 
   <main id="main-content">
-    <section aria-labelledby="page-title">
-      <h1 id="page-title">Contact</h1>
-      <p>Parlez-nous de votre projet.</p>
+
+    <!-- ================= INTRODUCTION ================= -->
+    <section class="contact-hero" aria-labelledby="page-title">
+      <div class="container contact-hero__container">
+        <p class="eyebrow">Contact</p>
+        <h1 id="page-title" class="contact-hero__title">Parlons de votre projet.</h1>
+        <p class="contact-hero__intro">Décrivez votre besoin dans le formulaire ci-dessous et nous vous répondrons dès que possible.</p>
+      </div>
     </section>
 
-    <!-- T11/T18/T20 : formulaire, validation et envoi. -->
+    <!-- ============ CONTENU : FORMULAIRE + INFORMATIONS ============= -->
+    <section class="contact-content" aria-label="Formulaire de contact">
+      <div class="container contact-layout">
+
+        <div class="contact-form-panel">
+          <h2 class="contact-form__title">Votre demande</h2>
+          <form class="contact-form" name="contact">
+            <div class="contact-form__field">
+              <label for="name">Nom</label>
+              <input id="name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="contact-form__field">
+              <label for="email">E-mail</label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="contact-form__field">
+              <label for="service">Service</label>
+              <select id="service" name="service">
+                <option value="">Choisir un service</option>
+              </select>
+            </div>
+            <div class="contact-form__field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" required></textarea>
+            </div>
+            <div class="contact-form__actions">
+              <button class="contact-form__submit" type="submit">Envoyer ma demande</button>
+            </div>
+          </form>
+        </div>
+
+        <aside class="contact-info" aria-labelledby="contact-info-title">
+          <p class="eyebrow">Réponse</p>
+          <h2 id="contact-info-title" class="contact-info__title">Un brief, une première réponse.</h2>
+          <p class="contact-info__text">Parlons de votre projet et construisons ensemble un échange simple : nous vous répondrons dès que possible.</p>
+        </aside>
+
+      </div>
+
+      <div class="container">
+        <p class="contact-note">Le formulaire est en cours de mise en place : sa structure est en ligne. L'envoi des messages sera activé dans une prochaine étape.</p>
+      </div>
+    </section>
+
   </main>
 
   <!-- Footer injecté par includes.js à partir de partials/footer.html. -->
