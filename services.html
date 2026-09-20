@@ -31,7 +31,16 @@
     <!-- ================= GRILLE DES SERVICES ================= -->
     <section class="services-cards" aria-label="Les quatre expertises d'Amplio">
       <div class="container">
-        <ol class="services-cards__list"><!-- Rendu dynamique via data/services.json --></ol>
+        <fieldset class="service-selector" id="service-selector">
+          <legend class="service-selector__legend">Choisissez le service qui correspond à votre projet.</legend>
+
+          <ol class="services-cards__list"><!-- Rendu dynamique via data/services.json --></ol>
+
+          <div class="service-selector__footer">
+            <p class="service-selector__status" id="service-selection-status" aria-live="polite">Aucun service sélectionné pour le moment.</p>
+            <button type="button" class="service-selector__continue" id="service-continue" disabled>Continuer</button>
+          </div>
+        </fieldset>
       </div>
     </section>
 
