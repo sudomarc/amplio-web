@@ -5,6 +5,9 @@
 
   var HOME_LIST = document.querySelector('.home-services__list');
   var SERVICES_LIST = document.querySelector('.services-cards__list');
+  var SELECTOR_FIELD = document.querySelector('#service-selector');
+  var CONTINUE_BUTTON = document.querySelector('#service-continue');
+  var SELECTOR_STATUS = document.querySelector('#service-selection-status');
 
   var CARD_MARKS = [
     'service-card__mark--square',
@@ -12,6 +15,9 @@
     'service-card__mark--cross',
     'service-card__mark--dot'
   ];
+
+  var selectedServiceId = null;
+  var servicesById = {};
 
   function loadServices() {
     return fetch(SERVICES_URL)
@@ -69,6 +75,14 @@
     target.parentNode.replaceChild(status, target);
   }
 
+  function createLabeledIcon(className, text) {
+    var element = document.createElement('span');
+    element.className = className;
+    element.setAttribute('aria-hidden', 'true');
+    element.textContent = text;
+    return element;
+  }
+
   function renderServicesPage(services) {
     if (!SERVICES_LIST) {
       return;
@@ -80,47 +94,70 @@
       var item = document.createElement('li');
       item.className = 'services-cards__item';
 
-      var card = document.createElement('article');
-      card.className = 'service-card';
+      var label = document.createElement('label');
+      label.className = 'service-card';
 
-      var top = document.createElement('div');
+      var radio = document.createElement('input');
+      radio.className = 'service-card__radio sr-only';
+      radio.type = 'radio';
+      radio.name = 'service';
+      radio.value = service.id;
+      radio.setAttribute('aria-labelledby', 'service-card-title-' + service.id);
+
+      var top = document.createElement('span');
       top.className = 'service-card__top';
 
-      var number = document.createElement('p');
+      var number = document.createElement('span');
       number.className = 'service-card__index';
       number.setAttribute('aria-hidden', 'true');
       number.textContent = String(index + 1).padStart(2, '0');
+
+      var indicators = document.createElement('span');
+      indicators.className = 'service-card__top-indicators';
+      indicators.setAttribute('aria-hidden', 'true');
 
       var mark = document.createElement('span');
       mark.className = 'service-card__mark ' + CARD_MARKS[index % CARD_MARKS.length];
       mark.setAttribute('aria-hidden', 'true');
 
-      top.appendChild(number);
-      top.appendChild(mark);
+      var check = createLabeledIcon('service-card__check', '\u2713');
 
-      var title = document.createElement('h2');
+      indicators.appendChild(mark);
+      indicators.appendChild(check);
+
+      top.appendChild(number);
+      top.appendChild(indicators);
+
+      var title = document.createElement('span');
       title.className = 'service-card__title';
+      title.id = 'service-card-title-' + service.id;
+      title.setAttribute('role', 'heading');
+      title.setAttribute('aria-level', '2');
       title.textContent = service.name;
 
-      var description = document.createElement('p');
+      var description = document.createElement('span');
       description.className = 'service-card__description';
       description.textContent = service.description;
 
-      var scope = document.createElement('ul');
+      var scope = document.createElement('span');
       scope.className = 'service-card__scope';
+      scope.setAttribute('role', 'list');
 
       service.scope.forEach(function (itemName) {
-        var li = document.createElement('li');
-        li.textContent = itemName;
-        scope.appendChild(li);
+        var scopeItem = document.createElement('span');
+        scopeItem.className = 'service-card__scope-item';
+        scopeItem.setAttribute('role', 'listitem');
+        scopeItem.textContent = itemName;
+        scope.appendChild(scopeItem);
       });
 
-      card.appendChild(top);
-      card.appendChild(title);
-      card.appendChild(description);
-      card.appendChild(scope);
+      label.appendChild(radio);
+      label.appendChild(top);
+      label.appendChild(title);
+      label.appendChild(description);
+      label.appendChild(scope);
 
-      item.appendChild(card);
+      item.appendChild(label);
       fragment.appendChild(item);
     });
 
@@ -160,6 +197,63 @@
     HOME_LIST.appendChild(fragment);
   }
 
+  function getServiceById(id) {
+    return servicesById[id] || null;
+  }
+
+  function updateSelectorUi(selectedId) {
+    if (!SELECTOR_FIELD) {
+      return;
+    }
+
+    var cards = SELECTOR_FIELD.querySelectorAll('.service-card');
+    cards.forEach(function (card) {
+      card.classList.toggle('is-selected', card.querySelector('.service-card__radio').value === selectedId);
+    });
+
+    if (CONTINUE_BUTTON) {
+      CONTINUE_BUTTON.disabled = selectedId === null;
+      if (CONTINUE_BUTTON.disabled) {
+        CONTINUE_BUTTON.removeAttribute('data-service-id');
+      } else {
+        CONTINUE_BUTTON.setAttribute('data-service-id', selectedId);
+      }
+    }
+
+    if (SELECTOR_STATUS) {
+      var service = getServiceById(selectedId);
+      SELECTOR_STATUS.textContent = service
+        ? 'Service sélectionné : ' + service.name + '.'
+        : 'Aucun service sélectionné pour le moment.';
+    }
+  }
+
+  function initSelector(services) {
+    if (!SELECTOR_FIELD || !CONTINUE_BUTTON) {
+      return;
+    }
+
+    servicesById = {};
+    services.forEach(function (service) {
+      servicesById[service.id] = service;
+    });
+
+    updateSelectorUi(null);
+
+    SELECTOR_FIELD.addEventListener('change', function (event) {
+      var radio = event.target;
+      var id = radio.value;
+
+      if (getServiceById(id) && radio.checked) {
+        selectedServiceId = id;
+      } else {
+        selectedServiceId = null;
+      }
+
+      updateSelectorUi(selectedServiceId);
+    });
+  }
+
   function handleError(error) {
     var message = 'Les services ne peuvent pas être affichés pour le moment.';
 
@@ -183,6 +277,7 @@
       .then(function (services) {
         renderServicesPage(services);
         renderHomeServices(services);
+        initSelector(services);
       })
       .catch(handleError);
   }
