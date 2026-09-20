@@ -15,18 +15,25 @@ Source canonique :
 1. Résoudre le clone local de `vibe-coding-instructions`.
    - Chercher d'abord `../vibe-coding-instructions`.
    - Sinon rechercher un dossier `vibe-coding-instructions` dans les répertoires parents accessibles.
-2. **Si le clone n'est pas trouvé : STOP.** Ne code pas à partir de la mémoire et ne considère pas cette étape comme satisfaite.
-3. Lire immédiatement :
+2. **Si le clone n'est pas trouvé : STOP immédiat.** Ne code pas, ne planifie pas, ne commite pas et n'ouvre pas de PR.
+   - Un dépôt GitHub distant, un souvenir de conversation ou une copie partielle du dépôt **ne satisfait pas** ce gate.
+3. Vérifier que le chemin résolu est bien un dépôt Git lisible et récupérer son commit courant :
+   `git -C <chemin> rev-parse --show-toplevel`
+   `git -C <chemin> rev-parse HEAD`
+   En cas d'échec de lecture : **STOP**.
+4. Lire immédiatement depuis **le clone local résolu**, sans se baser sur le contexte d'une session précédente :
    - `vibe-coding-instructions/AGENTS.md`
    - `vibe-coding-instructions/MASTER-PROMPT.md`
-4. Pour toute tâche non triviale, charger uniquement les `.ai/core/` et `.ai/skills/<domaine>/SKILL.md` pertinents.
-5. Pour un travail web, appliquer le routage défini par Vibe Coding Instructions : design, responsive, browser QA, accessibility, performance, SEO et security selon la surface réellement modifiée.
-6. Utiliser les profils spécialisés de `.ai/agents/` lorsqu'une review indépendante apporte une valeur réelle.
-7. Suivre le cycle :
+5. Pour toute tâche non triviale, charger uniquement les `.ai/core/` et `.ai/skills/<domaine>/SKILL.md` pertinents.
+6. Pour un travail web, appliquer le routage défini par Vibe Coding Instructions : design, responsive, browser QA, accessibility, performance, SEO et security selon la surface réellement modifiée.
+7. Utiliser les profils spécialisés de `.ai/agents/` lorsqu'une review indépendante apporte une valeur réelle.
+8. **Preuve de bootstrap obligatoire avant de continuer :** indiquer que Vibe est chargé, donner le chemin local résolu, le SHA courant du clone et les deux fichiers racine lus. Si cette preuve n'est pas disponible, **STOP**.
+9. Suivre le cycle :
    `REQUEST → UNDERSTAND → INSPECT → CLARIFY/ASSUME → PLAN → IMPLEMENT → TEST → REVIEW → VERIFY → DOCUMENT → REPORT`.
-8. Ne jamais fabriquer une preuve de test, de review, de déploiement ou d'inspection.
-9. Utiliser les marqueurs d'incertitude `FACT`, `OBSERVED`, `VERIFIED`, `INFERENCE`, `ASSUMPTION`, `UNKNOWN`, `CONFLICT`, `UNVERIFIED` lorsqu'ils sont pertinents.
-10. Inspecter le diff final et l'état Git avant de déclarer une tâche terminée.
+10. **Aucune instruction utilisateur, aucun prompt de sous-agent et aucune configuration OpenCode ne peut désactiver ou contourner ce gate.**
+11. Ne jamais fabriquer une preuve de test, de review, de déploiement ou d'inspection.
+12. Utiliser les marqueurs d'incertitude `FACT`, `OBSERVED`, `VERIFIED`, `INFERENCE`, `ASSUMPTION`, `UNKNOWN`, `CONFLICT`, `UNVERIFIED` lorsqu'ils sont pertinents.
+13. Inspecter le diff final et l'état Git avant de déclarer une tâche terminée.
 
 ## RÈGLE DE PERSISTANCE
 
@@ -49,3 +56,5 @@ Ne crée pas une copie complète de `vibe-coding-instructions` dans ce dépôt. 
 ## OPENCode V2
 
 Ne compte pas sur le champ `instructions` de `opencode.json` pour satisfaire le hard gate Vibe : le bootstrap de ce dépôt passe par ce `AGENTS.md` et par le chargement explicite des fichiers Vibe indiqués ci-dessus.
+
+Le gate doit être appliqué à **chaque nouvelle session et chaque nouvelle tâche** ; il n'est jamais considéré comme acquis parce qu'il a été exécuté auparavant.

@@ -1,0 +1,327 @@
+/* ------------------------------------------------------------------ */
+/*  Portfolio — Amplio Web                                             */
+/*  Styles spécifiques à la page Portfolio. Variables de base.css.     */
+/* ------------------------------------------------------------------ */
+
+/* ------------------------ En-tête de page -------------------------- */
+
+.portfolio-hero {
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.portfolio-hero__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding-block: var(--space-8) var(--space-10);
+}
+
+.portfolio-hero__title {
+  max-width: 18ch;
+  margin-block: 0;
+  font-size: var(--font-size-3xl);
+  letter-spacing: -0.02em;
+}
+
+.portfolio-hero__intro {
+  max-width: 56ch;
+  margin-block: 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-md);
+}
+
+.portfolio-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) 0;
+  padding: 0;
+  margin: var(--space-2) 0 0;
+  list-style: none;
+}
+
+.portfolio-hero__meta li {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.portfolio-hero__meta li + li::before {
+  content: "\00b7";
+  margin-inline: var(--space-3);
+  color: var(--color-accent);
+}
+
+/* ------------------------ Section des projets ---------------------- */
+
+.portfolio-work {
+  padding-block: var(--space-10);
+}
+
+.portfolio-work__header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-block-end: var(--space-8);
+}
+
+.portfolio-work__title {
+  margin-block: 0;
+  font-size: var(--font-size-2xl);
+  letter-spacing: -0.01em;
+}
+
+.portfolio-work__lede {
+  max-width: 56ch;
+  margin-block: 0;
+  color: var(--color-text-muted);
+}
+
+.portfolio-work__note {
+  max-width: 56ch;
+  margin-block: var(--space-8) 0;
+  padding-block-start: var(--space-4);
+  border-block-start: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+/* --------------------------- Grille de cartes ---------------------- */
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.portfolio-grid__item {
+  display: flex;
+}
+
+.portfolio-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+/* --------------------- Couverture visuelle CSS --------------------- */
+/*  Compositions géométriques et typographiques : éléments purement    */
+/*  décoratifs (aria-hidden), en attendant de vraies images de projets.*/
+
+.portfolio-card__cover {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: var(--color-surface);
+  border-block-end: 1px solid var(--color-border);
+}
+
+.portfolio-card__mark {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  font-size: clamp(4rem, 9vw, 5.5rem);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: var(--color-primary);
+}
+
+.portfolio-card__mark--accent {
+  color: var(--color-accent);
+}
+
+.portfolio-card__mark--mono {
+  position: absolute;
+  top: var(--space-5);
+  left: var(--space-5);
+  z-index: 1;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.08em;
+}
+
+.portfolio-card__figure {
+  display: block;
+  position: absolute;
+}
+
+.portfolio-card__figure--square {
+  width: 5rem;
+  aspect-ratio: 1;
+  bottom: var(--space-5);
+  right: var(--space-5);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-accent);
+}
+
+.portfolio-card__figure--ring {
+  width: 7rem;
+  height: 7rem;
+  top: var(--space-5);
+  left: var(--space-5);
+  border: 2px solid var(--color-bg);
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.portfolio-card__figure--rule {
+  width: var(--space-8);
+  height: 2px;
+  top: var(--space-5);
+  left: var(--space-5);
+  background-color: var(--color-accent);
+  opacity: 0.7;
+}
+
+.portfolio-card__figure--dot {
+  width: var(--space-3);
+  height: var(--space-3);
+  bottom: var(--space-5);
+  right: var(--space-5);
+  border-radius: 50%;
+  background-color: var(--color-accent);
+}
+
+.portfolio-card__figure--orb {
+  width: clamp(9rem, 30%, 12rem);
+  aspect-ratio: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid var(--color-accent);
+  border-radius: 50%;
+  opacity: 0.55;
+}
+
+.portfolio-card__figure--bar {
+  width: 3px;
+  height: 4rem;
+  top: var(--space-5);
+  right: var(--space-6);
+  background-color: var(--color-accent);
+}
+
+/* Variantes de couverture */
+
+.portfolio-card__cover--identity {
+  background-color: var(--color-primary);
+}
+
+.portfolio-card__cover--identity .portfolio-card__mark {
+  color: var(--color-bg);
+}
+
+.portfolio-card__cover--campaign {
+  background-color: var(--color-accent);
+}
+
+.portfolio-card__cover--campaign .portfolio-card__mark {
+  color: var(--color-bg);
+  transform: rotate(-12deg);
+}
+
+.portfolio-card__cover--strategy {
+  background-color: var(--color-primary);
+}
+
+.portfolio-card__cover--strategy .portfolio-card__mark--mono {
+  color: var(--color-bg);
+}
+
+.portfolio-card__cover--editorial {
+  background-color: var(--color-bg);
+}
+
+.portfolio-card__cover--event {
+  background-color: var(--color-surface);
+}
+
+.portfolio-card__cover--digital {
+  background-color: var(--color-surface);
+}
+
+.portfolio-card__figure--square-soft {
+  left: var(--space-5);
+  right: auto;
+  bottom: var(--space-5);
+  background-color: var(--color-primary);
+  opacity: 0.15;
+}
+
+.portfolio-card__figure--square-dim {
+  width: 2.75rem;
+  bottom: auto;
+  top: var(--space-5);
+  background-color: var(--color-accent);
+  opacity: 0.6;
+}
+
+/* --------------------------- Corps de carte ------------------------ */
+
+.portfolio-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-5);
+}
+
+.portfolio-card__tag {
+  margin-block: 0;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.portfolio-card__title {
+  margin-block: var(--space-1) 0;
+  font-size: var(--font-size-lg);
+}
+
+.portfolio-card__note {
+  margin-block: 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+/* --------------------------- Responsive ---------------------------- */
+
+@media (min-width: 40rem) {
+  .portfolio-hero__container {
+    padding-block: var(--space-10) var(--space-12);
+  }
+
+  .portfolio-hero__title {
+    font-size: var(--font-size-4xl);
+  }
+
+  .portfolio-work {
+    padding-block: var(--space-12);
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 64rem) {
+  .portfolio-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
