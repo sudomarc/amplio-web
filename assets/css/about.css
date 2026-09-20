@@ -1,0 +1,155 @@
+/* ------------------------------------------------------------------ */
+/*  À propos — Amplio Web                                              */
+/*  Styles spécifiques à la page À propos. Variables de base.css.      */
+/* ------------------------------------------------------------------ */
+
+/* ------------------------ En-tête de page -------------------------- */
+
+.about-hero {
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.about-hero__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding-block: var(--space-8) var(--space-10);
+}
+
+.about-hero__title {
+  max-width: 20ch;
+  margin-block: 0;
+  font-size: var(--font-size-3xl);
+  letter-spacing: -0.02em;
+}
+
+.about-hero__intro {
+  max-width: 52ch;
+  margin-block: 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-md);
+}
+
+/* --------------------------- Sections ------------------------------ */
+
+.about-section {
+  padding-block: var(--space-10);
+}
+
+.about-section--surface {
+  background-color: var(--color-surface);
+  border-block: 1px solid var(--color-border);
+}
+
+.about-section__header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-block-end: var(--space-6);
+}
+
+.about-section__title {
+  margin-block: 0;
+  font-size: var(--font-size-2xl);
+  letter-spacing: -0.01em;
+}
+
+.about-section__lede {
+  max-width: 52ch;
+  margin-block: 0;
+  color: var(--color-text-muted);
+}
+
+.about-text {
+  max-width: 62ch;
+}
+
+.about-text p {
+  color: var(--color-text-muted);
+}
+
+/* -------------------------- Principes ------------------------------ */
+
+.about-principles {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6) var(--space-8);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.about-principles__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-block-start: var(--space-4);
+  border-block-start: 1px solid var(--color-border);
+}
+
+.about-principles__index {
+  margin-block: 0;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+}
+
+.about-principles__title {
+  margin-block: var(--space-1) 0;
+  font-size: var(--font-size-lg);
+}
+
+.about-principles__text {
+  margin-block: 0;
+  color: var(--color-text-muted);
+}
+
+/* ---------------------------- Équipe ------------------------------- */
+
+.about-team {
+  max-width: 62ch;
+  padding: var(--space-6);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.about-team__text {
+  margin-block: 0;
+  color: var(--color-text-muted);
+}
+
+.about-team__text + .about-team__text {
+  margin-block-start: var(--space-3);
+}
+
+/* --------------------------- Responsive ---------------------------- */
+
+@media (min-width: 40rem) {
+  .about-hero__container {
+    padding-block: var(--space-10) var(--space-12);
+  }
+
+  .about-hero__title {
+    font-size: var(--font-size-4xl);
+  }
+
+  .about-section {
+    padding-block: var(--space-12);
+  }
+
+  .about-section__header {
+    margin-block-end: var(--space-8);
+  }
+}
+
+@media (min-width: 64rem) {
+  .about-principles {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

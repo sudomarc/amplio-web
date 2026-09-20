@@ -4,10 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>À propos — Amplio</title>
-  <meta name="description" content="Découvrez Amplio, son équipe et son approche.">
+  <meta name="description" content="Amplio, agence de publicité et de communication : découverte de l'agence, de son approche et de la manière dont elle travaille.">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/header.css">
   <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/about.css">
   <script src="assets/js/includes.js" defer></script>
   <script src="assets/js/nav.js" defer></script>
 </head>
@@ -16,12 +17,96 @@
   <div data-include="partials/header.html"></div>
 
   <main id="main-content">
-    <section aria-labelledby="page-title">
-      <h1 id="page-title">À propos</h1>
-      <p>Découvrez l'agence Amplio et son équipe.</p>
+
+    <!-- ================= INTRODUCTION ================= -->
+    <section class="about-hero" aria-labelledby="page-title">
+      <div class="container about-hero__container">
+        <p class="eyebrow">À propos</p>
+        <h1 id="page-title" class="about-hero__title">La communication qui donne du sens.</h1>
+        <p class="about-hero__intro">Amplio est une agence de publicité et de communication. Nous construisons des messages, des identités et des campagnes qui donnent du sens à une marque — du premier brief jusqu'à la diffusion.</p>
+      </div>
     </section>
 
-    <!-- T12 : présentation de l'agence et de l'équipe. -->
+    <!-- ================= PRÉSENTATION ================= -->
+    <section class="about-section" aria-labelledby="about-title">
+      <div class="container">
+        <header class="about-section__header">
+          <p class="eyebrow">L'agence</p>
+          <h2 id="about-title" class="about-section__title">Ce que fait Amplio.</h2>
+        </header>
+        <div class="about-text">
+          <p>Amplio accompagne les marques sur quatre métiers : la stratégie et la communication, l'identité et la création, la communication digitale, et la publicité et les campagnes.</p>
+          <p>Pour chaque projet, nous cherchons à construire une présence claire, cohérente et mémorable, sur les supports print comme numériques.</p>
+          <p>
+            <a class="arrow-link" href="services.html">Découvrir nos services<span class="arrow-link__arrow" aria-hidden="true">→</span></a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= APPROCHE ================= -->
+    <section class="about-section about-section--surface" aria-labelledby="approach-title">
+      <div class="container">
+        <header class="about-section__header">
+          <p class="eyebrow">Notre approche</p>
+          <h2 id="approach-title" class="about-section__title">Comment nous travaillons.</h2>
+          <p class="about-section__lede">Quelques principes simples structurent notre façon de faire, du premier échange à la diffusion.</p>
+        </header>
+
+        <ol class="about-principles">
+          <li class="about-principles__item">
+            <p class="about-principles__index" aria-hidden="true">01</p>
+            <h3 class="about-principles__title">Commencer par un brief clair</h3>
+            <p class="about-principles__text">Chaque projet débute par un brief : comprendre le contexte, les objectifs et les contraintes avant de créer.</p>
+          </li>
+          <li class="about-principles__item">
+            <p class="about-principles__index" aria-hidden="true">02</p>
+            <h3 class="about-principles__title">Poser des fondations avant de créer</h3>
+            <p class="about-principles__text">Positionnement, axes de message et cohérence d'identité d'abord : la création vient ensuite porter ces fondations.</p>
+          </li>
+          <li class="about-principles__item">
+            <p class="about-principles__index" aria-hidden="true">03</p>
+            <h3 class="about-principles__title">Assurer une présence cohérente</h3>
+            <p class="about-principles__text">Faire en sorte que la marque se reconnaisse au premier regard, sur tout support et dans la durée.</p>
+          </li>
+          <li class="about-principles__item">
+            <p class="about-principles__index" aria-hidden="true">04</p>
+            <h3 class="about-principles__title">Aller de la conception à la diffusion</h3>
+            <p class="about-principles__text">Des campagnes pensées de la première idée jusqu'à la diffusion, dans le but de susciter l'envie et l'action.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= ÉQUIPE ================= -->
+    <section class="about-section" aria-labelledby="team-title">
+      <div class="container">
+        <header class="about-section__header">
+          <p class="eyebrow">Équipe</p>
+          <h2 id="team-title" class="about-section__title">L'équipe.</h2>
+        </header>
+        <div class="about-team">
+          <p class="about-team__text">Cette version du site ne documente pas encore les profils individuels de l'équipe : nous présentons ici l'agence, son approche et ses travaux. Les informations sur les membres seront ajoutées lorsqu'elles seront réellement disponibles, sans inventer de contenu.</p>
+          <p class="about-team__text">
+            En attendant, la page
+            <a class="about-team__link" href="portfolio.html">Portfolio</a>
+            réunit nos pistes de travail et concepts en préparation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= APPEL À L'ACTION ================= -->
+    <section class="cta-band" aria-labelledby="about-cta-title">
+      <div class="container cta-band__container">
+        <div class="cta-band__content">
+          <h2 id="about-cta-title" class="cta-band__title">Envie de travailler ensemble ?</h2>
+          <p class="cta-band__text">Chaque projet commence par une discussion : décrivez-nous votre besoin et nous vous répondrons.</p>
+        </div>
+        <a class="arrow-link arrow-link--accent" href="contact.html">Parler de mon projet<span class="arrow-link__arrow" aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
   </main>
 
   <!-- Footer injecté par includes.js à partir de partials/footer.html. -->
