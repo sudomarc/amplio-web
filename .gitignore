@@ -42,7 +42,7 @@ test-results/
 .wrangler/
 
 # LOCAL ONLY — outils IA, instructions et métadonnées d’agent
-# Ces éléments restent volontairement sur le PC et ne doivent jamais être publiés sur GitHub.
+# Les outils restent locaux ; le seul bootstrap de gouvernance versionné est AGENTS.md.
 .ai/
 .ia/
 .opencode/
@@ -56,8 +56,9 @@ test-results/
 .factory/
 .agents/
 
-# Fichiers d’instructions IA locaux
+# Fichiers d'instructions IA locaux
 **/AGENTS.md
+!AGENTS.md
 **/CLAUDE.md
 **/MASTER-PROMPT.md
 **/GEMINI.md
