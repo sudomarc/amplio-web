@@ -28,11 +28,20 @@
     const menu = document.querySelector('.site-header__menu');
 
     if (menu) {
-      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+      const path = window.location.pathname;
+      let currentPage = path.split('/').pop() || 'index.html';
+      if (currentPage === '') {
+        currentPage = 'index.html';
+      }
 
       menu.querySelectorAll('a').forEach((link) => {
-        if (link.getAttribute('href') === currentPage) {
+        const href = link.getAttribute('href');
+        if (href === currentPage) {
           link.classList.add('is-active');
+          link.setAttribute('aria-current', 'page');
+        } else {
+          link.classList.remove('is-active');
+          link.removeAttribute('aria-current');
         }
       });
     }

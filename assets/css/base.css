@@ -217,6 +217,22 @@ textarea {
   border: 0;
 }
 
+.skip-link {
+  position: absolute;
+  top: -9999px;
+  left: 0;
+  z-index: 1000;
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  text-decoration: none;
+  font-weight: var(--font-weight-semibold);
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
 /* ----------------------- Composants partagés ------------------------ */
 /*  Composants d'interface réutilisés par plusieurs feuilles de page.   */
 

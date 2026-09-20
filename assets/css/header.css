@@ -34,8 +34,8 @@
   flex-direction: column;
   justify-content: center;
   gap: var(--space-1);
-  width: 2.5rem;
-  height: 2.5rem;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
   padding: var(--space-2);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);

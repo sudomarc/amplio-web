@@ -131,8 +131,6 @@
       var title = document.createElement('span');
       title.className = 'service-card__title';
       title.id = 'service-card-title-' + service.id;
-      title.setAttribute('role', 'heading');
-      title.setAttribute('aria-level', '2');
       title.textContent = service.name;
 
       var description = document.createElement('span');
@@ -141,12 +139,10 @@
 
       var scope = document.createElement('span');
       scope.className = 'service-card__scope';
-      scope.setAttribute('role', 'list');
 
       service.scope.forEach(function (itemName) {
         var scopeItem = document.createElement('span');
         scopeItem.className = 'service-card__scope-item';
-        scopeItem.setAttribute('role', 'listitem');
         scopeItem.textContent = itemName;
         scope.appendChild(scopeItem);
       });
