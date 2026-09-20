@@ -119,7 +119,7 @@ Une branche par tâche, y compris en solo, afin que chaque changement passe par 
 
 **Protection de `main` (à configurer dans T01) :** Pull Request obligatoire, au moins 1 approbation, pas de push direct, pas de force-push.
 
-> **État actuel :** T01 reste `En review` jusqu'à la configuration effective de la protection de `main`, suivie dans l'issue #10. T08 et T09 sont livrés ; T10 est en review et son suivi est référencé dans l'issue #19 ; T11 est la prochaine tâche de développement. Le modèle `.github/pull_request_template.md` est maintenu comme configuration du dépôt ; les outils et instructions d'agents restent locaux.
+> **État actuel (20 septembre 2026) :** T01 reste `En review` jusqu'à la configuration effective de la protection de `main`, suivie dans l'issue #10. T08 et T09 sont livrés ; T10 est `En review` via la PR #21 et son suivi est référencé dans l'issue #19. T11 est la prochaine tâche de développement, suivie dans l'issue #22, et ne doit démarrer qu'après la validation/merge de T10. Le modèle `.github/pull_request_template.md` est maintenu comme configuration du dépôt. Le bootstrap OpenCode `AGENTS.md` est désormais versionné ; il impose le chargement préalable des Vibe Coding Instructions canoniques avant toute modification.
 
 ---
 
