@@ -1,0 +1,160 @@
+/* ------------------------------------------------------------------ */
+/*  Contact — Amplio Web                                               */
+/*  Styles spécifiques à la page Contact. Variables de base.css.       */
+/* ------------------------------------------------------------------ */
+
+/* ------------------------ En-tête de page -------------------------- */
+
+.contact-hero {
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.contact-hero__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding-block: var(--space-8) var(--space-10);
+}
+
+.contact-hero__title {
+  max-width: 20ch;
+  margin-block: 0;
+  font-size: var(--font-size-3xl);
+  letter-spacing: -0.02em;
+}
+
+.contact-hero__intro {
+  max-width: 52ch;
+  margin-block: 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-md);
+}
+
+/* ----------------------- Contenu : formulaire ----------------------- */
+
+.contact-content {
+  padding-block: var(--space-10);
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+}
+
+.contact-form-panel {
+  padding: var(--space-6);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.contact-form__title {
+  margin-block: 0;
+  font-size: var(--font-size-xl);
+}
+
+.contact-form {
+  display: grid;
+  gap: var(--space-5);
+  margin-block: var(--space-6) 0;
+}
+
+.contact-form__field {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.contact-form__field label {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.contact-form__field input,
+.contact-form__field select,
+.contact-form__field textarea {
+  width: 100%;
+}
+
+.contact-form__field textarea {
+  min-height: 9rem;
+}
+
+.contact-form__actions {
+  margin-block: var(--space-2) 0;
+}
+
+.contact-form__submit {
+  padding: var(--space-3) var(--space-6);
+  border: 0;
+  border-radius: var(--radius);
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-base);
+}
+
+.contact-form__submit:hover {
+  opacity: 0.92;
+}
+
+/* --------------------- Informations complémentaires ----------------- */
+
+.contact-info {
+  padding: var(--space-6);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.contact-info__title {
+  margin-block: var(--space-3) 0;
+  font-size: var(--font-size-lg);
+}
+
+.contact-info__text {
+  margin-block: var(--space-3) 0;
+  color: var(--color-text-muted);
+}
+
+/* ----------------------------- Note finale ------------------------- */
+
+.contact-note {
+  margin-block: var(--space-6) 0;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+/* --------------------------- Responsive ---------------------------- */
+
+@media (min-width: 40rem) {
+  .contact-hero__container {
+    padding-block: var(--space-10) var(--space-12);
+  }
+
+  .contact-hero__title {
+    font-size: var(--font-size-4xl);
+  }
+
+  .contact-content {
+    padding-block: var(--space-12);
+  }
+
+  .contact-info__title {
+    font-size: var(--font-size-xl);
+  }
+}
+
+@media (min-width: 64rem) {
+  .contact-layout {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    align-items: start;
+  }
+}
