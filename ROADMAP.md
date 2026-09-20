@@ -119,7 +119,7 @@ Une branche par tâche, y compris en solo, afin que chaque changement passe par 
 
 **Protection de `main` (à configurer dans T01) :** Pull Request obligatoire, au moins 1 approbation, pas de push direct, pas de force-push.
 
-> **État actuel (20 septembre 2026) :** T01 reste `En review` jusqu'à la configuration effective de la protection de `main`, suivie dans l'issue #10. T08 et T09 sont livrés ; T10 est `Terminé` depuis le merge de la PR #21, suivi dans l'issue #19. T11 est `Terminé` depuis le merge de la PR #24, suivie dans l'issue #22. T12 est `En review` (issue #26) : la page `a-propos.html` est désormais une vraie page de présentation de l'agence et de l'équipe, en attente de la review de la pull request. Le modèle `.github/pull_request_template.md` est maintenu comme configuration du dépôt. Le bootstrap OpenCode `AGENTS.md` est versionné ; il impose le chargement préalable des Vibe Coding Instructions canoniques avant toute modification.
+> **État actuel (20 septembre 2026) :** T01 reste `En review` jusqu'à la configuration effective de la protection de `main`, suivie dans l'issue #10. T08 et T09 sont livrés ; T10 est `Terminé` depuis le merge de la PR #21, suivi dans l'issue #19. T11 est `Terminé` depuis le merge de la PR #24, suivie dans l'issue #22. T12 est `Terminé` depuis le merge de la PR #28, suivie dans l'issue #26. La page `a-propos.html` est désormais présente et reliée au header/footer. T13 est maintenant la prochaine tâche de développement, suivie dans l'issue #29. Le modèle `.github/pull_request_template.md` est maintenu comme configuration du dépôt. Le bootstrap OpenCode `AGENTS.md` est versionné ; il impose le chargement préalable des Vibe Coding Instructions canoniques avant toute modification.
 
 ---
 
@@ -147,13 +147,13 @@ Une branche par tâche, y compris en solo, afin que chaque changement passe par 
 | T09 | Page Services : mise en page et structure des cartes de services | Terminé | T07 |
 | T10 | Page Portfolio : mise en page de la grille d'études de cas | Terminé | T07 |
 | T11 | Page Contact : structure du formulaire (champs, libellés, bloc coordonnées) | Terminé | T07 |
-| T12 | Page À propos : présentation de l'agence et de l'équipe | En review | T07 |
+| T12 | Page À propos : présentation de l'agence et de l'équipe | Terminé | T07 |
 
 ### Phase 3 — Intégration
 
 | # | Tâche | Statut | Dépendances |
 |---|---|---|---|
-| T13 | `data/services.json` et rendu dynamique des services (Services, Accueil) | À faire | T09 |
+| T13 | `data/services.json` et rendu dynamique des services (Services, Accueil) | À faire | T08, T09, T12 |
 | T14 | Sélecteur de services : sélection au clic, état visuel, bouton « Continuer » | À faire | T13 |
 | T15 | Redirection vers `contact.html?service=…` et pré-remplissage du formulaire (avec repli si paramètre absent ou invalide) | À faire | T11, T14 |
 | T16 | `data/projects.json` et rendu des études de cas | À faire | T10 |
