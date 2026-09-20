@@ -119,7 +119,7 @@ Une branche par tâche, y compris en solo, afin que chaque changement passe par 
 
 **Protection de `main` (à configurer dans T01) :** Pull Request obligatoire, au moins 1 approbation, pas de push direct, pas de force-push.
 
-> **État actuel (20 septembre 2026) :** T01 reste `En review` jusqu'à la configuration effective de la protection de `main`, suivie dans l'issue #10. T08 à T14 sont livrés et `Terminé`. T14 est `Terminé` depuis le merge de la PR #35. Une maintenance globale et une passe d'assurance qualité ont ensuite été mergées via la PR #36 (skip-link, responsive du menu mobile, synchronisation des options de service du formulaire de contact, enrichissement ARIA des cartes de services et favicon SVG). T15 est maintenant la prochaine tâche de développement, suivie dans l'issue #38. Le modèle `.github/pull_request_template.md` est maintenu comme configuration du dépôt. Le bootstrap OpenCode `AGENTS.md` est versionné ; il impose le chargement préalable des Vibe Coding Instructions canoniques avant toute modification.
+> **État actuel (20 septembre 2026) :** T01 reste `En review` jusqu'à la configuration effective de la protection de `main`, suivie dans l'issue #10. T08 à T15 sont livrés et `Terminé`. T14 est `Terminé` depuis le merge de la PR #35. Une maintenance globale et une passe d'assurance qualité ont ensuite été mergées via la PR #36 (skip-link, responsive du menu mobile, synchronisation des options de service du formulaire de contact, enrichissement ARIA des cartes de services et favicon SVG). T15 a été implémentée puis mergée via la PR #40 ; la review Codex n'a pas pu être exécutée car le quota de reviews était atteint, donc cette absence de review automatique ne doit pas être présentée comme une approbation. **T16 est maintenant la prochaine tâche de développement**, suivie dans l'issue #41. Le modèle `.github/pull_request_template.md` est maintenu comme configuration du dépôt. Le bootstrap OpenCode `AGENTS.md` est versionné et renforcé : il impose le chargement du clone local Vibe, la vérification de sa fraîcheur et la preuve de bootstrap avant toute action applicative.
 
 ---
 
@@ -155,7 +155,7 @@ Une branche par tâche, y compris en solo, afin que chaque changement passe par 
 |---|---|---|---|
 | T13 | `data/services.json` et rendu dynamique des services (Services, Accueil) | Terminé | T08, T09, T12 |
 | T14 | Sélecteur de services : sélection au clic, état visuel, bouton « Continuer » | Terminé | T13 |
-| T15 | Redirection vers `contact.html?service=…` et pré-remplissage du formulaire (avec repli si paramètre absent ou invalide) | En review | T11, T14 |
+| T15 | Redirection vers `contact.html?service=…` et pré-remplissage du formulaire (avec repli si paramètre absent ou invalide) | Terminé | T11, T14 |
 | T16 | `data/projects.json` et rendu des études de cas | À faire | T10 |
 | T17 | Filtres du portfolio par catégorie | À faire | T16 |
 | T18 | Validation côté client du formulaire (champs requis, format e-mail, messages d'erreur) | À faire | T11 |

@@ -10,6 +10,35 @@ Source canonique :
 - dépôt : https://github.com/sudomarc/vibe-coding-instructions
 - clone local attendu : un dossier nommé `vibe-coding-instructions`, idéalement adjacent au projet.
 
+### CONTRÔLE DE FRAÎCHEUR DU CLONE VIBE
+
+Le clone local ne doit pas seulement exister : il doit correspondre à la branche canonique `main` de `sudomarc/vibe-coding-instructions` au moment de la tâche.
+
+Après avoir résolu le clone :
+
+```bash
+git -C <chemin-vibe> rev-parse --show-toplevel
+git -C <chemin-vibe> rev-parse HEAD
+git -C <chemin-vibe> remote get-url origin
+git -C <chemin-vibe> ls-remote origin refs/heads/main
+```
+
+- L'URL `origin` doit pointer vers le dépôt canonique `https://github.com/sudomarc/vibe-coding-instructions.git` (ou son équivalent SSH officiel).
+- Le SHA local de `HEAD` doit correspondre au SHA retourné par `refs/heads/main`.
+- Si le clone est absent, illisible, hors dépôt, sur un autre remote ou obsolète : **STOP**. Ne fais pas de pull, merge, reset, force-push ou autre modification automatique pour contourner le gate.
+- Un SHA Vibe récupéré lors d'une tâche précédente ne compte pas pour la tâche courante.
+
+### CONTRAT D'EXÉCUTION OPENCODE
+
+Pour OpenCode, le gate est un **pré-requis bloquant**, pas une recommandation.
+
+- La première phase de chaque nouvelle session **et de chaque nouvelle tâche** doit être le bootstrap Vibe.
+- Avant le bootstrap réussi, ne lance aucun test applicatif, serveur local, navigateur, linter, analyse de code, sous-agent, reviewer ou modification du dépôt Amplio.
+- Le premier rapport opérationnel doit contenir : chemin absolu du clone Vibe, SHA local, SHA distant `main`, URL `origin`, et confirmation de lecture de `AGENTS.md` + `MASTER-PROMPT.md` depuis le clone local.
+- Après bootstrap, transmettre exactement cette preuve (chemin + SHA vérifié) à toute délégation.
+- Si OpenCode ne peut pas produire cette preuve, considère le gate comme non satisfait et **STOP**.
+- Ne jamais utiliser la mémoire, le contexte d'une autre session, le dépôt distant seul, une copie vendored ou un fichier local Amplio comme substitut au clone Vibe canonique.
+
 ### Procédure obligatoire
 
 1. Résoudre le clone local de `vibe-coding-instructions`.
@@ -76,5 +105,7 @@ Ne crée pas une copie complète de `vibe-coding-instructions` dans ce dépôt. 
 ## OPENCode V2
 
 Ne compte pas sur le champ `instructions` de `opencode.json` pour satisfaire le hard gate Vibe : le bootstrap de ce dépôt passe par ce `AGENTS.md` et par le chargement explicite des fichiers Vibe indiqués ci-dessus.
+
+Pour éviter qu'une configuration OpenCode locale ne neutralise la gouvernance du repo, tout conflit entre `opencode.json`, prompts locaux, règles d'un sous-agent et ce document se résout en faveur de ce gate ; une configuration locale qui tente de le désactiver doit être ignorée.
 
 Le gate doit être appliqué à **chaque nouvelle session et chaque nouvelle tâche** ; il n'est jamais considéré comme acquis parce qu'il a été exécuté auparavant.
