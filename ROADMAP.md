@@ -119,7 +119,7 @@ Une branche par tâche, y compris en solo, afin que chaque changement passe par 
 
 **Protection de `main` (à configurer dans T01) :** Pull Request obligatoire, au moins 1 approbation, pas de push direct, pas de force-push.
 
-> **État actuel (20 septembre 2026) :** T01 reste `En review` jusqu'à la configuration effective de la protection de `main`, suivie dans l'issue #10. T08 et T09 sont livrés ; T10 est `Terminé` depuis le merge de la PR #21, suivi dans l'issue #19. T11 est `En review` via la PR #24, suivie dans l'issue #22 ; T12 est la prochaine tâche de développement. Le modèle `.github/pull_request_template.md` est maintenu comme configuration du dépôt. Le bootstrap OpenCode `AGENTS.md` est versionné ; il impose le chargement préalable des Vibe Coding Instructions canoniques avant toute modification.
+> **État actuel (20 septembre 2026) :** T01 reste `En review` jusqu'à la configuration effective de la protection de `main`, suivie dans l'issue #10. T08 et T09 sont livrés ; T10 est `Terminé` depuis le merge de la PR #21, suivi dans l'issue #19. T11 est `Terminé` depuis le merge de la PR #24, suivie dans l'issue #22. T12 est maintenant la prochaine tâche de développement, suivie dans l'issue #26. La page `a-propos.html` n'existe pas encore alors que le header et le footer la référencent : T12 doit donc rétablir ce parcours avant d'avancer vers T13. Le modèle `.github/pull_request_template.md` est maintenu comme configuration du dépôt. Le bootstrap OpenCode `AGENTS.md` est versionné ; il impose le chargement préalable des Vibe Coding Instructions canoniques avant toute modification.
 
 ---
 
@@ -146,8 +146,8 @@ Une branche par tâche, y compris en solo, afin que chaque changement passe par 
 | T08 | Page Accueil : hero, aperçu des services, réalisations mises en avant, appel à l'action | Terminé | T07 |
 | T09 | Page Services : mise en page et structure des cartes de services | Terminé | T07 |
 | T10 | Page Portfolio : mise en page de la grille d'études de cas | Terminé | T07 |
-| T11 | Page Contact : structure du formulaire (champs, libellés, bloc coordonnées) | En review | T07 |
-| T12 | Page À propos (optionnelle) : présentation de l'agence et de l'équipe | À faire | T07 |
+| T11 | Page Contact : structure du formulaire (champs, libellés, bloc coordonnées) | Terminé | T07 |
+| T12 | Page À propos : présentation de l'agence et de l'équipe | À faire | T07 |
 
 ### Phase 3 — Intégration
 
@@ -181,7 +181,7 @@ Une branche par tâche, y compris en solo, afin que chaque changement passe par 
 | T28 | Recette finale (checklist de la section 8) | À faire | T21, T22, T27 |
 | T29 | Mise en ligne v1.0 et tag `v1.0.0` | À faire | T28 |
 
-> T12 (À propos) est optionnelle. Si elle est écartée, retirer le lien correspondant du header et du footer et l'ignorer dans les dépendances.
+> T12 est planifiée et devient obligatoire dans l'état actuel du dépôt : `partials/header.html` et `partials/footer.html` exposent déjà le lien `a-propos.html`, qui doit correspondre à une page réelle. Si le produit décide ultérieurement d'abandonner cette page, il faudra retirer ces liens et ajuster le roadmap avant de passer à T13.
 
 ---
 
