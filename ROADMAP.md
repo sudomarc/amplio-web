@@ -155,7 +155,7 @@ Une branche par tâche, y compris en solo, afin que chaque changement passe par 
 |---|---|---|---|
 | T13 | `data/services.json` et rendu dynamique des services (Services, Accueil) | Terminé | T08, T09, T12 |
 | T14 | Sélecteur de services : sélection au clic, état visuel, bouton « Continuer » | Terminé | T13 |
-| T15 | Redirection vers `contact.html?service=…` et pré-remplissage du formulaire (avec repli si paramètre absent ou invalide) | À faire | T11, T14 |
+| T15 | Redirection vers `contact.html?service=…` et pré-remplissage du formulaire (avec repli si paramètre absent ou invalide) | En cours | T11, T14 |
 | T16 | `data/projects.json` et rendu des études de cas | À faire | T10 |
 | T17 | Filtres du portfolio par catégorie | À faire | T16 |
 | T18 | Validation côté client du formulaire (champs requis, format e-mail, messages d'erreur) | À faire | T11 |

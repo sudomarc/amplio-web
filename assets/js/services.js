@@ -204,6 +204,17 @@
     return servicesById[id] || null;
   }
 
+  function continueToContact() {
+    if (!getServiceById(selectedServiceId)) {
+      selectedServiceId = null;
+      updateSelectorUi(null);
+      return;
+    }
+
+    var url = 'contact.html?service=' + encodeURIComponent(selectedServiceId);
+    window.location.assign(url);
+  }
+
   function updateSelectorUi(selectedId) {
     if (!SELECTOR_FIELD) {
       return;
@@ -255,6 +266,8 @@
 
       updateSelectorUi(selectedServiceId);
     });
+
+    CONTINUE_BUTTON.addEventListener('click', continueToContact);
   }
 
   function handleError(error) {
