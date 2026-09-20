@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="assets/css/services.css">
   <script src="assets/js/includes.js" defer></script>
   <script src="assets/js/nav.js" defer></script>
+  <script src="assets/js/services.js" defer></script>
 </head>
 <body>
   <!-- Header injecté par includes.js à partir de partials/header.html. -->
@@ -30,68 +31,7 @@
     <!-- ================= GRILLE DES SERVICES ================= -->
     <section class="services-cards" aria-label="Les quatre expertises d'Amplio">
       <div class="container">
-        <ol class="services-cards__list">
-          <li class="services-cards__item">
-            <article class="service-card">
-              <div class="service-card__top">
-                <p class="service-card__index" aria-hidden="true">01</p>
-                <span class="service-card__mark service-card__mark--square" aria-hidden="true"></span>
-              </div>
-              <h2 class="service-card__title">Stratégie &amp; communication</h2>
-              <p class="service-card__description">Positionnement, axes de message et plans de communication : nous définissons ce que la marque doit dire avant de passer à la création.</p>
-              <ul class="service-card__scope">
-                <li>Positionnement</li>
-                <li>Plans de communication</li>
-                <li>Conseil de marque</li>
-              </ul>
-            </article>
-          </li>
-          <li class="services-cards__item">
-            <article class="service-card">
-              <div class="service-card__top">
-                <p class="service-card__index" aria-hidden="true">02</p>
-                <span class="service-card__mark service-card__mark--ring" aria-hidden="true"></span>
-              </div>
-              <h2 class="service-card__title">Identité &amp; création</h2>
-              <p class="service-card__description">Logos, chartes graphiques et supports print : une identité cohérente et reconnaissable au premier regard.</p>
-              <ul class="service-card__scope">
-                <li>Logo &amp; charte</li>
-                <li>Supports print</li>
-                <li>Direction artistique</li>
-              </ul>
-            </article>
-          </li>
-          <li class="services-cards__item">
-            <article class="service-card">
-              <div class="service-card__top">
-                <p class="service-card__index" aria-hidden="true">03</p>
-                <span class="service-card__mark service-card__mark--cross" aria-hidden="true"></span>
-              </div>
-              <h2 class="service-card__title">Communication digitale</h2>
-              <p class="service-card__description">Sites, réseaux sociaux et contenus : une présence régulière et cohérente dans tous les espaces où se trouve votre audience.</p>
-              <ul class="service-card__scope">
-                <li>Sites web</li>
-                <li>Réseaux sociaux</li>
-                <li>Contenus</li>
-              </ul>
-            </article>
-          </li>
-          <li class="services-cards__item">
-            <article class="service-card">
-              <div class="service-card__top">
-                <p class="service-card__index" aria-hidden="true">04</p>
-                <span class="service-card__mark service-card__mark--dot" aria-hidden="true"></span>
-              </div>
-              <h2 class="service-card__title">Publicité &amp; campagnes</h2>
-              <p class="service-card__description">Des campagnes pensées de la conception à la diffusion, dans le but de susciter l'envie et l'action.</p>
-              <ul class="service-card__scope">
-                <li>Conception</li>
-                <li>Diffusion</li>
-                <li>Événementiel</li>
-              </ul>
-            </article>
-          </li>
-        </ol>
+        <ol class="services-cards__list"><!-- Rendu dynamique via data/services.json --></ol>
       </div>
     </section>
 

@@ -1,0 +1,46 @@
+[
+  {
+    "id": "strategie-communication",
+    "name": "Strat?gie & communication",
+    "summary": "Positionnement, axes de message et plans de communication : nous posons les fondations avant de cr?er.",
+    "description": "Positionnement, axes de message et plans de communication : nous d?finissons ce que la marque doit dire avant de passer ? la cr?ation.",
+    "scope": [
+      "Positionnement",
+      "Plans de communication",
+      "Conseil de marque"
+    ]
+  },
+  {
+    "id": "identite-creation",
+    "name": "Identit? & cr?ation",
+    "summary": "Logos, chartes graphiques et supports print : une identit? coh?rente et reconnaissable au premier regard.",
+    "description": "Logos, chartes graphiques et supports print : une identit? coh?rente et reconnaissable au premier regard.",
+    "scope": [
+      "Logo & charte",
+      "Supports print",
+      "Direction artistique"
+    ]
+  },
+  {
+    "id": "communication-digitale",
+    "name": "Communication digitale",
+    "summary": "Sites, r?seaux sociaux et contenus : une pr?sence r?guli?re l? o? se trouve votre audience.",
+    "description": "Sites, r?seaux sociaux et contenus : une pr?sence r?guli?re et coh?rente dans tous les espaces o? se trouve votre audience.",
+    "scope": [
+      "Sites web",
+      "R?seaux sociaux",
+      "Contenus"
+    ]
+  },
+  {
+    "id": "publicite-campagnes",
+    "name": "Publicit? & campagnes",
+    "summary": "Des campagnes pens?es de la conception ? la diffusion, dans le but de susciter l'envie et l'action.",
+    "description": "Des campagnes pens?es de la conception ? la diffusion, dans le but de susciter l'envie et l'action.",
+    "scope": [
+      "Conception",
+      "Diffusion",
+      "?v?nementiel"
+    ]
+  }
+]
