@@ -39,6 +39,15 @@ Pour OpenCode, le gate est un **pré-requis bloquant**, pas une recommandation.
 - Si OpenCode ne peut pas produire cette preuve, considère le gate comme non satisfait et **STOP**.
 - Ne jamais utiliser la mémoire, le contexte d'une autre session, le dépôt distant seul, une copie vendored ou un fichier local Amplio comme substitut au clone Vibe canonique.
 
+### ROUTAGE TOKEN ECONOMY VIBE
+
+Le dépôt Vibe canonique intègre désormais une guidance dédiée à l'économie des tokens et à l'usage des agents.
+
+- Après le bootstrap racine, lorsque la tâche peut générer un volume important de contexte, d'appels d'outils, de délégations, de retries ou un travail long-horizon, charger `.ai/skills/token-economics/` depuis le clone Vibe.
+- Pour une tâche simple et locale, ne pas charger cette skill par défaut : respecter le principe de progressive disclosure.
+- Le coût ne doit jamais justifier une réduction de la vérification requise, de la sécurité, de la portée ou de la qualité.
+- Les prix, limites de contexte, mécanismes de cache et règles de facturation restent volatils : les vérifier dans les sources actuelles du fournisseur lorsqu'ils deviennent pertinents.
+
 ### Procédure obligatoire
 
 1. Résoudre le clone local de `vibe-coding-instructions`.
