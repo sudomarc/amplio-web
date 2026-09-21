@@ -1,0 +1,44 @@
+[
+  {
+    "id": "identite-programme",
+    "category": "Identité",
+    "title": "Programme d'identité",
+    "status": "Projet conceptuel",
+    "cover": "identity"
+  },
+  {
+    "id": "campagne-lancement",
+    "category": "Campagne digitale",
+    "title": "Campagne de lancement",
+    "status": "Concept en préparation",
+    "cover": "campaign"
+  },
+  {
+    "id": "serie-editoriale",
+    "category": "Contenus & print",
+    "title": "Série éditoriale",
+    "status": "Étude de cas à venir",
+    "cover": "editorial"
+  },
+  {
+    "id": "plateforme-marque",
+    "category": "Stratégie",
+    "title": "Plateforme de marque",
+    "status": "Travail conceptuel",
+    "cover": "strategy"
+  },
+  {
+    "id": "dispositif-evenement",
+    "category": "Publicité & événementiel",
+    "title": "Dispositif d'événement",
+    "status": "Concept en préparation",
+    "cover": "event"
+  },
+  {
+    "id": "site-vitrine",
+    "category": "Digital",
+    "title": "Site vitrine",
+    "status": "Sélection à venir",
+    "cover": "digital"
+  }
+]
