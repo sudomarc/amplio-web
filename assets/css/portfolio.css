@@ -300,6 +300,44 @@
   font-size: var(--font-size-sm);
 }
 
+/* --------------------------- Filtres ------------------------------ */
+
+.portfolio-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-block-end: var(--space-5);
+}
+
+.portfolio-filter {
+  display: inline-block;
+  font: inherit;
+  font-size: var(--font-size-sm);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.portfolio-filter:hover {
+  border-color: var(--color-text-muted);
+}
+
+.portfolio-filter[aria-pressed="true"] {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-bg);
+  font-weight: var(--font-weight-semibold);
+}
+
+.portfolio-grid__status {
+  margin-block: 0 0 var(--space-5);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
 /* --------------------------- Responsive ---------------------------- */
 
 @media (min-width: 40rem) {

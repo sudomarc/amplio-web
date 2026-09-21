@@ -159,11 +159,84 @@
       card.appendChild(createCover(project));
       card.appendChild(createBody(project));
 
+      item.setAttribute('data-category', project.category);
+
       item.appendChild(card);
       fragment.appendChild(item);
     });
 
     GRID.appendChild(fragment);
+
+    return projects;
+  }
+
+  var FILTERS = null;
+  var STATUS = null;
+  var ACTIVE_CATEGORY = 'Tous';
+
+  function buildCategories(projects) {
+    var seen = [];
+    var set = {};
+    projects.forEach(function (project) {
+      if (!set[project.category]) {
+        set[project.category] = true;
+        seen.push(project.category);
+      }
+    });
+    return seen;
+  }
+
+  function createFilterButton(label, isActive) {
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'portfolio-filter';
+    btn.setAttribute('data-category', label);
+    btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    btn.textContent = label;
+    return btn;
+  }
+
+  function renderFilters(categories) {
+    if (!FILTERS) {
+      return;
+    }
+
+    var frag = document.createDocumentFragment();
+    frag.appendChild(createFilterButton('Tous', true));
+    categories.forEach(function (category) {
+      frag.appendChild(createFilterButton(category, false));
+    });
+    FILTERS.appendChild(frag);
+  }
+
+  function applyFilter(category) {
+    var items = document.querySelectorAll('.portfolio-grid__item');
+    var visible = 0;
+
+    items.forEach(function (item) {
+      var show = (category === 'Tous') || (item.getAttribute('data-category') === category);
+      item.style.display = show ? 'flex' : 'none';
+      if (show) visible += 1;
+    });
+
+    var buttons = FILTERS ? FILTERS.querySelectorAll('button') : [];
+    Array.prototype.forEach.call(buttons, function (btn) {
+      var active = btn.getAttribute('data-category') === category;
+      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+      if (active) {
+        ACTIVE_CATEGORY = category;
+      }
+    });
+
+    if (STATUS) {
+      if (category === 'Tous') {
+        STATUS.textContent = 'Tous les projets sont affichés.';
+      } else if (visible === 0) {
+        STATUS.textContent = 'Aucun projet dans cette catégorie.';
+      } else {
+        STATUS.textContent = visible + ' projet(s) affiché(s).';
+      }
+    }
   }
 
   function handleError(error) {
@@ -176,14 +249,37 @@
     }
   }
 
+  function wireFilters() {
+    if (!FILTERS) {
+      return;
+    }
+
+    FILTERS.addEventListener('click', function (event) {
+      var btn = event.target.closest('button[data-category]');
+      if (!btn) {
+        return;
+      }
+      applyFilter(btn.getAttribute('data-category'));
+    });
+  }
+
   function init() {
     if (!GRID) {
       return;
     }
 
+    FILTERS = document.querySelector('.portfolio-filters');
+    STATUS = document.querySelector('#portfolio-grid-status');
+
     loadProjects()
       .then(validateProjects)
       .then(renderProjects)
+      .then(function (projects) {
+        var categories = buildCategories(projects);
+        renderFilters(categories);
+        wireFilters();
+        applyFilter('Tous');
+      })
       .catch(handleError);
   }
 
