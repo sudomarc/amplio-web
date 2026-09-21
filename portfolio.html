@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="assets/css/portfolio.css">
   <script src="assets/js/includes.js" defer></script>
   <script src="assets/js/nav.js" defer></script>
+  <script src="assets/js/portfolio.js" defer></script>
 </head>
 <body>
   <!-- Header injecté par includes.js à partir de partials/header.html. -->
@@ -43,93 +44,7 @@
           <p class="portfolio-work__lede">Les cartes ci-dessous sont des concepts et des sélections à venir : elles ne documentent pas de réalisations clients. Aucune d'elles ne prétend représenter un travail livré.</p>
         </header>
 
-        <ul class="portfolio-grid">
-          <li class="portfolio-grid__item">
-            <article class="portfolio-card">
-              <div class="portfolio-card__cover portfolio-card__cover--identity" aria-hidden="true">
-                <span class="portfolio-card__mark">A.</span>
-                <span class="portfolio-card__figure portfolio-card__figure--square"></span>
-              </div>
-              <div class="portfolio-card__body">
-                <p class="portfolio-card__tag">Identité</p>
-                <h3 class="portfolio-card__title">Programme d'identité</h3>
-                <p class="portfolio-card__note">Projet conceptuel</p>
-              </div>
-            </article>
-          </li>
-
-          <li class="portfolio-grid__item">
-            <article class="portfolio-card">
-              <div class="portfolio-card__cover portfolio-card__cover--campaign" aria-hidden="true">
-                <span class="portfolio-card__mark">→</span>
-                <span class="portfolio-card__figure portfolio-card__figure--ring"></span>
-              </div>
-              <div class="portfolio-card__body">
-                <p class="portfolio-card__tag">Campagne digitale</p>
-                <h3 class="portfolio-card__title">Campagne de lancement</h3>
-                <p class="portfolio-card__note">Concept en préparation</p>
-              </div>
-            </article>
-          </li>
-
-          <li class="portfolio-grid__item">
-            <article class="portfolio-card">
-              <div class="portfolio-card__cover portfolio-card__cover--editorial" aria-hidden="true">
-                <span class="portfolio-card__mark">&amp;</span>
-                <span class="portfolio-card__figure portfolio-card__figure--rule"></span>
-                <span class="portfolio-card__figure portfolio-card__figure--dot"></span>
-              </div>
-              <div class="portfolio-card__body">
-                <p class="portfolio-card__tag">Contenus &amp; print</p>
-                <h3 class="portfolio-card__title">Série éditoriale</h3>
-                <p class="portfolio-card__note">Étude de cas à venir</p>
-              </div>
-            </article>
-          </li>
-
-          <li class="portfolio-grid__item">
-            <article class="portfolio-card">
-              <div class="portfolio-card__cover portfolio-card__cover--strategy" aria-hidden="true">
-                <span class="portfolio-card__mark portfolio-card__mark--mono">01</span>
-                <span class="portfolio-card__figure portfolio-card__figure--orb"></span>
-              </div>
-              <div class="portfolio-card__body">
-                <p class="portfolio-card__tag">Stratégie</p>
-                <h3 class="portfolio-card__title">Plateforme de marque</h3>
-                <p class="portfolio-card__note">Travail conceptuel</p>
-              </div>
-            </article>
-          </li>
-
-          <li class="portfolio-grid__item">
-            <article class="portfolio-card">
-              <div class="portfolio-card__cover portfolio-card__cover--event" aria-hidden="true">
-                <span class="portfolio-card__mark portfolio-card__mark--accent">×</span>
-                <span class="portfolio-card__figure portfolio-card__figure--square portfolio-card__figure--square-soft"></span>
-                <span class="portfolio-card__figure portfolio-card__figure--square portfolio-card__figure--square-dim"></span>
-              </div>
-              <div class="portfolio-card__body">
-                <p class="portfolio-card__tag">Publicité &amp; événementiel</p>
-                <h3 class="portfolio-card__title">Dispositif d'événement</h3>
-                <p class="portfolio-card__note">Concept en préparation</p>
-              </div>
-            </article>
-          </li>
-
-          <li class="portfolio-grid__item">
-            <article class="portfolio-card">
-              <div class="portfolio-card__cover portfolio-card__cover--digital" aria-hidden="true">
-                <span class="portfolio-card__mark">›</span>
-                <span class="portfolio-card__figure portfolio-card__figure--bar"></span>
-              </div>
-              <div class="portfolio-card__body">
-                <p class="portfolio-card__tag">Digital</p>
-                <h3 class="portfolio-card__title">Site vitrine</h3>
-                <p class="portfolio-card__note">Sélection à venir</p>
-              </div>
-            </article>
-          </li>
-        </ul>
+        <ul class="portfolio-grid"><!-- Rendu dynamique via data/projects.json --></ul>
 
         <p class="portfolio-work__note">Aucune de ces cartes ne renvoie à un projet livré : il s'agit de pistes de réflexion et de compositions de travail. Les études de cas détaillées, enrichies de résultats et de partenaires, seront publiées prochainement.</p>
       </div>
