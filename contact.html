@@ -63,7 +63,7 @@
             </div>
             <div class="contact-form__field">
               <label for="service">Service <span aria-hidden="true">*</span></label>
-              <select id="service" name="service" aria-describedby="service-error" aria-invalid="false">
+              <select id="service" name="service" required aria-describedby="service-error" aria-invalid="false">
                 <option value="">Choisir un service</option>
                 <option value="strategie-communication">Stratégie & communication</option>
                 <option value="identite-creation">Identité & création</option>
@@ -79,7 +79,7 @@
             </div>
             <div class="contact-form__field contact-form__field--consent">
               <label class="contact-form__consent-label" for="consent">
-                <input id="consent" name="consent" type="checkbox" required aria-describedby="consent-error name-error" aria-invalid="false">
+                <input id="consent" name="consent" type="checkbox" required aria-describedby="consent-error" aria-invalid="false">
                 <span class="contact-form__consent-text">
                   J'accepte que les informations saisies soient utilisées pour traiter ma demande.
                   <a href="privacy.html" rel="noopener">Politique de confidentialité</a>.
