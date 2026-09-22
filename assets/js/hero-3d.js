@@ -22,6 +22,7 @@
   })();
 
   if (!canWebgl) {
+    container.setAttribute('data-hero-3d-fallback', 'true');
     return;
   }
 
@@ -41,7 +42,7 @@
   scene.add(group);
 
   var knot = new THREE.Mesh(
-    new THREE.TorusKnotGeometry(1.5, 0.42, 160, 20),
+    new THREE.TorusKnotGeometry(1.5, 0.42, 128, 18),
     new THREE.MeshStandardMaterial({
       color: 0xff4d1f,
       metalness: 0.35,
@@ -61,6 +62,22 @@
     })
   );
   group.add(halo);
+
+  var orbitMaterial = new THREE.MeshBasicMaterial({
+    color: 0xff4d1f,
+    transparent: true,
+    opacity: 0.34,
+    wireframe: true
+  });
+
+  var orbitA = new THREE.Mesh(new THREE.TorusGeometry(2.05, 0.026, 8, 72), orbitMaterial);
+  orbitA.rotation.x = Math.PI * 0.18;
+  group.add(orbitA);
+
+  var orbitB = new THREE.Mesh(new THREE.TorusGeometry(2.45, 0.018, 8, 72), orbitMaterial.clone());
+  orbitB.material.opacity = 0.18;
+  orbitB.rotation.y = Math.PI * 0.55;
+  group.add(orbitB);
 
   scene.add(new THREE.AmbientLight(0xffffff, 0.55));
 
@@ -88,6 +105,8 @@
     knot.rotation.y += 0.0035;
     knot.rotation.x += 0.0016;
     halo.rotation.y -= 0.0018;
+    orbitA.rotation.z += 0.0022;
+    orbitB.rotation.x -= 0.0012;
 
     group.rotation.y += (pointer.x * 0.3 - group.rotation.y) * 0.04;
     group.rotation.x += (pointer.y * 0.2 - group.rotation.x) * 0.04;
