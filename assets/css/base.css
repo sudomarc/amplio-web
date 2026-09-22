@@ -9,6 +9,8 @@
   --color-primary-soft: #211f1a;
   --color-accent: #ff4d1f;
   --color-accent-dim: #c2380f;
+  --color-ink-soft: #2b2821;
+  --color-surface-strong: #e5dcc8;
   --color-bg: #faf7f0;
   --color-surface: #efe9db;
   --color-text: #14120d;
@@ -83,6 +85,7 @@
   --dur-fast: 150ms;
   --dur-base: 350ms;
   --dur-slow: 700ms;
+  --dur-xl: 1000ms;
 }
 
 /* ------------------------- Reset de base -------------------------- */
@@ -104,6 +107,7 @@ html {
 
 body {
   min-height: 100vh;
+  overflow-x: hidden;
   font-family: var(--font-body);
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
