@@ -1,0 +1,18 @@
+# Configuration Netlify — Amplio Web
+#
+# Site HTML/CSS/JS statique, sans outil de build.
+# Publie la racine du dépôt telle quelle.
+#
+# État : CONFIGURATION PRÉPARÉE — le déploiement effectif
+# (liaison GitHub, URL publique, Forms ACTIVE) doit être
+# vérifié dans le dashboard Netlify. Ne pas inventer d'URL.
+
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "DENY"
