@@ -1,7 +1,9 @@
-/* Scène 3D minimale du hero — sculpture abstraite (nœud torique + halo
+/* Scène 3D du hero — sculpture abstraite (nœud torique + halo
    filaire), rendue uniquement si THREE (CDN épinglé, voir index.html) et
    WebGL sont disponibles. Repli : le visuel CSS statique déjà présent
-   dans le DOM reste visible si cette couche ne se charge pas. */
+   dans le DOM reste visible si cette couche ne se charge pas.
+   Mouvement : combinaison de fréquences autonomes (rotation, oscillation, breathing)
+   pour un rendu organique, plus pointeur en complément (lerp doux). */
 (function () {
   'use strict';
 
@@ -73,8 +75,10 @@
   scene.add(rim);
 
   var pointer = { x: 0, y: 0 };
+  var targetPointer = { x: 0, y: 0 };
   var visible = true;
   var rafId = null;
+  var startTime = performance.now() / 1000;
 
   function resize() {
     var rect = container.getBoundingClientRect();
@@ -85,12 +89,25 @@
   }
 
   function renderFrame() {
-    knot.rotation.y += 0.0035;
-    knot.rotation.x += 0.0016;
-    halo.rotation.y -= 0.0018;
+    var elapsed = performance.now() / 1000 - startTime;
 
-    group.rotation.y += (pointer.x * 0.3 - group.rotation.y) * 0.04;
-    group.rotation.x += (pointer.y * 0.2 - group.rotation.x) * 0.04;
+    if (!reduceMotion) {
+      knot.rotation.y = 0.15 * Math.sin(elapsed * 0.35) + 0.08 * Math.sin(elapsed * 0.7);
+      knot.rotation.x = 0.08 * Math.cos(elapsed * 0.27) + 0.04 * Math.cos(elapsed * 0.55);
+
+      group.position.y = 0.035 * Math.sin(elapsed * 0.45);
+      group.rotation.z = 0.02 * Math.sin(elapsed * 0.22);
+
+      halo.rotation.y = -0.06 * Math.sin(elapsed * 0.23) - 0.03 * Math.sin(elapsed * 0.5);
+      halo.rotation.x = 0.025 * Math.cos(elapsed * 0.31);
+
+      var scaleBreath = 1 + 0.006 * Math.sin(elapsed * 0.6);
+      knot.scale.setScalar(scaleBreath);
+      halo.scale.setScalar(scaleBreath * 0.998);
+    }
+
+    group.rotation.y += (targetPointer.x - group.rotation.y) * 0.025;
+    group.rotation.x += (targetPointer.y - group.rotation.x) * 0.025;
 
     renderer.render(scene, camera);
   }
@@ -128,6 +145,8 @@
       var relY = (event.clientY - rect.top) / Math.max(rect.height, 1);
       pointer.x = Math.min(Math.max(relX - 0.5, -0.5), 0.5);
       pointer.y = Math.min(Math.max(relY - 0.5, -0.5), 0.5);
+      targetPointer.x = pointer.x * 0.25;
+      targetPointer.y = pointer.y * 0.15;
     }, { passive: true });
   }
 

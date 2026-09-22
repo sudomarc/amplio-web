@@ -6,6 +6,7 @@
   var SERVICE_SELECT = document.querySelector('#service');
   var CONTACT_FORM = document.querySelector('.contact-form');
   var FORM_STATUS = document.getElementById('form-status');
+  var CONSENT_CHECKBOX = document.querySelector('#consent');
 
   var ERROR_MESSAGES = {
     name: {
@@ -17,6 +18,9 @@
     },
     message: {
       valueMissing: 'Message requis',
+    },
+    consent: {
+      valueMissing: 'Vous devez accepter le traitement de vos données',
     },
   };
 
@@ -137,7 +141,7 @@
     var isValid = form.checkValidity();
 
     if (!isValid) {
-      var fields = form.querySelectorAll('input[required], textarea[required]');
+      var fields = form.querySelectorAll('input[required], textarea[required], select[required]');
 
       fields.forEach(function (field) {
         if (!field.validity.valid) {
@@ -149,7 +153,7 @@
 
       focusFirstInvalid(form);
     } else {
-      var fields = form.querySelectorAll('input[required], textarea[required]');
+      var fields = form.querySelectorAll('input[required], textarea[required], select[required]');
       fields.forEach(clearError);
     }
 
@@ -160,7 +164,10 @@
     var submitBtn = CONTACT_FORM.querySelector('.contact-form__submit');
     if (submitBtn) {
       submitBtn.disabled = isSubmitting;
-      submitBtn.textContent = isSubmitting ? 'Envoi en cours...' : 'Envoyer ma demande';
+      var textEl = submitBtn.querySelector('.contact-form__submit-text');
+      if (textEl) {
+        textEl.textContent = isSubmitting ? 'Envoi en cours…' : 'Envoyer ma demande';
+      }
       submitBtn.setAttribute('aria-busy', isSubmitting ? 'true' : 'false');
     }
   }
@@ -212,9 +219,8 @@
         if (response.ok) {
           showFormStatus('Votre demande a bien été envoyée. Nous vous répondrons dès que possible.', false);
           form.reset();
-          clearError(form.querySelector('#name'));
-          clearError(form.querySelector('#email'));
-          clearError(form.querySelector('#message'));
+          var fields = form.querySelectorAll('input[required], textarea[required], select[required]');
+          fields.forEach(clearError);
         } else {
           throw new Error('Erreur serveur');
         }
@@ -232,7 +238,7 @@
       return;
     }
 
-    var fields = CONTACT_FORM.querySelectorAll('input[required], textarea[required]');
+    var fields = CONTACT_FORM.querySelectorAll('input[required], textarea[required], select[required]');
 
     fields.forEach(function (field) {
       field.addEventListener('input', function () {
