@@ -161,6 +161,7 @@
     if (submitBtn) {
       submitBtn.disabled = isSubmitting;
       submitBtn.textContent = isSubmitting ? 'Envoi en cours...' : 'Envoyer ma demande';
+      submitBtn.setAttribute('aria-busy', isSubmitting ? 'true' : 'false');
     }
   }
 
@@ -171,6 +172,7 @@
     FORM_STATUS.className = 'contact-form__status' + (isError ? ' contact-form__status--error' : ' contact-form__status--success');
     FORM_STATUS.setAttribute('role', isError ? 'alert' : 'status');
     FORM_STATUS.setAttribute('aria-live', isError ? 'assertive' : 'polite');
+    FORM_STATUS.focus();
   }
 
   function clearFormStatus() {
