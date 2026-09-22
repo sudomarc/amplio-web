@@ -4,6 +4,69 @@
   var SERVICES_URL = 'data/services.json';
 
   var SERVICE_SELECT = document.querySelector('#service');
+  var CONTACT_FORM = document.querySelector('.contact-form');
+
+  var ERROR_MESSAGES = {
+    name: {
+      valueMissing: 'Nom requis',
+    },
+    email: {
+      valueMissing: 'Adresse e-mail requise',
+      typeMismatch: 'Adresse e-mail invalide',
+    },
+    message: {
+      valueMissing: 'Message requis',
+    },
+  };
+
+  function getErrorMessage(field) {
+    var validity = field.validity;
+    var messages = ERROR_MESSAGES[field.name];
+
+    if (!messages) {
+      return field.validationMessage || 'Champ invalide';
+    }
+
+    if (validity.valueMissing && messages.valueMissing) {
+      return messages.valueMissing;
+    }
+    if (validity.typeMismatch && messages.typeMismatch) {
+      return messages.typeMismatch;
+    }
+    if (validity.tooShort && messages.tooShort) {
+      return messages.tooShort;
+    }
+
+    return field.validationMessage || 'Champ invalide';
+  }
+
+  function showError(field, message) {
+    var errorId = field.id + '-error';
+    var errorEl = document.getElementById(errorId);
+    var fieldContainer = field.closest('.contact-form__field');
+
+    field.setAttribute('aria-invalid', 'true');
+    if (errorEl) {
+      errorEl.textContent = message;
+    }
+    if (fieldContainer) {
+      fieldContainer.classList.add('contact-form__field--invalid');
+    }
+  }
+
+  function clearError(field) {
+    var errorId = field.id + '-error';
+    var errorEl = document.getElementById(errorId);
+    var fieldContainer = field.closest('.contact-form__field');
+
+    field.setAttribute('aria-invalid', 'false');
+    if (errorEl) {
+      errorEl.textContent = '';
+    }
+    if (fieldContainer) {
+      fieldContainer.classList.remove('contact-form__field--invalid');
+    }
+  }
 
   function getServiceIdParam() {
     var params = new URLSearchParams(window.location.search);
@@ -62,6 +125,76 @@
     select.value = serviceId;
   }
 
+  function focusFirstInvalid(form) {
+    var invalidField = form.querySelector('[aria-invalid="true"]');
+    if (invalidField) {
+      invalidField.focus();
+    }
+  }
+
+  function validateForm(form) {
+    var isValid = form.checkValidity();
+
+    if (!isValid) {
+      var fields = form.querySelectorAll('input[required], textarea[required]');
+
+      fields.forEach(function (field) {
+        if (!field.validity.valid) {
+          showError(field, getErrorMessage(field));
+        } else {
+          clearError(field);
+        }
+      });
+
+      focusFirstInvalid(form);
+    } else {
+      var fields = form.querySelectorAll('input[required], textarea[required]');
+      fields.forEach(clearError);
+    }
+
+    return isValid;
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    var form = event.target;
+    var isValid = validateForm(form);
+
+    if (isValid) {
+      // Formulaire valide : pas d'envoi réel (T19/T20), pas de navigation
+      // La logique de confirmation/soumission sera ajoutée en T20
+    }
+  }
+
+  function initValidation() {
+    if (!CONTACT_FORM) {
+      return;
+    }
+
+    var fields = CONTACT_FORM.querySelectorAll('input[required], textarea[required]');
+
+    fields.forEach(function (field) {
+      field.addEventListener('input', function () {
+        if (!field.validity.valid) {
+          showError(field, getErrorMessage(field));
+        } else {
+          clearError(field);
+        }
+      });
+
+      field.addEventListener('blur', function () {
+        if (!field.validity.valid) {
+          showError(field, getErrorMessage(field));
+        } else {
+          clearError(field);
+        }
+      });
+    });
+
+    CONTACT_FORM.addEventListener('submit', handleSubmit);
+  }
+
   function init() {
     if (!SERVICE_SELECT) {
       return;
@@ -74,6 +207,8 @@
       .catch(function (error) {
         console.error('contact: ' + error.message);
       });
+
+    initValidation();
   }
 
   init();

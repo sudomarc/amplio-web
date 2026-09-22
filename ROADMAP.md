@@ -158,7 +158,7 @@ Une branche par tâche, y compris en solo, afin que chaque changement passe par 
 | T15 | Redirection vers `contact.html?service=…` et pré-remplissage du formulaire (avec repli si paramètre absent ou invalide) | Terminé | T11, T14 |
 | T16 | `data/projects.json` et rendu des études de cas | Terminé | T10 |
 | T17 | Filtres du portfolio par catégorie | En review | T16 |
-| T18 | Validation côté client du formulaire (champs requis, format e-mail, messages d'erreur) | À faire | T11 |
+| T18 | Validation côté client du formulaire (champs requis, format e-mail, messages d'erreur) | En cours | T11 |
 | T19 | Choix de la plateforme d'hébergement et du service d'envoi du formulaire (voir section 8) | À faire | T11 |
 | T20 | Envoi du formulaire et message de confirmation / d'erreur | À faire | T18, T19 |
 | T21 | SEO de base : `title`, `meta description`, Open Graph, favicon, `robots.txt`, `sitemap.xml` | À faire | T08, T09, T10, T11 |
