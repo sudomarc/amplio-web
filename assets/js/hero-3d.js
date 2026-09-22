@@ -168,6 +168,13 @@
       targetPointer.x = pointer.x * 0.25;
       targetPointer.y = pointer.y * 0.15;
     }, { passive: true });
+
+    container.addEventListener('pointerleave', function () {
+      pointer.x = 0;
+      pointer.y = 0;
+      targetPointer.x = 0;
+      targetPointer.y = 0;
+    });
   }
 
   window.addEventListener('resize', resize);

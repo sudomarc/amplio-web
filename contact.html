@@ -25,43 +25,50 @@
   <script src="assets/js/contact.js" defer></script>
 </head>
 <body>
-  <!-- Header injecté par includes.js à partir de partials/header.html. -->
   <div data-include="partials/header.html"></div>
 
   <main id="main-content">
-
-    <!-- ================= INTRODUCTION ================= -->
     <section class="contact-hero" aria-labelledby="page-title">
       <div class="container contact-hero__container">
-        <p class="eyebrow">Contact</p>
-        <h1 id="page-title" class="contact-hero__title">Parlons de votre projet.</h1>
-        <p class="contact-hero__intro">Décrivez votre besoin dans le formulaire ci-dessous et nous vous répondrons dès que possible.</p>
+        <div class="contact-hero__copy">
+          <p class="eyebrow reveal">Contact</p>
+          <h1 id="page-title" class="contact-hero__title reveal" style="--reveal-delay:1">Parlons de votre projet.</h1>
+          <p class="contact-hero__intro reveal" style="--reveal-delay:2">Un bon brief commence simplement. Donnez-nous le contexte, l'objectif et le service qui vous intéresse.</p>
+        </div>
+        <div class="contact-hero__aside reveal" style="--reveal-delay:3" aria-label="Informations de contact">
+          <span class="contact-hero__aside-index">01</span>
+          <p>Brief<br><em>→</em><br>Réponse</p>
+        </div>
       </div>
     </section>
 
-    <!-- ============ CONTENU : FORMULAIRE + INFORMATIONS ============= -->
     <section class="contact-content" aria-label="Formulaire de contact">
       <div class="container contact-layout">
-
         <div class="contact-form-panel">
+          <div class="contact-form-panel__stamp" aria-hidden="true">AMPLIO / BRIEF</div>
+
           <header class="contact-form__header">
-            <p class="eyebrow">Formulaire</p>
-            <h2 class="contact-form__title">Votre demande</h2>
-            <p class="contact-form__intro">Chaque champ compte pour comprendre votre besoin. Nous vous répondrons dans les meilleurs délais.</p>
+            <p class="eyebrow">Votre demande</p>
+            <h2 class="contact-form__title">Donnez-nous de quoi commencer.</h2>
+            <p class="contact-form__intro">Quelques informations suffisent pour cadrer le premier échange.</p>
           </header>
+
           <form class="contact-form" name="contact" method="post" data-netlify="true" novalidate>
             <input type="hidden" name="form-name" value="contact">
-            <div class="contact-form__field">
+
+            <div class="contact-form__field contact-form__field--half">
               <label for="name">Nom <span aria-hidden="true">*</span></label>
               <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error" aria-invalid="false" placeholder="Votre nom">
               <p class="contact-form__error" id="name-error" role="alert" aria-live="assertive"></p>
             </div>
-            <div class="contact-form__field">
+
+            <div class="contact-form__field contact-form__field--half">
               <label for="email">E-mail <span aria-hidden="true">*</span></label>
               <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error" aria-invalid="false" placeholder="vous@exemple.com">
               <p class="contact-form__error" id="email-error" role="alert" aria-live="assertive"></p>
             </div>
-            <div class="contact-form__field">
+
+            <div class="contact-form__field contact-form__field--wide">
               <label for="service">Service <span aria-hidden="true">*</span></label>
               <select id="service" name="service" required aria-describedby="service-error" aria-invalid="false">
                 <option value="">Choisir un service</option>
@@ -72,12 +79,14 @@
               </select>
               <p class="contact-form__error" id="service-error" role="alert" aria-live="assertive"></p>
             </div>
-            <div class="contact-form__field">
+
+            <div class="contact-form__field contact-form__field--wide">
               <label for="message">Message <span aria-hidden="true">*</span></label>
               <textarea id="message" name="message" rows="6" required aria-describedby="message-error" aria-invalid="false" placeholder="Décrivez votre projet, vos objectifs, vos contraintes…"></textarea>
               <p class="contact-form__error" id="message-error" role="alert" aria-live="assertive"></p>
             </div>
-            <div class="contact-form__field contact-form__field--consent">
+
+            <div class="contact-form__field contact-form__field--consent contact-form__field--wide">
               <label class="contact-form__consent-label" for="consent">
                 <input id="consent" name="consent" type="checkbox" required aria-describedby="consent-error" aria-invalid="false">
                 <span class="contact-form__consent-text">
@@ -87,21 +96,40 @@
               </label>
               <p class="contact-form__error" id="consent-error" role="alert" aria-live="assertive"></p>
             </div>
+
             <div class="contact-form__actions">
               <button class="contact-form__submit" type="submit">
                 <span class="contact-form__submit-text">Envoyer ma demande</span>
                 <span class="contact-form__submit-arrow" aria-hidden="true">→</span>
               </button>
+              <p class="contact-form__actions-note">Réponse dès que possible · Sans engagement</p>
             </div>
           </form>
         </div>
 
         <aside class="contact-info" aria-labelledby="contact-info-title">
-          <p class="eyebrow">Réponse</p>
+          <div class="contact-info__index">02 / ÉCHANGE</div>
+          <p class="eyebrow">Après votre message</p>
           <h2 id="contact-info-title" class="contact-info__title">Un brief, une première réponse.</h2>
-          <p class="contact-info__text">Parlons de votre projet et construisons ensemble un échange simple : nous vous répondrons dès que possible.</p>
-        </aside>
+          <p class="contact-info__text">Nous lisons votre demande, clarifions le besoin si nécessaire et revenons vers vous avec la suite la plus simple.</p>
 
+          <div class="contact-info__steps">
+            <div class="contact-info__step">
+              <span>01</span>
+              <p>Votre brief</p>
+            </div>
+            <div class="contact-info__step">
+              <span>02</span>
+              <p>Notre réponse</p>
+            </div>
+            <div class="contact-info__step">
+              <span>03</span>
+              <p>Le prochain mouvement</p>
+            </div>
+          </div>
+
+          <div class="contact-info__mark" aria-hidden="true">A.</div>
+        </aside>
       </div>
 
       <div class="container">
@@ -109,9 +137,17 @@
       </div>
     </section>
 
+    <section class="cta-band" aria-labelledby="contact-cta-title">
+      <div class="container cta-band__container">
+        <div class="cta-band__content">
+          <h2 id="contact-cta-title" class="cta-band__title">Une idée. <em>Maintenant.</em></h2>
+          <p class="cta-band__text">Un projet commence souvent par quelques lignes. Le reste se construit ensuite.</p>
+        </div>
+        <a class="arrow-link arrow-link--accent" href="portfolio.html">Voir notre approche<span class="arrow-link__arrow" aria-hidden="true">→</span></a>
+      </div>
+    </section>
   </main>
 
-  <!-- Footer injecté par includes.js à partir de partials/footer.html. -->
   <div data-include="partials/footer.html"></div>
 </body>
 </html>
