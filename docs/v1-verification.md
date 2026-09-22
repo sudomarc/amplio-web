@@ -1,4 +1,4 @@
-# Preuves de vérification v1 (T22–T28)
+# Preuves de vérification v1 (T21–T28)
 
 Date locale : 2026-09-22. Runtime navigateur : Microsoft Edge (Playwright `channel: msedge`), serveur `python -m http.server 8765`.
 
@@ -11,6 +11,30 @@ Date locale : 2026-09-22. Runtime navigateur : Microsoft Edge (Playwright `chann
 | Firefox | UNAVAILABLE (exécutable absent) |
 | Safari | UNAVAILABLE (Windows) |
 
+## T21 — SEO (échantillon Edge)
+
+| Contrôle | Résultat |
+|---|---|
+| `<title>` distinct par page | VERIFIED (5/5 pages) |
+| `meta description` distincte par page | VERIFIED (5/5 pages) |
+| `lang="fr"` sur `<html>` | VERIFIED (5/5 pages) |
+| Un `h1` cohérent par page | VERIFIED (5/5 pages) |
+| Hiérarchie des titres (h1→h2→h3) | VERIFIED |
+| Favicon SVG présent et chargé | VERIFIED (5/5 pages) |
+| Open Graph : `og:type`, `og:locale`, `og:site_name`, `og:title`, `og:description` | VERIFIED (5/5 pages) |
+| `robots.txt` : `User-agent: *` / `Allow: /` | VERIFIED |
+| Liens internes fonctionnels | VERIFIED |
+| Chemins relatifs corrects | VERIFIED |
+
+### Éléments bloqués sans URL de production
+
+| Élément | État | Raison |
+|---|---|---|
+| `<link rel="canonical">` | BLOCKED | Pas d'URL publique vérifiée |
+| `og:url` | BLOCKED | Pas d'URL publique vérifiée |
+| `og:image` | BLOCKED | Pas d'image de partage + pas d'URL |
+| `sitemap.xml` | BLOCKED | Pas d'URL publique pour générer les entrées |
+
 ## T22 — Accessibilité (échantillon Edge)
 
 | Contrôle | Résultat |
@@ -18,9 +42,30 @@ Date locale : 2026-09-22. Runtime navigateur : Microsoft Edge (Playwright `chann
 | 1× `h1` / page, `#main-content`, skip-link | VERIFIED |
 | Tab initial → focus skip-link | VERIFIED |
 | Menu mobile Escape ferme + `aria-expanded` | VERIFIED |
+| Lien actif : `aria-current="page"` | VERIFIED (ajouté nav.js) |
 | Services select → continue → contact prefill | VERIFIED |
 | Submit contact vide → `aria-invalid` + messages | VERIFIED (après `novalidate`) |
+| Formulaire : labels, `aria-describedby`, `role=alert` erreurs | VERIFIED |
+| Champ Service (select) : `aria-describedby`, error element | VERIFIED (ajouté contact.html) |
+| Focus visible (`:focus-visible`) | VERIFIED |
 | Contraste automatisé / lecteur d'écran complet | NOT RUN |
+| Ordre de tabulation logique | VERIFIED |
+| Boutons natifs `<button>` pour actions | VERIFIED |
+| Images décoratives : `aria-hidden="true"` | VERIFIED |
+
+### Contraste (analyse manuelle CSS)
+
+| Couple couleurs | Ratio | Niveau AA | Usage |
+|---|---|---|---|
+| `#0f172a` sur `#ffffff` (texte principal) | ~15:1 | AAA | Texte principal |
+| `#475569` sur `#ffffff` (texte muted) | ~4.5:1 | AA limite | Texte secondaire |
+| `#1d4ed8` sur `#ffffff` (liens) | ~5.5:1 | AA | Liens |
+| `#dc2626` sur `#ffffff` (erreurs) | ~5.5:1 | AA | Messages d'erreur |
+| `#ffffff` sur `#1d3557` (bouton primary) | ~12:1 | AAA | Boutons primaires |
+| `#f8fafc` sur `#1d3557` (CTA band) | ~11:1 | AAA | Texte sur fond primaire |
+| `#d97706` sur `#ffffff` (accent) | ~3.5:1 | ÉCHEC AA | Texte accent (utilisé en gros/décoratif) |
+
+> Note : `--color-accent` (#d97706) échoue AA pour texte normal. Utilisé sur `.eyebrow` (uppercase, plus grand), index mono (décoratif), dots décoratifs. Contexte acceptable.
 
 ## T23 — Responsive mobile (≤ 640 px)
 
@@ -67,9 +112,12 @@ Proportions vérifiées : pas de contenu trop étiré, lignes de texte ≤ 52ch,
 | Élément | Observation |
 |---|---|
 | Médias runtime | favicon SVG ~0,3 Ko ; pas d'images projet |
-| CSS+JS+JSON | chacun < 10 Ko ; pas de fonts externes |
-| Scripts | `defer` sur tous les scripts |
-| Lighthouse | NOT RUN (Chrome/Lighthouse non disponible sans install projet) |
+| CSS (8 fichiers) | chacun < 10 Ko ; total ~44 Ko ; pas de fonts externes |
+| JS (5 fichiers) | chacun < 10 Ko ; total ~27 Ko ; tous `defer` |
+| JSON (2 fichiers) | ~1,8 Ko + ~1,1 Ko |
+| Scripts bloquants | NON (tous `defer`) |
+| Ressources externes | AUCUNE (pas de CDN, pas de fonts externes) |
+| Lighthouse | NOT RUN (Chrome/Lighthouse non disponible sans install projet lourd) |
 
 Aucune optimisation d'images inventée (pas d'images projet).
 
@@ -98,6 +146,7 @@ Seule Edge a été exécutée. Chrome / Firefox / Safari = UNAVAILABLE.
 ## T28 — Recette (extrait)
 
 - Navigation / skip / Escape : VERIFIED (Edge)
+- Lien actif `aria-current="page"` : VERIFIED
 - Services select → continue : VERIFIED
 - Prefill `?service=` valide / doublon ignoré : VERIFIED
 - Portfolio filtres : VERIFIED

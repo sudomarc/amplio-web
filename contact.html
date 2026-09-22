@@ -54,13 +54,14 @@
             </div>
             <div class="contact-form__field">
               <label for="service">Service</label>
-              <select id="service" name="service">
+              <select id="service" name="service" aria-describedby="service-error" aria-invalid="false">
                 <option value="">Choisir un service</option>
                 <option value="strategie-communication">Stratégie & communication</option>
                 <option value="identite-creation">Identité & création</option>
                 <option value="communication-digitale">Communication digitale</option>
                 <option value="publicite-campagnes">Publicité & campagnes</option>
               </select>
+              <p class="contact-form__error" id="service-error" role="alert" aria-live="assertive"></p>
             </div>
             <div class="contact-form__field">
               <label for="message">Message</label>
