@@ -39,6 +39,7 @@
       menu.querySelectorAll('a').forEach((link) => {
         if (link.getAttribute('href') === currentPage) {
           link.classList.add('is-active');
+          link.setAttribute('aria-current', 'page');
         }
       });
     }
