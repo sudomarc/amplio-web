@@ -8,7 +8,11 @@
       "Positionnement",
       "Plans de communication",
       "Conseil de marque"
-    ]
+    ],
+    "image": "https://live.staticflickr.com/4816/30849317747_4abe95673d_b.jpg",
+    "imageAlt": "Équipe en séance de travail autour de notes autocollantes sur un mur.",
+    "imageWidth": 1024,
+    "imageHeight": 912
   },
   {
     "id": "identite-creation",
@@ -19,7 +23,11 @@
       "Logo & charte",
       "Supports print",
       "Direction artistique"
-    ]
+    ],
+    "image": "https://live.staticflickr.com/5266/5647939487_05bd0fc3e1_b.jpg",
+    "imageAlt": "Croquis de logotypes au crayon sur un carnet de recherche graphique.",
+    "imageWidth": 1024,
+    "imageHeight": 809
   },
   {
     "id": "communication-digitale",
@@ -30,7 +38,11 @@
       "Sites web",
       "Réseaux sociaux",
       "Contenus"
-    ]
+    ],
+    "image": "https://live.staticflickr.com/4881/45789232771_92be9698ab_b.jpg",
+    "imageAlt": "Maquette d'un site web affichée sur l'écran d'un ordinateur portable.",
+    "imageWidth": 1024,
+    "imageHeight": 714
   },
   {
     "id": "publicite-campagnes",
@@ -41,6 +53,10 @@
       "Conception",
       "Diffusion",
       "Événementiel"
-    ]
+    ],
+    "image": "https://live.staticflickr.com/348/19056142805_d20e2b17af_b.jpg",
+    "imageAlt": "Panneaux publicitaires lumineux d'une place urbaine la nuit.",
+    "imageWidth": 1024,
+    "imageHeight": 675
   }
 ]

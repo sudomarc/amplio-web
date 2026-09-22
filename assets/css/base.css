@@ -4,17 +4,19 @@
 /* ------------------------------------------------------------------ */
 
 :root {
-  /* Couleurs */
-  --color-primary: #1d3557;
-  --color-accent: #d97706;
-  --color-bg: #ffffff;
-  --color-surface: #f8fafc;
-  --color-text: #0f172a;
-  --color-text-muted: #475569;
-  --color-border: #e2e8f0;
-  --color-link: #1d4ed8;
-  --color-link-hover: #1e40af;
-  --color-focus: #2563eb;
+  /* Couleurs — direction éditoriale chaude : encre / papier / accent publicitaire */
+  --color-primary: #100f0c;
+  --color-primary-soft: #211f1a;
+  --color-accent: #ff4d1f;
+  --color-accent-dim: #c2380f;
+  --color-bg: #faf7f0;
+  --color-surface: #efe9db;
+  --color-text: #14120d;
+  --color-text-muted: #5c5648;
+  --color-border: #ddd5c1;
+  --color-link: var(--color-primary);
+  --color-link-hover: var(--color-accent);
+  --color-focus: #ff4d1f;
   --color-error: #dc2626;
   --color-error-bg: #fef2f2;
   --color-error-border: #fecaca;
@@ -32,12 +34,19 @@
   --space-8: 3rem;
   --space-10: 4rem;
   --space-12: 6rem;
+  --space-16: 8rem;
 
   /* Typographie */
   --font-body: system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
   --font-mono: ui-monospace, "Cascadia Mono", "Segoe UI Mono",
     Menlo, Consolas, "Liberation Mono", monospace;
+  /* Display : voix éditoriale forte pour les titres. Chargée en <link> (voir <head>),
+     avec repli système immédiat si le CDN de polices est indisponible. */
+  --font-display: "Archivo", var(--font-body);
+  /* Serif d'accent : utilisée avec parcimonie sur un mot ou un repère par titre,
+     jamais comme pairing systématique. */
+  --font-accent: "Fraunces", Georgia, serif;
 
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
@@ -47,20 +56,30 @@
   --font-size-2xl: 1.875rem;
   --font-size-3xl: 2.25rem;
   --font-size-4xl: 3rem;
+  --font-size-5xl: clamp(3rem, 2vw + 2.5rem, 4.5rem);
+  --font-size-hero: clamp(3.25rem, 4vw + 2rem, 7.25rem);
 
-  --line-height-tight: 1.25;
+  --line-height-tight: 1.05;
+  --line-height-snug: 1.25;
   --line-height-base: 1.6;
 
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
+  --font-weight-black: 800;
 
   /* Layout */
   --container-max: 72rem;
   --container-pad: var(--space-4);
   --radius-sm: 0.25rem;
   --radius: 0.5rem;
+
+  /* Mouvement — voir motion.css pour l'application */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 150ms;
+  --dur-base: 350ms;
+  --dur-slow: 700ms;
 }
 
 /* ------------------------- Reset de base -------------------------- */
@@ -95,10 +114,18 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: inherit;
-  font-weight: var(--font-weight-semibold);
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-black);
   line-height: var(--line-height-tight);
+  letter-spacing: -0.02em;
   color: var(--color-text);
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--font-weight-bold);
 }
 
 h1 {
@@ -311,12 +338,30 @@ textarea {
   color: var(--color-text-muted);
 }
 
-/* Bandeau final d'appel à l'action. */
+/* Bandeau final d'appel à l'action — moment d'impact avant la conclusion. */
 .cta-band {
+  position: relative;
   background-color: var(--color-primary);
+  overflow: hidden;
+}
+
+.cta-band::before {
+  content: "→";
+  position: absolute;
+  top: 50%;
+  right: -1rem;
+  transform: translateY(-50%);
+  font-family: var(--font-display);
+  font-size: min(40rem, 60vw);
+  line-height: 1;
+  color: var(--color-primary-soft);
+  z-index: 0;
+  pointer-events: none;
 }
 
 .cta-band__container {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -326,19 +371,21 @@ textarea {
 }
 
 .cta-band__content {
-  max-width: 34rem;
+  max-width: 38rem;
 }
 
 .cta-band__title {
   margin-block: 0;
-  font-size: var(--font-size-2xl);
-  letter-spacing: -0.01em;
+  font-size: var(--font-size-5xl);
+  letter-spacing: -0.02em;
   color: var(--color-bg);
 }
 
 .cta-band__text {
-  margin-block: var(--space-3) 0;
+  max-width: 42ch;
+  margin-block: var(--space-4) 0;
   color: var(--color-surface);
+  font-size: var(--font-size-md);
 }
 
 .cta-band__actions {
@@ -347,6 +394,6 @@ textarea {
 
 @media (min-width: 40rem) {
   .cta-band__container {
-    padding-block: var(--space-12);
+    padding-block: var(--space-16);
   }
 }

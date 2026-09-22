@@ -63,6 +63,7 @@
       && typeof project.status === 'string' && project.status.length > 0
       && typeof project.cover === 'string'
       && Object.prototype.hasOwnProperty.call(COVER_VARIANTS, project.cover)
+      && (typeof project.image !== 'string' || project.image.length > 0)
       && typeof index === 'number' && index >= 0;
   }
 
@@ -106,22 +107,28 @@
     return element;
   }
 
-  function createCover(project) {
+  function createCover(project, index) {
     var variant = COVER_VARIANTS[project.cover];
 
     var cover = document.createElement('div');
     cover.className = 'portfolio-card__cover ' + variant.coverClass;
-    cover.setAttribute('aria-hidden', 'true');
 
-    var mark = createElement('portfolio-card__mark', variant.mark);
-    if (variant.markClass) {
-      mark.className += ' ' + variant.markClass;
+    if (project.image) {
+      var img = document.createElement('img');
+      img.className = 'portfolio-card__image';
+      img.src = project.image;
+      img.alt = project.imageAlt || '';
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      if (project.imageWidth) img.width = project.imageWidth;
+      if (project.imageHeight) img.height = project.imageHeight;
+      cover.appendChild(img);
+      cover.appendChild(createElement('portfolio-card__scrim', ''));
     }
-    cover.appendChild(mark);
 
-    variant.figures.forEach(function (figureClasses) {
-      cover.appendChild(createElement('portfolio-card__figure ' + figureClasses, ''));
-    });
+    var number = createElement('portfolio-card__number', String(index + 1).padStart(2, '0'));
+    number.setAttribute('aria-hidden', 'true');
+    cover.appendChild(number);
 
     return cover;
   }
@@ -149,14 +156,15 @@
 
     var fragment = document.createDocumentFragment();
 
-    projects.forEach(function (project) {
+    projects.forEach(function (project, index) {
       var item = document.createElement('li');
-      item.className = 'portfolio-grid__item';
+      item.className = 'portfolio-grid__item reveal';
+      item.style.setProperty('--reveal-delay', String(index));
 
       var card = document.createElement('article');
       card.className = 'portfolio-card';
 
-      card.appendChild(createCover(project));
+      card.appendChild(createCover(project, index));
       card.appendChild(createBody(project));
 
       item.setAttribute('data-category', project.category);
@@ -166,6 +174,7 @@
     });
 
     GRID.appendChild(fragment);
+    document.dispatchEvent(new CustomEvent('content:rendered'));
 
     return projects;
   }

@@ -9,6 +9,7 @@
     if (header && toggle && nav) {
       function setMenuOpen(open) {
         header.classList.toggle('is-menu-open', open);
+        document.body.classList.toggle('has-menu-open', open);
         toggle.setAttribute('aria-expanded', String(open));
         toggle.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
       }

@@ -11,12 +11,19 @@
   <meta property="og:title" content="Amplio — Agence de publicité">
   <meta property="og:description" content="Amplio, agence de publicité et de communication. Stratégie, identité, communication digitale et campagnes.">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,500;0,700;0,800;1,700&family=Fraunces:ital,opsz,wght@1,9..144,500&display=swap">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/header.css">
   <link rel="stylesheet" href="assets/css/footer.css">
   <link rel="stylesheet" href="assets/css/home.css">
+  <link rel="stylesheet" href="assets/css/motion.css">
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js" defer></script>
+  <script src="assets/js/hero-3d.js" defer></script>
   <script src="assets/js/includes.js" defer></script>
   <script src="assets/js/nav.js" defer></script>
+  <script src="assets/js/motion.js" defer></script>
   <script src="assets/js/services.js" defer></script>
 </head>
 <body>
@@ -29,11 +36,14 @@
     <section class="home-hero" aria-labelledby="home-title">
       <div class="container home-hero__container">
         <div class="home-hero__content">
-          <p class="eyebrow">Amplio — Publicité &amp; communication</p>
-          <h1 id="home-title" class="home-hero__title">Une idée mérite plus que de la visibilité.</h1>
-          <p class="home-hero__intro">Amplio conçoit des messages, des identités et des campagnes qui donnent du sens à une marque — du premier brief jusqu'à la diffusion.</p>
-          <div class="home-hero__actions">
-            <a class="btn btn--primary" href="services.html">Découvrir nos services</a>
+          <p class="eyebrow reveal">Amplio — Publicité &amp; communication</p>
+          <h1 id="home-title" class="home-hero__title">
+            <span class="reveal" style="--reveal-delay:1">Une idée mérite</span>
+            <span class="reveal" style="--reveal-delay:2">plus que de la <em>visibilité</em>.</span>
+          </h1>
+          <p class="home-hero__intro reveal" style="--reveal-delay:3">Amplio conçoit des messages, des identités et des campagnes qui donnent du sens à une marque — du premier brief jusqu'à la diffusion.</p>
+          <div class="home-hero__actions reveal" style="--reveal-delay:4">
+            <a class="btn btn--primary" href="services.html">Découvrir nos services<span class="btn__arrow" aria-hidden="true">→</span></a>
             <a class="btn btn--secondary" href="portfolio.html">Voir nos réalisations</a>
           </div>
         </div>
@@ -53,6 +63,7 @@
             <p class="home-hero-visual__tile-label">Digital</p>
           </div>
           <span class="home-hero-visual__dot" aria-hidden="true"></span>
+          <div class="home-hero-visual__canvas" data-hero-3d></div>
         </div>
       </div>
     </section>
@@ -61,12 +72,15 @@
     <section class="home-section home-services" aria-labelledby="services-title">
       <div class="container">
         <header class="home-section__header">
-          <p class="eyebrow">Nos expertises</p>
-          <h2 id="services-title" class="home-section__title">Quatre métiers, une même ambition : rendre votre marque visible et mémorable.</h2>
-          <p class="home-section__lede">Chaque projet débute par un brief clair. Nous construisons ensuite la stratégie, l'identité et les supports qui la portent.</p>
+          <p class="eyebrow reveal">Nos expertises</p>
+          <h2 id="services-title" class="home-section__title reveal">Quatre métiers, une même ambition : rendre votre marque visible et mémorable.</h2>
+          <p class="home-section__lede reveal">Chaque projet débute par un brief clair. Nous construisons ensuite la stratégie, l'identité et les supports qui la portent.</p>
         </header>
 
-        <ol class="home-services__list"><!-- Rendu dynamique via data/services.json --></ol>
+        <div class="home-services__interactive">
+          <ol class="home-services__list"><!-- Rendu dynamique via data/services.json --></ol>
+          <div class="home-services__visual" aria-hidden="true"><!-- Rendu dynamique via data/services.json --></div>
+        </div>
 
         <p class="home-section__footer">
           <a class="arrow-link" href="services.html">Voir tous les services<span class="arrow-link__arrow" aria-hidden="true">→</span></a>
@@ -78,16 +92,15 @@
     <section class="home-section home-section--surface home-work" aria-labelledby="work-title">
       <div class="container">
         <header class="home-section__header">
-          <p class="eyebrow">Portfolio</p>
-          <h2 id="work-title" class="home-section__title">Quelques réalisations</h2>
-          <p class="home-section__lede">Nos études de cas détaillées arrivent prochainement. Voici un aperçu des catégories de projets que la page Portfolio documentera.</p>
+          <p class="eyebrow reveal">Portfolio</p>
+          <h2 id="work-title" class="home-section__title reveal">Quelques pistes de travail</h2>
+          <p class="home-section__lede reveal">Nos études de cas détaillées arrivent prochainement. Voici un aperçu des catégories de projets que la page Portfolio documentera.</p>
         </header>
 
         <ul class="home-work__grid">
-          <li class="home-work__card">
-            <div class="home-work__media" aria-hidden="true">
-              <span class="home-work__media-shape home-work__media-shape--square"></span>
-              <span class="home-work__media-shape home-work__media-shape--line"></span>
+          <li class="home-work__card reveal" style="--reveal-delay:1">
+            <div class="home-work__media">
+              <img src="https://live.staticflickr.com/5266/5647939487_05bd0fc3e1_b.jpg" alt="" width="1024" height="809" loading="lazy" decoding="async">
             </div>
             <div class="home-work__body">
               <p class="home-work__tag">Identité</p>
@@ -95,10 +108,9 @@
               <p class="home-work__status">Projet à venir</p>
             </div>
           </li>
-          <li class="home-work__card">
-            <div class="home-work__media" aria-hidden="true">
-              <span class="home-work__media-shape home-work__media-shape--circle"></span>
-              <span class="home-work__media-shape home-work__media-shape--rule"></span>
+          <li class="home-work__card reveal" style="--reveal-delay:2">
+            <div class="home-work__media">
+              <img src="https://live.staticflickr.com/348/19056142805_d20e2b17af_b.jpg" alt="" width="1024" height="675" loading="lazy" decoding="async">
             </div>
             <div class="home-work__body">
               <p class="home-work__tag">Campagne digitale</p>
@@ -106,10 +118,9 @@
               <p class="home-work__status">Sélection à venir</p>
             </div>
           </li>
-          <li class="home-work__card">
-            <div class="home-work__media" aria-hidden="true">
-              <span class="home-work__media-shape home-work__media-shape--cross"></span>
-              <span class="home-work__media-shape home-work__media-shape--dot"></span>
+          <li class="home-work__card reveal" style="--reveal-delay:3">
+            <div class="home-work__media">
+              <img src="https://live.staticflickr.com/7224/7063254695_fa55b5b41f_b.jpg" alt="" width="1024" height="640" loading="lazy" decoding="async">
             </div>
             <div class="home-work__body">
               <p class="home-work__tag">Contenus &amp; print</p>
@@ -129,11 +140,11 @@
     <section class="cta-band" aria-labelledby="contact-title">
       <div class="container cta-band__container">
         <div class="cta-band__content">
-          <h2 id="contact-title" class="cta-band__title">Un projet en tête ?</h2>
-          <p class="cta-band__text">Transformons votre idée en communication qui compte. Décrivez-nous votre projet en quelques lignes : nous vous répondrons rapidement.</p>
+          <h2 id="contact-title" class="cta-band__title reveal">Une idée. <em>Maintenant.</em></h2>
+          <p class="cta-band__text reveal" style="--reveal-delay:1">Décrivez-nous votre projet en quelques lignes — nous vous répondrons rapidement, sans jargon ni détour.</p>
         </div>
-        <div class="cta-band__actions">
-          <a class="btn btn--accent" href="contact.html">Parler de mon projet</a>
+        <div class="cta-band__actions reveal" style="--reveal-delay:2">
+          <a class="btn btn--accent" href="contact.html">Parler de mon projet<span class="btn__arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>

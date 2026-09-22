@@ -4,7 +4,9 @@
   var SERVICES_URL = 'data/services.json';
 
   var HOME_LIST = document.querySelector('.home-services__list');
+  var HOME_VISUAL = document.querySelector('.home-services__visual');
   var SERVICES_LIST = document.querySelector('.services-cards__list');
+  var SERVICES_VISUAL = document.querySelector('.services-cards__visual');
   var SELECTOR_FIELD = document.querySelector('#service-selector');
   var CONTINUE_BUTTON = document.querySelector('#service-continue');
   var SELECTOR_STATUS = document.querySelector('#service-selection-status');
@@ -83,6 +85,43 @@
     return element;
   }
 
+  function renderVisualPanel(target, services) {
+    if (!target) {
+      return;
+    }
+
+    var fragment = document.createDocumentFragment();
+
+    services.forEach(function (service, index) {
+      if (!service.image) {
+        return;
+      }
+      var img = document.createElement('img');
+      img.className = index === 0 ? 'is-active' : '';
+      img.dataset.for = service.id;
+      img.src = service.image;
+      img.alt = service.imageAlt || '';
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      if (service.imageWidth) img.width = service.imageWidth;
+      if (service.imageHeight) img.height = service.imageHeight;
+      fragment.appendChild(img);
+    });
+
+    target.appendChild(fragment);
+  }
+
+  function setActiveVisual(target, serviceId) {
+    if (!target) {
+      return;
+    }
+    target.querySelectorAll('img').forEach(function (img) {
+      img.classList.toggle('is-active', img.dataset.for === serviceId);
+    });
+  }
+
+  /* ---------------------- Page Services : cartes ---------------------- */
+
   function renderServicesPage(services) {
     if (!SERVICES_LIST) {
       return;
@@ -121,7 +160,7 @@
       mark.className = 'service-card__mark ' + CARD_MARKS[index % CARD_MARKS.length];
       mark.setAttribute('aria-hidden', 'true');
 
-      var check = createLabeledIcon('service-card__check', '\u2713');
+      var check = createLabeledIcon('service-card__check', '✓');
 
       indicators.appendChild(mark);
       indicators.appendChild(check);
@@ -160,10 +199,25 @@
 
       item.appendChild(label);
       fragment.appendChild(item);
+
+      label.addEventListener('mouseenter', function () {
+        setActiveVisual(SERVICES_VISUAL, service.id);
+      });
+      label.addEventListener('focusin', function () {
+        setActiveVisual(SERVICES_VISUAL, service.id);
+      });
     });
 
     SERVICES_LIST.appendChild(fragment);
+
+    if (SERVICES_LIST.addEventListener) {
+      SERVICES_LIST.addEventListener('mouseleave', function () {
+        setActiveVisual(SERVICES_VISUAL, selectedServiceId || services[0].id);
+      });
+    }
   }
+
+  /* --------------------- Accueil : liste interactive ------------------- */
 
   function renderHomeServices(services) {
     if (!HOME_LIST) {
@@ -176,27 +230,80 @@
       var item = document.createElement('li');
       item.className = 'home-services__item';
 
-      var number = document.createElement('p');
+      var row = document.createElement('button');
+      row.type = 'button';
+      row.className = 'home-services__row';
+      row.setAttribute('aria-expanded', index === 0 ? 'true' : 'false');
+      row.setAttribute('aria-controls', 'home-panel-' + service.id);
+      row.dataset.serviceId = service.id;
+
+      var number = document.createElement('span');
       number.className = 'home-services__index';
+      number.setAttribute('aria-hidden', 'true');
       number.textContent = String(index + 1).padStart(2, '0');
 
-      var title = document.createElement('h3');
-      title.className = 'home-services__name';
-      title.textContent = service.name;
+      var name = document.createElement('span');
+      name.className = 'home-services__name';
+      name.textContent = service.name;
+
+      var arrow = document.createElement('span');
+      arrow.className = 'home-services__arrow';
+      arrow.setAttribute('aria-hidden', 'true');
+      arrow.textContent = '↗';
+
+      row.appendChild(number);
+      row.appendChild(name);
+      row.appendChild(arrow);
+
+      var panel = document.createElement('div');
+      panel.className = 'home-services__panel';
+      panel.id = 'home-panel-' + service.id;
+
+      var panelInner = document.createElement('div');
+      panelInner.className = 'home-services__panel-inner';
 
       var text = document.createElement('p');
       text.className = 'home-services__text';
       text.textContent = service.summary || service.description;
 
-      item.appendChild(number);
-      item.appendChild(title);
-      item.appendChild(text);
+      panelInner.appendChild(text);
+      panel.appendChild(panelInner);
+
+      item.appendChild(row);
+      item.appendChild(panel);
 
       fragment.appendChild(item);
+
+      row.addEventListener('click', function () {
+        setActiveHomeService(service.id);
+      });
+      row.addEventListener('mouseenter', function () {
+        setActiveVisual(HOME_VISUAL, service.id);
+      });
+      row.addEventListener('focus', function () {
+        setActiveVisual(HOME_VISUAL, service.id);
+      });
     });
 
     HOME_LIST.appendChild(fragment);
+
+    if (services[0]) {
+      setActiveVisual(HOME_VISUAL, services[0].id);
+    }
   }
+
+  function setActiveHomeService(id) {
+    if (!HOME_LIST) {
+      return;
+    }
+    HOME_LIST.querySelectorAll('.home-services__row').forEach(function (row) {
+      var isActive = row.dataset.serviceId === id;
+      row.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+    });
+    setActiveVisual(HOME_VISUAL, id);
+  }
+
+  /* ------------------------- Sélecteur (formulaire) --------------------- */
 
   function getServiceById(id) {
     return servicesById[id] || null;
@@ -237,6 +344,10 @@
       SELECTOR_STATUS.textContent = service
         ? 'Service sélectionné : ' + service.name + '.'
         : 'Aucun service sélectionné pour le moment.';
+    }
+
+    if (selectedId) {
+      setActiveVisual(SERVICES_VISUAL, selectedId);
     }
   }
 
@@ -290,7 +401,9 @@
       .then(validateServices)
       .then(function (services) {
         renderServicesPage(services);
+        renderVisualPanel(SERVICES_VISUAL, services);
         renderHomeServices(services);
+        renderVisualPanel(HOME_VISUAL, services);
         initSelector(services);
       })
       .catch(handleError);
