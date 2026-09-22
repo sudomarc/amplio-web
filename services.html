@@ -11,12 +11,17 @@
   <meta property="og:title" content="Services — Amplio">
   <meta property="og:description" content="Stratégie, identité, communication digitale et campagnes : découvrez les services publicitaires et de communication d'Amplio.">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,500;0,700;0,800;1,700&family=Fraunces:ital,opsz,wght@1,9..144,500&display=swap">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/header.css">
   <link rel="stylesheet" href="assets/css/footer.css">
   <link rel="stylesheet" href="assets/css/services.css">
+  <link rel="stylesheet" href="assets/css/motion.css">
   <script src="assets/js/includes.js" defer></script>
   <script src="assets/js/nav.js" defer></script>
+  <script src="assets/js/motion.js" defer></script>
   <script src="assets/js/services.js" defer></script>
 </head>
 <body>
@@ -28,15 +33,15 @@
     <!-- ================= INTRODUCTION ================= -->
     <section class="services-hero" aria-labelledby="page-title">
       <div class="container services-hero__container">
-        <p class="eyebrow">Nos services</p>
-        <h1 id="page-title" class="services-hero__title">De la stratégie à la diffusion.</h1>
-        <p class="services-hero__intro">Nous construisons les éléments qui donnent à une marque une présence claire, cohérente et mémorable — du positionnement à la campagne.</p>
+        <p class="eyebrow reveal">Nos services</p>
+        <h1 id="page-title" class="services-hero__title reveal">De la stratégie à la diffusion.</h1>
+        <p class="services-hero__intro reveal" style="--reveal-delay:1">Nous construisons les éléments qui donnent à une marque une présence claire, cohérente et mémorable — du positionnement à la campagne.</p>
       </div>
     </section>
 
     <!-- ================= GRILLE DES SERVICES ================= -->
     <section class="services-cards" aria-label="Les quatre expertises d'Amplio">
-      <div class="container">
+      <div class="container services-cards__layout">
         <fieldset class="service-selector" id="service-selector">
           <legend class="service-selector__legend">Choisissez le service qui correspond à votre projet.</legend>
 
@@ -47,6 +52,8 @@
             <button type="button" class="service-selector__continue" id="service-continue" disabled>Continuer</button>
           </div>
         </fieldset>
+
+        <div class="services-cards__visual" aria-hidden="true"><!-- Rendu dynamique via data/services.json --></div>
       </div>
     </section>
 

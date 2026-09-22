@@ -1,0 +1,107 @@
+/* ------------------------------------------------------------------ */
+/*  Motion — Amplio Web                                                */
+/*  Système de révélation au scroll, transitions de menu et micro-      */
+/*  interactions. Chargé après les feuilles de page. Respecte           */
+/*  prefers-reduced-motion via base.css (règle globale déjà en place)   */
+/*  et via les gardes ci-dessous pour les transitions déclenchées en JS.*/
+/* ------------------------------------------------------------------ */
+
+/* --------------------- Révélation au défilement --------------------- */
+/* Appliqué sélectivement (titre de hero, intros de section, cartes de   */
+/* galerie) par motion.js — jamais en bloc sur tous les éléments.        */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(1.25rem);
+  transition: opacity var(--dur-slow) var(--ease-out),
+    transform var(--dur-slow) var(--ease-out);
+  transition-delay: calc(var(--reveal-delay, 0) * 60ms);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ----------------------- Boutons et liens ---------------------------- */
+
+.btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.btn__arrow {
+  display: inline-block;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.btn:hover .btn__arrow,
+.btn:focus-visible .btn__arrow {
+  transform: translateX(0.35rem);
+}
+
+.btn--primary::before,
+.btn--accent::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.btn--accent::before {
+  background-color: var(--color-primary);
+}
+
+.btn--primary:hover::before,
+.btn--primary:focus-visible::before,
+.btn--accent:hover::before,
+.btn--accent:focus-visible::before {
+  transform: scaleX(1);
+}
+
+/* ------------------------- Menu plein écran -------------------------- */
+
+body.has-menu-open {
+  overflow: hidden;
+}
+
+@media (max-width: 40rem) {
+  .site-header__nav {
+    transition: opacity var(--dur-base) var(--ease-out);
+  }
+
+  .site-header__menu li {
+    opacity: 0;
+    transform: translateY(0.75rem);
+    transition: opacity var(--dur-base) var(--ease-out),
+      transform var(--dur-base) var(--ease-out);
+    transition-delay: calc(var(--stagger, 0) * 60ms);
+  }
+
+  .site-header.is-menu-open .site-header__menu li {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header__menu li,
+  .btn--primary::before,
+  .btn--accent::before,
+  .btn__arrow {
+    transition: none !important;
+  }
+}

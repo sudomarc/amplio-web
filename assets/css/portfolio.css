@@ -6,7 +6,7 @@
 /* ------------------------ En-tête de page -------------------------- */
 
 .portfolio-hero {
-  background-color: var(--color-surface);
+  background-color: var(--color-bg);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -19,9 +19,9 @@
 }
 
 .portfolio-hero__title {
-  max-width: 18ch;
+  max-width: 16ch;
   margin-block: 0;
-  font-size: var(--font-size-3xl);
+  font-size: var(--font-size-5xl);
   letter-spacing: -0.02em;
 }
 
@@ -39,6 +39,7 @@
   padding: 0;
   margin: var(--space-2) 0 0;
   list-style: none;
+  font-family: var(--font-mono);
 }
 
 .portfolio-hero__meta li {
@@ -69,7 +70,7 @@
 
 .portfolio-work__title {
   margin-block: 0;
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-3xl);
   letter-spacing: -0.01em;
 }
 
@@ -111,163 +112,54 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   overflow: hidden;
+  transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) ease;
 }
 
-/* --------------------- Couverture visuelle CSS --------------------- */
-/*  Compositions géométriques et typographiques : éléments purement    */
-/*  décoratifs (aria-hidden), en attendant de vraies images de projets.*/
+.portfolio-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(16, 15, 12, 0.14);
+}
+
+/* --------------------- Couverture visuelle (image) ------------------ */
 
 .portfolio-card__cover {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   aspect-ratio: 4 / 3;
   overflow: hidden;
   background-color: var(--color-surface);
   border-block-end: 1px solid var(--color-border);
 }
 
-.portfolio-card__mark {
-  position: relative;
-  z-index: 1;
-  display: inline-block;
-  font-size: clamp(4rem, 9vw, 5.5rem);
-  font-weight: var(--font-weight-bold);
-  line-height: 1;
-  letter-spacing: -0.05em;
-  color: var(--color-primary);
-}
-
-.portfolio-card__mark--accent {
-  color: var(--color-accent);
-}
-
-.portfolio-card__mark--mono {
+.portfolio-card__image {
   position: absolute;
-  top: var(--space-5);
-  left: var(--space-5);
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+
+.portfolio-card:hover .portfolio-card__image {
+  transform: scale(1.06);
+}
+
+.portfolio-card__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(16, 15, 12, 0) 45%, rgba(16, 15, 12, 0.75) 100%);
+}
+
+.portfolio-card__number {
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-4);
   z-index: 1;
   font-family: var(--font-mono);
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
   letter-spacing: 0.08em;
-}
-
-.portfolio-card__figure {
-  display: block;
-  position: absolute;
-}
-
-.portfolio-card__figure--square {
-  width: 5rem;
-  aspect-ratio: 1;
-  bottom: var(--space-5);
-  right: var(--space-5);
-  border-radius: var(--radius-sm);
-  background-color: var(--color-accent);
-}
-
-.portfolio-card__figure--ring {
-  width: 7rem;
-  height: 7rem;
-  top: var(--space-5);
-  left: var(--space-5);
-  border: 2px solid var(--color-bg);
-  border-radius: 50%;
-  opacity: 0.6;
-}
-
-.portfolio-card__figure--rule {
-  width: var(--space-8);
-  height: 2px;
-  top: var(--space-5);
-  left: var(--space-5);
-  background-color: var(--color-accent);
-  opacity: 0.7;
-}
-
-.portfolio-card__figure--dot {
-  width: var(--space-3);
-  height: var(--space-3);
-  bottom: var(--space-5);
-  right: var(--space-5);
-  border-radius: 50%;
-  background-color: var(--color-accent);
-}
-
-.portfolio-card__figure--orb {
-  width: clamp(9rem, 30%, 12rem);
-  aspect-ratio: 1;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 2px solid var(--color-accent);
-  border-radius: 50%;
-  opacity: 0.55;
-}
-
-.portfolio-card__figure--bar {
-  width: 3px;
-  height: 4rem;
-  top: var(--space-5);
-  right: var(--space-6);
-  background-color: var(--color-accent);
-}
-
-/* Variantes de couverture */
-
-.portfolio-card__cover--identity {
-  background-color: var(--color-primary);
-}
-
-.portfolio-card__cover--identity .portfolio-card__mark {
   color: var(--color-bg);
-}
-
-.portfolio-card__cover--campaign {
-  background-color: var(--color-accent);
-}
-
-.portfolio-card__cover--campaign .portfolio-card__mark {
-  color: var(--color-bg);
-  transform: rotate(-12deg);
-}
-
-.portfolio-card__cover--strategy {
-  background-color: var(--color-primary);
-}
-
-.portfolio-card__cover--strategy .portfolio-card__mark--mono {
-  color: var(--color-bg);
-}
-
-.portfolio-card__cover--editorial {
-  background-color: var(--color-bg);
-}
-
-.portfolio-card__cover--event {
-  background-color: var(--color-surface);
-}
-
-.portfolio-card__cover--digital {
-  background-color: var(--color-surface);
-}
-
-.portfolio-card__figure--square-soft {
-  left: var(--space-5);
-  right: auto;
-  bottom: var(--space-5);
-  background-color: var(--color-primary);
-  opacity: 0.15;
-}
-
-.portfolio-card__figure--square-dim {
-  width: 2.75rem;
-  bottom: auto;
-  top: var(--space-5);
-  background-color: var(--color-accent);
-  opacity: 0.6;
+  text-shadow: 0 1px 6px rgba(16, 15, 12, 0.5);
 }
 
 /* --------------------------- Corps de carte ------------------------ */
@@ -315,10 +207,11 @@
   font-size: var(--font-size-sm);
   padding: var(--space-2) var(--space-3);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius);
+  border-radius: var(--radius-sm);
   background-color: var(--color-bg);
   color: var(--color-text);
   cursor: pointer;
+  transition: border-color var(--dur-fast) ease;
 }
 
 .portfolio-filter:hover {
@@ -345,10 +238,6 @@
     padding-block: var(--space-10) var(--space-12);
   }
 
-  .portfolio-hero__title {
-    font-size: var(--font-size-4xl);
-  }
-
   .portfolio-work {
     padding-block: var(--space-12);
   }
@@ -361,5 +250,31 @@
 @media (min-width: 64rem) {
   .portfolio-grid {
     grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+  }
+
+  /* Grille asymétrique : quelques cartes prennent plus de place. */
+  .portfolio-grid__item:nth-child(1) {
+    grid-column: span 2;
+  }
+
+  .portfolio-grid__item:nth-child(1) .portfolio-card__cover {
+    aspect-ratio: 21 / 9;
+  }
+
+  .portfolio-grid__item:nth-child(5) {
+    grid-row: span 2;
+  }
+
+  .portfolio-grid__item:nth-child(5) .portfolio-card__cover {
+    aspect-ratio: 3 / 4;
+    height: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-card,
+  .portfolio-card__image {
+    transition: none;
   }
 }

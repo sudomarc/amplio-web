@@ -4,41 +4,65 @@
     "category": "Identité",
     "title": "Programme d'identité",
     "status": "Projet conceptuel",
-    "cover": "identity"
+    "cover": "identity",
+    "image": "https://live.staticflickr.com/5266/5647939487_05bd0fc3e1_b.jpg",
+    "imageAlt": "Croquis de logotypes au crayon sur un carnet de recherche graphique.",
+    "imageWidth": 1024,
+    "imageHeight": 809
   },
   {
     "id": "campagne-lancement",
     "category": "Campagne digitale",
     "title": "Campagne de lancement",
     "status": "Concept en préparation",
-    "cover": "campaign"
+    "cover": "campaign",
+    "image": "https://live.staticflickr.com/348/19056142805_d20e2b17af_b.jpg",
+    "imageAlt": "Panneaux publicitaires lumineux d'une place urbaine la nuit.",
+    "imageWidth": 1024,
+    "imageHeight": 675
   },
   {
     "id": "serie-editoriale",
     "category": "Contenus & print",
     "title": "Série éditoriale",
     "status": "Étude de cas à venir",
-    "cover": "editorial"
+    "cover": "editorial",
+    "image": "https://live.staticflickr.com/7224/7063254695_fa55b5b41f_b.jpg",
+    "imageAlt": "Mise en page d'un magazine imprimé, gros plan sur la grille éditoriale.",
+    "imageWidth": 1024,
+    "imageHeight": 640
   },
   {
     "id": "plateforme-marque",
     "category": "Stratégie",
     "title": "Plateforme de marque",
     "status": "Travail conceptuel",
-    "cover": "strategy"
+    "cover": "strategy",
+    "image": "https://live.staticflickr.com/4816/30849317747_4abe95673d_b.jpg",
+    "imageAlt": "Équipe en séance de travail autour de notes autocollantes sur un mur.",
+    "imageWidth": 1024,
+    "imageHeight": 912
   },
   {
     "id": "dispositif-evenement",
     "category": "Publicité & événementiel",
     "title": "Dispositif d'événement",
     "status": "Concept en préparation",
-    "cover": "event"
+    "cover": "event",
+    "image": "https://live.staticflickr.com/1796/42899835422_a6dac8bd84_b.jpg",
+    "imageAlt": "Rue commerçante illuminée par des enseignes lumineuses la nuit.",
+    "imageWidth": 1024,
+    "imageHeight": 683
   },
   {
     "id": "site-vitrine",
     "category": "Digital",
     "title": "Site vitrine",
     "status": "Sélection à venir",
-    "cover": "digital"
+    "cover": "digital",
+    "image": "https://live.staticflickr.com/4881/45789232771_92be9698ab_b.jpg",
+    "imageAlt": "Maquette d'un site web affichée sur l'écran d'un ordinateur portable.",
+    "imageWidth": 1024,
+    "imageHeight": 714
   }
 ]
