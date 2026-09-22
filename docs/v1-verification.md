@@ -1,15 +1,15 @@
 # Preuves de vérification v1 (T21–T28)
 
-Date locale : 2026-09-22. Runtime navigateur : Microsoft Edge (Playwright `channel: msedge`), serveur `python -m http.server 8765`.
+Date locale : 2026-09-22. Runtime navigateur : Playwright Chromium, serveur `python -m http.server 8080`.
 
 ## Navigateurs
 
 | Navigateur | État |
 |---|---|
-| Edge | VERIFIED (local) |
-| Chrome | UNAVAILABLE (exécutable absent) |
-| Firefox | UNAVAILABLE (exécutable absent) |
-| Safari | UNAVAILABLE (Windows) |
+| Chromium (Playwright) | VERIFIED (local) |
+| Chrome | UNAVAILABLE (exécutable direct non présent) |
+| Firefox | UNAVAILABLE |
+| Safari | UNAVAILABLE |
 
 ## T21 — SEO (échantillon Edge)
 
