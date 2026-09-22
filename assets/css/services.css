@@ -129,6 +129,7 @@
 
 .service-card {
   position: relative;
+  transition: color var(--dur-fast) ease, padding-inline var(--dur-base) var(--ease-out);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -136,6 +137,15 @@
   width: 100%;
   padding-block: var(--space-5);
   cursor: pointer;
+  padding-inline-start: var(--space-2);
+  padding-inline-end: var(--space-2);
+}
+
+.service-card:hover,
+.service-card.is-selected {
+  color: var(--color-accent);
+  background:
+    linear-gradient(90deg, rgba(255, 77, 31, 0.06), transparent 70%);
 }
 
 .service-card:has(.service-card__radio:focus-visible) {
