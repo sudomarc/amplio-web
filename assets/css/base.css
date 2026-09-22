@@ -16,6 +16,11 @@
   --color-link-hover: #1e40af;
   --color-focus: #2563eb;
   --color-error: #dc2626;
+  --color-error-bg: #fef2f2;
+  --color-error-border: #fecaca;
+  --color-success: #16a34a;
+  --color-success-bg: #f0fdf4;
+  --color-success-border: #bbf7d0;
 
   /* Espacements */
   --space-1: 0.25rem;

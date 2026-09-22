@@ -5,6 +5,7 @@
 
   var SERVICE_SELECT = document.querySelector('#service');
   var CONTACT_FORM = document.querySelector('.contact-form');
+  var FORM_STATUS = document.getElementById('form-status');
 
   var ERROR_MESSAGES = {
     name: {
@@ -155,16 +156,73 @@
     return isValid;
   }
 
+  function setSubmitting(isSubmitting) {
+    var submitBtn = CONTACT_FORM.querySelector('.contact-form__submit');
+    if (submitBtn) {
+      submitBtn.disabled = isSubmitting;
+      submitBtn.textContent = isSubmitting ? 'Envoi en cours...' : 'Envoyer ma demande';
+    }
+  }
+
+  function showFormStatus(message, isError) {
+    if (!FORM_STATUS) return;
+    FORM_STATUS.textContent = message;
+    FORM_STATUS.hidden = false;
+    FORM_STATUS.className = 'contact-form__status' + (isError ? ' contact-form__status--error' : ' contact-form__status--success');
+    FORM_STATUS.setAttribute('role', isError ? 'alert' : 'status');
+    FORM_STATUS.setAttribute('aria-live', isError ? 'assertive' : 'polite');
+  }
+
+  function clearFormStatus() {
+    if (!FORM_STATUS) return;
+    FORM_STATUS.textContent = '';
+    FORM_STATUS.hidden = true;
+    FORM_STATUS.className = 'contact-form__status';
+  }
+
+  function submitForm(form) {
+    var formData = new FormData(form);
+    var urlSearchParams = new URLSearchParams(formData);
+    var body = urlSearchParams.toString();
+
+    return fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: body
+    });
+  }
+
   function handleSubmit(event) {
     event.preventDefault();
 
     var form = event.target;
     var isValid = validateForm(form);
 
-    if (isValid) {
-      // Formulaire valide : pas d'envoi réel (T19/T20), pas de navigation
-      // La logique de confirmation/soumission sera ajoutée en T20
+    if (!isValid) {
+      return;
     }
+
+    clearFormStatus();
+    setSubmitting(true);
+
+    submitForm(form)
+      .then(function (response) {
+        if (response.ok) {
+          showFormStatus('Votre demande a bien été envoyée. Nous vous répondrons dès que possible.', false);
+          form.reset();
+          clearError(form.querySelector('#name'));
+          clearError(form.querySelector('#email'));
+          clearError(form.querySelector('#message'));
+        } else {
+          throw new Error('Erreur serveur');
+        }
+      })
+      .catch(function () {
+        showFormStatus('L\'envoi a échoué. Veuillez réessayer dans quelques instants.', true);
+      })
+      .finally(function () {
+        setSubmitting(false);
+      });
   }
 
   function initValidation() {

@@ -35,7 +35,7 @@
 
         <div class="contact-form-panel">
           <h2 class="contact-form__title">Votre demande</h2>
-          <form class="contact-form" name="contact">
+          <form class="contact-form" name="contact" data-netlify="true">
             <div class="contact-form__field">
               <label for="name">Nom</label>
               <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error" aria-invalid="false">
@@ -76,7 +76,7 @@
       </div>
 
       <div class="container">
-        <p class="contact-note">Le formulaire est en cours de mise en place : sa structure est en ligne. L'envoi des messages sera activé dans une prochaine étape.</p>
+        <div id="form-status" class="contact-form__status" aria-live="polite" role="status" hidden></div>
       </div>
     </section>
 
