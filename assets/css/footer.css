@@ -1,6 +1,6 @@
 /* ------------------------------------------------------------------ */
 /*  Footer — Amplio Web                                                */
-/*  Pied de page commun. Variables de base.css.                        */
+/*  Pied de page commun avec navigation légale. Variables de base.css.   */
 /* ------------------------------------------------------------------ */
 
 .site-footer {
@@ -40,11 +40,18 @@
   color: var(--color-surface);
 }
 
+.site-footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-5);
+}
+
 .site-footer__menu {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-3) var(--space-5);
   padding: 0;
+  margin: 0;
   list-style: none;
 }
 
@@ -82,5 +89,9 @@
 
   .site-footer__brand {
     max-width: none;
+  }
+
+  .site-footer__nav {
+    margin-block-start: var(--space-4);
   }
 }

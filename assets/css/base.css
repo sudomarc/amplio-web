@@ -36,7 +36,9 @@
   --space-8: 3rem;
   --space-10: 4rem;
   --space-12: 6rem;
+  --space-14: 7rem;
   --space-16: 8rem;
+  --space-20: 10rem;
 
   /* Typographie */
   --font-body: system-ui, -apple-system, "Segoe UI", Roboto,
@@ -76,6 +78,8 @@
   --container-pad: var(--space-4);
   --radius-sm: 0.25rem;
   --radius: 0.5rem;
+  --radius-lg: 0.875rem;
+  --radius-xl: 1.25rem;
 
   /* Mouvement — voir motion.css pour l'application */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
