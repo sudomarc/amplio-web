@@ -317,6 +317,8 @@
 .home-services__list {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 100%;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -330,8 +332,9 @@
 .home-services__row {
   display: flex;
   align-items: center;
-  gap: var(--space-5);
+  gap: var(--space-3);
   width: 100%;
+  max-width: 100%;
   padding-block: var(--space-5);
   border: 0;
   background: none;
@@ -339,6 +342,12 @@
   font: inherit;
   color: var(--color-text);
   cursor: pointer;
+}
+
+@media (min-width: 40rem) {
+  .home-services__row {
+    gap: var(--space-5);
+  }
 }
 
 .home-services__index {
@@ -352,6 +361,7 @@
 
 .home-services__name {
   flex: 1;
+  min-width: 0;
   margin-block: 0;
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
@@ -557,6 +567,8 @@
 /* ------------------------ Marquee / manifesto ---------------------- */
 
 .home-marquee {
+  width: 100%;
+  max-width: 100vw;
   overflow: hidden;
   border-bottom: 1px solid var(--color-border);
   background: var(--color-primary);
