@@ -2,8 +2,8 @@
   {
     "id": "strategie-communication",
     "name": "Stratégie & communication",
-    "summary": "Positionnement, axes de message et plans de communication : nous posons les fondations avant de créer.",
-    "description": "Positionnement, axes de message et plans de communication : nous définissons ce que la marque doit dire avant de passer à la création.",
+    "summary": "Avant les visuels, on décide ce que la marque doit faire comprendre.",
+    "description": "Avant les visuels, on clarifie le positionnement, les messages et la direction de communication.",
     "scope": [
       "Positionnement",
       "Plans de communication",
@@ -17,8 +17,8 @@
   {
     "id": "identite-creation",
     "name": "Identité & création",
-    "summary": "Logos, chartes graphiques et supports print : une identité cohérente et reconnaissable au premier regard.",
-    "description": "Logos, chartes graphiques et supports print : une identité cohérente et reconnaissable au premier regard.",
+    "summary": "Une identité qu'on reconnaît avant même de lire le nom.",
+    "description": "Nous construisons les signes, systèmes et directions visuelles qui donnent à la marque une présence reconnaissable.",
     "scope": [
       "Logo & charte",
       "Supports print",
@@ -32,8 +32,8 @@
   {
     "id": "communication-digitale",
     "name": "Communication digitale",
-    "summary": "Sites, réseaux sociaux et contenus : une présence régulière là où se trouve votre audience.",
-    "description": "Sites, réseaux sociaux et contenus : une présence régulière et cohérente dans tous les espaces où se trouve votre audience.",
+    "summary": "Une présence pensée pour être vue, comprise et partagée.",
+    "description": "Nous traduisons l'identité en expériences, contenus et présences digitales cohérentes.",
     "scope": [
       "Sites web",
       "Réseaux sociaux",
@@ -47,8 +47,8 @@
   {
     "id": "publicite-campagnes",
     "name": "Publicité & campagnes",
-    "summary": "Des campagnes pensées de la conception à la diffusion, dans le but de susciter l'envie et l'action.",
-    "description": "Des campagnes pensées de la conception à la diffusion, dans le but de susciter l'envie et l'action.",
+    "summary": "Du concept au terrain, une campagne doit déclencher quelque chose.",
+    "description": "Nous imaginons les campagnes, leurs déclinaisons et leur diffusion pour transformer une idée en mouvement.",
     "scope": [
       "Conception",
       "Diffusion",

@@ -26,7 +26,7 @@
   <script src="assets/js/motion.js" defer></script>
   <script src="assets/js/services.js" defer></script>
 </head>
-<body>
+<body class="home-page">
   <!-- Header injecté par includes.js à partir de partials/header.html. -->
   <div data-include="partials/header.html"></div>
 
@@ -45,6 +45,9 @@
           <div class="home-hero__actions reveal" style="--reveal-delay:4">
             <a class="btn btn--primary" href="services.html">Découvrir nos services<span class="btn__arrow" aria-hidden="true">→</span></a>
             <a class="btn btn--secondary" href="portfolio.html">Voir nos réalisations</a>
+          </div>
+          <div class="home-hero__meta reveal" style="--reveal-delay:5" aria-label="Repères">
+            <span>Stratégie</span><span>Identité</span><span>Digital</span><span>Campagnes</span>
           </div>
         </div>
 
@@ -68,6 +71,13 @@
       </div>
     </section>
 
+    <div class="home-marquee" aria-hidden="true">
+      <div class="home-marquee__track">
+        <span>STRATÉGIE</span><span>IDENTITÉ</span><span>DIGITAL</span><span>CAMPAGNES</span>
+        <span>STRATÉGIE</span><span>IDENTITÉ</span><span>DIGITAL</span><span>CAMPAGNES</span>
+      </div>
+    </div>
+
     <!-- ================= SERVICES ================= -->
     <section class="home-section home-services" aria-labelledby="services-title">
       <div class="container">
@@ -85,6 +95,17 @@
         <p class="home-section__footer">
           <a class="arrow-link" href="services.html">Voir tous les services<span class="arrow-link__arrow" aria-hidden="true">→</span></a>
         </p>
+      </div>
+    </section>
+
+    <!-- ================= MANIFESTE ================= -->
+    <section class="home-manifesto" aria-labelledby="manifesto-title">
+      <div class="container home-manifesto__container">
+        <p class="eyebrow reveal">Notre point de vue</p>
+        <h2 id="manifesto-title" class="home-manifesto__title reveal">
+          On ne fabrique pas seulement de la visibilité.
+          <em>On construit ce que l'on retient.</em>
+        </h2>
       </div>
     </section>
 
@@ -131,7 +152,7 @@
         </ul>
 
         <p class="home-section__footer">
-          <a class="arrow-link" href="portfolio.html">Voir toutes nos réalisations<span class="arrow-link__arrow" aria-hidden="true">→</span></a>
+          <a class="arrow-link" href="portfolio.html">Voir toutes nos pistes<span class="arrow-link__arrow" aria-hidden="true">→</span></a>
         </p>
       </div>
     </section>

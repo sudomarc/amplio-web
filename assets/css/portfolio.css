@@ -115,9 +115,10 @@
   transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) ease;
 }
 
-.portfolio-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(16, 15, 12, 0.14);
+.portfolio-card:hover,
+.portfolio-card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(16, 15, 12, 0.16);
 }
 
 /* --------------------- Couverture visuelle (image) ------------------ */
@@ -165,6 +166,7 @@
 /* --------------------------- Corps de carte ------------------------ */
 
 .portfolio-card__body {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
@@ -275,6 +277,29 @@
 @media (prefers-reduced-motion: reduce) {
   .portfolio-card,
   .portfolio-card__image {
+    transition: none;
+  }
+}
+
+.portfolio-card__body::after {
+  content: "↗";
+  position: absolute;
+  top: var(--space-5);
+  right: var(--space-5);
+  font-size: var(--font-size-xl);
+  color: var(--color-accent);
+  opacity: 0;
+  transform: translate(-0.35rem, 0.35rem);
+  transition: opacity var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
+}
+
+.portfolio-card:hover .portfolio-card__body::after {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-card__body::after {
     transition: none;
   }
 }

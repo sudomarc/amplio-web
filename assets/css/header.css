@@ -161,3 +161,48 @@
     color: var(--color-accent);
   }
 }
+
+/* ----------------------- Homepage overlay -------------------------- */
+
+.home-page .site-header {
+  position: absolute;
+  inset: 0 0 auto;
+  background: transparent;
+  border-bottom-color: transparent;
+}
+
+.home-page .site-header__logo,
+.home-page .site-header__link {
+  color: var(--color-text);
+}
+
+.home-page .site-header__link::after {
+  background-color: var(--color-accent);
+}
+
+.home-page .site-header__logo:hover,
+.home-page .site-header__link:hover {
+  color: var(--color-accent);
+}
+
+@media (max-width: 40rem) {
+  .home-page .site-header.is-menu-open {
+    background-color: var(--color-primary);
+  }
+
+  .home-page .site-header__toggle {
+    background-color: transparent;
+  }
+
+  .home-page .site-header.is-menu-open .site-header__logo {
+    color: var(--color-bg);
+  }
+
+  .home-page .site-header.is-menu-open .site-header__logo:hover {
+    color: var(--color-accent);
+  }
+
+  .home-page .site-header.is-menu-open .site-header__toggle-bar {
+    background-color: var(--color-bg);
+  }
+}

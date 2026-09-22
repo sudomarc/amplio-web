@@ -182,6 +182,8 @@ Une branche par tâche, y compris en solo, afin que chaque changement passe par 
 | T29 | Mise en ligne v1.0 et tag `v1.0.0` | À faire | T28 |
 
 > T12 a été livrée et mergée via la PR #28. La page `a-propos.html` est désormais présente et reliée au header/footer.
+>
+> **Refonte créative v1.1 (22 septembre 2026) :** la direction artistique a été enrichie après la v1 fonctionnelle : nouvelle palette éditoriale, typographie display, hero 3D léger, motion système, interactions services/portfolio, images placeholders documentées, homepage enrichie par des transitions de rythme et CTA retravaillé. Le déploiement final reste volontairement différé.
 
 ---
 
