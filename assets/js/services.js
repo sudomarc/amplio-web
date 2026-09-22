@@ -129,11 +129,9 @@
       top.appendChild(number);
       top.appendChild(indicators);
 
-      var title = document.createElement('span');
+      var title = document.createElement('h2');
       title.className = 'service-card__title';
       title.id = 'service-card-title-' + service.id;
-      title.setAttribute('role', 'heading');
-      title.setAttribute('aria-level', '2');
       title.textContent = service.name;
 
       var description = document.createElement('span');

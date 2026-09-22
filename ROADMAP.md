@@ -119,7 +119,7 @@ Une branche par tâche, y compris en solo, afin que chaque changement passe par 
 
 **Protection de `main` (à configurer dans T01) :** Pull Request obligatoire, au moins 1 approbation, pas de push direct, pas de force-push.
 
-> **État actuel (22 septembre 2026) :** T01 reste `En review` jusqu'à la configuration effective de la protection de `main`, suivie dans l'issue #10. T08 à T19 sont livrés et `Terminé`. T14 est `Terminé` depuis le merge de la PR #35. Une maintenance globale et une passe d'assurance qualité ont ensuite été mergées via la PR #36 (skip-link, responsive du menu mobile, synchronisation des options de service du formulaire de contact, enrichissement ARIA des cartes de services et favicon SVG). T15 a été implémentée puis mergée via la PR #40 ; la review Codex n'a pas pu être exécutée car le quota de reviews était atteint, donc cette absence de review automatique ne doit pas être présentée comme une approbation. **T16 a été implémentée puis mergée via la PR #44** (création de `data/projects.json`, rendu dynamique via `assets/js/portfolio.js`, branchement de `portfolio.html`). La review Codex n'a pas pu être exécutée car le quota de reviews était atteint, et aucune approbation Codex n'est enregistrée ; la review automatique CodeRabbit était encore indiquée « en cours » au moment du merge. **T17 a été implémentée puis mergée via la PR #48** (filtres de portfolio dynamiques dérivés de `data/projects.json`, état actif accessible et état sans résultat). La review Codex n'a pas pu être exécutée car le quota de reviews était atteint, et aucune approbation Codex n'est enregistrée ; CodeRabbit était encore indiqué « en cours » au moment du merge. **T18 a été implémentée puis mergée via la PR #52** (validation côté client du formulaire : champs requis, format e-mail, messages d'erreur accessibles). **T19 a été décidée et documentée** (choix Netlify + Netlify Forms, voir `docs/hosting-form-decision.md`). **T20 a été implémentée** (envoi réel formulaire via Netlify Forms AJAX, messages succès/erreur accessibles, prévention double soumission). Le modèle `.github/pull_request_template.md` est maintenu comme configuration du dépôt. Le bootstrap OpenCode `AGENTS.md` est versionné et renforcé : il impose le chargement du clone local Vibe, la vérification de sa fraîcheur et la preuve de bootstrap avant toute action applicative. Le routage Vibe prévoit aussi le chargement ciblé de la guidance `token-economics` lorsque la tâche présente un coût de contexte/outillage significatif. **T21 (SEO) :** titles/descriptions/favicon déjà présents ; Open Graph (`og:type`, `og:locale`, `og:site_name`, `og:title`, `og:description`) et `robots.txt` (Allow: /) ajoutés. `canonical`, `og:url`, `og:image` et `sitemap.xml` non ajoutés faute d'URL publique de production vérifiée (aucune URL inventée).
+> **État actuel (22 septembre 2026) :** T01 reste `En review` jusqu'à la configuration effective de la protection de `main`, suivie dans l'issue #10. T08 à T19 sont livrés et `Terminé`. T14 est `Terminé` depuis le merge de la PR #35. Une maintenance globale et une passe d'assurance qualité ont ensuite été mergées via la PR #36 (skip-link, responsive du menu mobile, synchronisation des options de service du formulaire de contact, enrichissement ARIA des cartes de services et favicon SVG). T15 a été implémentée puis mergée via la PR #40 ; la review Codex n'a pas pu être exécutée car le quota de reviews était atteint, donc cette absence de review automatique ne doit pas être présentée comme une approbation. **T16 a été implémentée puis mergée via la PR #44** (création de `data/projects.json`, rendu dynamique via `assets/js/portfolio.js`, branchement de `portfolio.html`). La review Codex n'a pas pu être exécutée car le quota de reviews était atteint, et aucune approbation Codex n'est enregistrée ; la review automatique CodeRabbit était encore indiquée « en cours » au moment du merge. **T17 a été implémentée puis mergée via la PR #48** (filtres de portfolio dynamiques dérivés de `data/projects.json`, état actif accessible et état sans résultat). La review Codex n'a pas pu être exécutée car le quota de reviews était atteint, et aucune approbation Codex n'est enregistrée ; CodeRabbit était encore indiqué « en cours » au moment du merge. **T18 a été implémentée puis mergée via la PR #52** (validation côté client du formulaire : champs requis, format e-mail, messages d'erreur accessibles). **T19 a été décidée et documentée** (choix Netlify + Netlify Forms, voir `docs/hosting-form-decision.md`). **T20 a été implémentée** (envoi réel formulaire via Netlify Forms AJAX, messages succès/erreur accessibles, prévention double soumission). Le modèle `.github/pull_request_template.md` est maintenu comme configuration du dépôt. Le bootstrap OpenCode `AGENTS.md` est versionné et renforcé : il impose le chargement du clone local Vibe, la vérification de sa fraîcheur et la preuve de bootstrap avant toute action applicative. Le routage Vibe prévoit aussi le chargement ciblé de la guidance `token-economics` lorsque la tâche présente un coût de contexte/outillage significatif. **T21 (SEO) :** titles/descriptions/favicon déjà présents ; Open Graph (`og:type`, `og:locale`, `og:site_name`, `og:title`, `og:description`) et `robots.txt` (Allow: /) ajoutés. `canonical`, `og:url`, `og:image` et `sitemap.xml` non ajoutés faute d'URL publique de production vérifiée (aucune URL inventée). **T22 :** correctifs `novalidate`/`method`/`form-name` sur le formulaire (validation JS réellement déclenchée) et `h2` natifs sur les cartes services ; smoke a11y Edge documenté dans `docs/v1-verification.md` (contraste automatisé / SR complets : NOT RUN). **T23–T26 :** responsive sans overflow (Edge, viewports 320–1920) ; perf = assets légers, pas d'images à optimiser, Lighthouse NOT RUN ; cross-browser = Edge seulement (Chrome/Firefox/Safari UNAVAILABLE). **T27 :** `netlify.toml` (publish `.` + headers de base) = CONFIGURATION PRÉPARÉE ; URL prod / Forms ACTIVE = UNVERIFIED. **T28 :** checklist mise à jour avec preuves ; voir `docs/v1-verification.md`. **T29 :** tag `v1.0.0` non créé (recette incomplète + déploiement non vérifié).
 
 ---
 
@@ -162,23 +162,23 @@ Une branche par tâche, y compris en solo, afin que chaque changement passe par 
 | T19 | Choix de la plateforme d'hébergement et du service d'envoi du formulaire (voir section 8) | Terminé | T11 |
 | T20 | Envoi du formulaire et message de confirmation / d'erreur | Terminé | T18, T19 |
 | T21 | SEO de base : `title`, `meta description`, Open Graph, favicon, `robots.txt`, `sitemap.xml` | En review | T08, T09, T10, T11 |
-| T22 | Accessibilité : contrastes, focus visible, attributs ARIA, navigation clavier, textes alternatifs | À faire | T14, T15, T17, T20 |
+| T22 | Accessibilité : contrastes, focus visible, attributs ARIA, navigation clavier, textes alternatifs | En review | T14, T15, T17, T20 |
 
 ### Phase 4 — Responsive et performance
 
 | # | Tâche | Statut | Dépendances |
 |---|---|---|---|
-| T23 | Responsive mobile (≤ 640 px) sur l'ensemble des pages et composants | À faire | T08–T11, T14, T17 |
-| T24 | Responsive tablette (641–1024 px) et grands écrans (≥ 1440 px) | À faire | T23 |
-| T25 | Optimisation des images (formats, dimensions, lazy-loading) et audit Lighthouse | À faire | T23 |
-| T26 | Tests navigateurs (Chrome, Firefox, Safari, Edge) et appareils | À faire | T24, T25 |
+| T23 | Responsive mobile (≤ 640 px) sur l'ensemble des pages et composants | En review | T08–T11, T14, T17 |
+| T24 | Responsive tablette (641–1024 px) et grands écrans (≥ 1440 px) | En review | T23 |
+| T25 | Optimisation des images (formats, dimensions, lazy-loading) et audit Lighthouse | En review | T23 |
+| T26 | Tests navigateurs (Chrome, Firefox, Safari, Edge) et appareils | En review | T24, T25 |
 
 ### Phase 5 — Déploiement
 
 | # | Tâche | Statut | Dépendances |
 |---|---|---|---|
-| T27 | Configuration du déploiement : source, HTTPS, domaine personnalisé éventuel | À faire | T19, T26 |
-| T28 | Recette finale (checklist de la section 8) | À faire | T21, T22, T27 |
+| T27 | Configuration du déploiement : source, HTTPS, domaine personnalisé éventuel | En review | T19, T26 |
+| T28 | Recette finale (checklist de la section 8) | En review | T21, T22, T27 |
 | T29 | Mise en ligne v1.0 et tag `v1.0.0` | À faire | T28 |
 
 > T12 a été livrée et mergée via la PR #28. La page `a-propos.html` est désormais présente et reliée au header/footer.
@@ -324,15 +324,17 @@ Ce qui change et pourquoi.
 
 ### Checklist de recette (T28)
 
-- [ ] Toutes les pages s'affichent sans erreur console.
-- [ ] Navigation : liens du header et du footer, logo vers l'accueil, état actif, burger mobile.
-- [ ] Sélecteur de services : choix, redirection, pré-remplissage correct pour chaque service.
-- [ ] Contact : accès direct sans paramètre, paramètre invalide, validation, envoi réel et réception du message.
-- [ ] Portfolio : rendu des études de cas et filtres.
-- [ ] Responsive vérifié sur mobile, tablette, desktop.
-- [ ] Score Lighthouse acceptable (performance, accessibilité, SEO, bonnes pratiques).
-- [ ] Balises SEO, favicon, `sitemap.xml` et `robots.txt` en place.
-- [ ] Aucun secret ni donnée personnelle dans le repo.
+Preuves détaillées : `docs/v1-verification.md`. Statuts ci-dessous = état au 2026-09-22.
+
+- [x] Toutes les pages s'affichent sans erreur console. *(VERIFIED Edge local)*
+- [x] Navigation : liens du header et du footer, logo vers l'accueil, état actif, burger mobile. *(VERIFIED Edge ; Escape menu VERIFIED)*
+- [x] Sélecteur de services : choix, redirection, pré-remplissage correct pour chaque service. *(VERIFIED Edge : sélection, Continuer → contact.html?service=, prefill)*
+- [ ] Contact : accès direct sans paramètre, paramètre invalide, validation, envoi réel et réception du message. *(validation + prefill VERIFIED ; envoi Forms prod UNVERIFIED)*
+- [x] Portfolio : rendu des études de cas et filtres. *(VERIFIED Edge)*
+- [x] Responsive vérifié sur mobile, tablette, desktop. *(VERIFIED Edge viewports listés dans docs/v1-verification.md ; autres navigateurs UNAVAILABLE)*
+- [ ] Score Lighthouse acceptable (performance, accessibilité, SEO, bonnes pratiques). *(NOT RUN)*
+- [ ] Balises SEO, favicon, `sitemap.xml` et `robots.txt` en place. *(title/description/OG/favicon/robots VERIFIED ; sitemap/canonical BLOCKED sans URL publique)*
+- [x] Aucun secret ni donnée personnelle dans le repo. *(OBSERVED)*
 
 ### Mise en ligne (T29)
 

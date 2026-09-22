@@ -74,4 +74,5 @@ test-results/
 !/.github/pull_request_template.md
 /docs/*
 !/docs/
+!/docs/*.md
 /documents/
