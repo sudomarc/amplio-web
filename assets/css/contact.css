@@ -123,6 +123,21 @@
   color: var(--color-text-muted);
 }
 
+/* --------------------------- États de validation --------------------- */
+
+.contact-form__error {
+  margin-block: 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-error);
+  min-height: 0;
+}
+
+.contact-form__field--invalid input,
+.contact-form__field--invalid select,
+.contact-form__field--invalid textarea {
+  border-color: var(--color-error);
+}
+
 /* ----------------------------- Note finale ------------------------- */
 
 .contact-note {
