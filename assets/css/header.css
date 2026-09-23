@@ -202,6 +202,14 @@
     color: var(--color-accent);
   }
 
+  .home-page .site-header.is-menu-open .site-header__link {
+    color: var(--color-bg);
+  }
+
+  .home-page .site-header.is-menu-open .site-header__link.is-active {
+    color: var(--color-accent);
+  }
+
   .home-page .site-header.is-menu-open .site-header__toggle-bar {
     background-color: var(--color-bg);
   }

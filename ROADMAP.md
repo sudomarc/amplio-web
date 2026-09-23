@@ -184,7 +184,7 @@ Une branche par tâche, y compris en solo, afin que chaque changement passe par 
 
 > T12 a été livrée et mergée via la PR #28. La page `a-propos.html` est désormais présente et reliée au header/footer.
 >
-> **Refonte créative v1.1 (22 septembre 2026) :** la direction artistique a été enrichie après la v1 fonctionnelle : nouvelle palette éditoriale, typographie display, hero 3D léger, motion système, interactions services/portfolio, images placeholders documentées, homepage enrichie par des transitions de rythme et CTA retravaillé. Le déploiement final reste volontairement différé.
+> **Refonte créative v1.1 & Maintenance globale (22 septembre 2026) :** la direction artistique a été enrichie après la v1 fonctionnelle. Une audit complet et une passe de maintenance globale (`chore/full-maintenance-audit`) ont vérifié l'ensemble des 7 pages HTML sur 7 viewports (320px–1920px) via Playwright Chromium (0 overflow, 0 erreur console), renforcé l'accessibilité du menu mobile (piégeage du focus + Escape) et des cartes services (focus visible progressif), supprimé le 'for' redondant du checkbox de consentement, et complété les balises Twitter Card pour le partage social. Le déploiement final reste volontairement différé.
 
 ---
 

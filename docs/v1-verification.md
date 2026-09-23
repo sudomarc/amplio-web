@@ -1,6 +1,15 @@
-# Preuves de vérification v1 (T21–T28)
+# Preuves de vérification v1 (T21–T28 & Audit Complet)
 
-Date locale : 2026-09-22. Runtime navigateur : Playwright Chromium, serveur `python -m http.server 8080`.
+Date locale : 2026-09-22. Runtime navigateur : Playwright Chromium, serveur `python3 -m http.server 8765`.
+
+## Audit complet & Maintenance globale (chore/full-maintenance-audit)
+
+- **Audit Playwright** : 7 routes (`/`, `/services.html`, `/portfolio.html`, `/contact.html`, `/a-propos.html`, `/legal.html`, `/privacy.html`) testées sur 7 viewports (320px, 375px, 640px, 768px, 1024px, 1280px, 1920px).
+- **Débordement horizontal (overflow)** : 0 problème détecté.
+- **Erreurs console** : 0 erreur runtime ou réseau sur l'ensemble des pages.
+- **Navigation mobile & Accessibilité** : piégeage du focus clavier (Tab/Shift+Tab) dans le menu mobile ouvert, fermeture automatique sur Clic de lien ou touche Échap, focus restauré sur le bouton burger (`assets/js/nav.js`).
+- **Sélecteur de services** : indicateur de focus progressif (`is-focused`) en cas de navigation au clavier sur les cartes de service (`assets/js/services.js` + `assets/css/services.css`). Redirection `contact.html?service=...` et pré-remplissage validés.
+- **SEO & Réseaux sociaux** : balises Twitter Card (`twitter:card`, `twitter:title`, `twitter:description`) ajoutées et harmonisées sur l'ensemble des 7 pages HTML avec les balises Open Graph déjà existantes.
 
 ## Navigateurs
 

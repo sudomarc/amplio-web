@@ -148,7 +148,8 @@
     linear-gradient(90deg, rgba(255, 77, 31, 0.06), transparent 70%);
 }
 
-.service-card:has(.service-card__radio:focus-visible) {
+.service-card:has(.service-card__radio:focus-visible),
+.service-card.is-focused {
   outline: 3px solid var(--color-focus);
   outline-offset: 2px;
 }

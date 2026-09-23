@@ -18,10 +18,41 @@
         setMenuOpen(!header.classList.contains('is-menu-open'));
       });
 
+      nav.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          if (header.classList.contains('is-menu-open')) {
+            setMenuOpen(false);
+          }
+        });
+      });
+
       document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && header.classList.contains('is-menu-open')) {
+        if (!header.classList.contains('is-menu-open')) {
+          return;
+        }
+
+        if (event.key === 'Escape') {
           setMenuOpen(false);
           toggle.focus();
+          return;
+        }
+
+        if (event.key === 'Tab') {
+          const focusables = Array.from(
+            header.querySelectorAll('a[href], button:not([disabled])')
+          );
+          if (focusables.length === 0) return;
+
+          const first = focusables[0];
+          const last = focusables[focusables.length - 1];
+
+          if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+          } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+          }
         }
       });
 

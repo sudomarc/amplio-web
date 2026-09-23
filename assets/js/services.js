@@ -204,7 +204,11 @@
         setActiveVisual(SERVICES_VISUAL, service.id);
       });
       label.addEventListener('focusin', function () {
+        label.classList.add('is-focused');
         setActiveVisual(SERVICES_VISUAL, service.id);
+      });
+      label.addEventListener('focusout', function () {
+        label.classList.remove('is-focused');
       });
     });
 
