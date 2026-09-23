@@ -35,12 +35,19 @@
     const menu = document.querySelector('.site-header__menu');
 
     if (menu) {
-      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+      const rawPage = window.location.pathname.split('/').pop() || 'index.html';
+      const currentPage = rawPage.split('?')[0].split('#')[0] || 'index.html';
 
       menu.querySelectorAll('a').forEach((link) => {
-        if (link.getAttribute('href') === currentPage) {
+        const href = link.getAttribute('href');
+        if (!href) return;
+        const cleanHref = href.split('?')[0].split('#')[0];
+        if (cleanHref === currentPage) {
           link.classList.add('is-active');
           link.setAttribute('aria-current', 'page');
+        } else {
+          link.classList.remove('is-active');
+          link.removeAttribute('aria-current');
         }
       });
     }
