@@ -191,12 +191,27 @@
 
   function submitForm(form) {
     var formData = new FormData(form);
-    var urlSearchParams = new URLSearchParams(formData);
-    var body = urlSearchParams.toString();
+    var payload = {};
+    var body;
 
-    return fetch('/', {
+    // Web3Forms exige une clé d'accès valide (voir contact.html) ;
+    // la valeur placeholder doit être remplacée avant la mise en ligne.
+    var accessKey = formData.get('access_key');
+    if (!accessKey || accessKey === 'VOTRE_ACCESS_KEY_WEB3FORMS') {
+      return Promise.reject(new Error('Formulaire non configuré'));
+    }
+
+    formData.forEach(function (value, key) {
+      payload[key] = value;
+    });
+    body = JSON.stringify(payload);
+
+    return fetch('https://api.web3forms.com/submit', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
       body: body
     });
   }

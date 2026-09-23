@@ -54,8 +54,11 @@
             <p class="contact-form__intro">Quelques informations suffisent pour cadrer le premier échange.</p>
           </header>
 
-          <form class="contact-form" name="contact" method="post" data-netlify="true" novalidate>
-            <input type="hidden" name="form-name" value="contact">
+          <form class="contact-form" name="contact" method="post" action="https://api.web3forms.com/submit" novalidate>
+            <input type="hidden" name="access_key" value="VOTRE_ACCESS_KEY_WEB3FORMS">
+            <input type="hidden" name="subject" value="Nouveau message depuis le site Amplio">
+            <input type="hidden" name="from_name" value="Amplio Web">
+            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" aria-hidden="true">
 
             <div class="contact-form__field contact-form__field--half">
               <label for="name">Nom <span aria-hidden="true">*</span></label>

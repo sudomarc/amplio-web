@@ -119,7 +119,7 @@ Une branche par tâche, y compris en solo, afin que chaque changement passe par 
 
 **Protection de `main` (à configurer dans T01) :** Pull Request obligatoire, au moins 1 approbation, pas de push direct, pas de force-push.
 
-> **État actuel (22 septembre 2026) :** T01 reste `En review` jusqu'à la configuration effective de la protection de `main`, suivie dans l'issue #10. T08 à T20 sont livrés et `Terminé`. T14 est `Terminé` depuis le merge de la PR #35. Une maintenance globale et une passe d'assurance qualité ont ensuite été mergées via la PR #36 (skip-link, responsive du menu mobile, synchronisation des options de service du formulaire de contact, enrichissement ARIA des cartes de services et favicon SVG). T15 a été implémentée puis mergée via la PR #40 ; la review Codex n'a pas pu être exécutée car le quota de reviews était atteint, donc cette absence de review automatique ne doit pas être présentée comme une approbation. **T16 a été implémentée puis mergée via la PR #44** (création de `data/projects.json`, rendu dynamique via `assets/js/portfolio.js`, branchement de `portfolio.html`). La review Codex n'a pas pu être exécutée car le quota de reviews était atteint, et aucune approbation Codex n'est enregistrée ; la review automatique CodeRabbit était encore indiquée « en cours » au moment du merge. **T17 a été implémentée puis mergée via la PR #48** (filtres de portfolio dynamiques dérivés de `data/projects.json`, état actif accessible et état sans résultat). La review Codex n'a pas pu être exécutée car le quota de reviews était atteint, et aucune approbation Codex n'est enregistrée ; CodeRabbit était encore indiquée « en cours » au moment du merge. **T18 a été implémentée puis mergée via la PR #52** (validation côté client du formulaire : champs requis, format e-mail, messages d'erreur accessibles). **T19 a été décidée et documentée** (choix Netlify + Netlify Forms, voir `docs/hosting-form-decision.md`). **T20 a été implémentée** (envoi réel formulaire via Netlify Forms AJAX, messages succès/erreur accessibles, prévention double soumission). **T22 est `Terminé`** (focus management après soumission, aria-busy sur bouton d'envoi, tabindex sur message de statut ; contraste automatisé et lecteur d'écran non exécutés ; Chrome/Firefox/Safari indisponibles). **T23–T24 sont `Terminé`** (responsive mobile ≤640px et tablette/desktop ≥641px vérifiés sur Edge aux viewports 320–1920, aucun overflow horizontal). **T25 est `Terminé`** (aucune image projet à optimiser — favicon SVG uniquement ; CSS/JS/JSON < 10 Ko ; scripts `defer` ; Lighthouse NOT RUN — Chrome indisponible). **T26 est `En review`** (Edge VERIFIÉ ; Chrome/Firefox/Safari UNAVAILABLE sur Windows). Le modèle `.github/pull_request_template.md` est maintenu comme configuration du dépôt. Le bootstrap OpenCode `AGENTS.md` est versionné et renforcé : il impose le chargement du clone local Vibe, la vérification de sa fraîcheur et la preuve de bootstrap avant toute action applicative. Le routage Vibe prévoit aussi le chargement ciblé de la guidance `token-economics` lorsque la tâche présente un coût de contexte/outillage significatif. **T21 (SEO) :** titles/descriptions/favicon déjà présents ; Open Graph (`og:type`, `og:locale`, `og:site_name`, `og:title`, `og:description`) et `robots.txt` (Allow: /) ajoutés. `canonical`, `og:url`, `og:image` et `sitemap.xml` non ajoutés faute d'URL publique de production vérifiée (aucune URL inventée). **T22 :** correctifs `novalidate`/`method`/`form-name` sur le formulaire (validation JS réellement déclenchée) et `h2` natifs sur les cartes services ; smoke a11y Edge documenté dans `docs/v1-verification.md` (contraste automatisé / SR complets : NOT RUN). **T23–T26 :** responsive sans overflow (Edge, viewports 320–1920) ; perf = assets légers, pas d'images à optimiser, Lighthouse NOT RUN ; cross-browser = Edge seulement (Chrome/Firefox/Safari UNAVAILABLE). **T27 :** `netlify.toml` (publish `.` + headers de base) = CONFIGURATION PRÉPARÉE ; URL prod / Forms ACTIVE = UNVERIFIED. **T28 :** checklist mise à jour avec preuves ; voir `docs/v1-verification.md`. **T29 :** tag `v1.0.0` non créé (recette incomplète + déploiement non vérifié).
+> **État actuel (22 septembre 2026) :** T01 reste `En review` jusqu'à la configuration effective de la protection de `main`, suivie dans l'issue #10. T08 à T20 sont livrés et `Terminé`. T14 est `Terminé` depuis le merge de la PR #35. Une maintenance globale et une passe d'assurance qualité ont ensuite été mergées via la PR #36 (skip-link, responsive du menu mobile, synchronisation des options de service du formulaire de contact, enrichissement ARIA des cartes de services et favicon SVG). T15 a été implémentée puis mergée via la PR #40 ; la review Codex n'a pas pu être exécutée car le quota de reviews était atteint, donc cette absence de review automatique ne doit pas être présentée comme une approbation. **T16 a été implémentée puis mergée via la PR #44** (création de `data/projects.json`, rendu dynamique via `assets/js/portfolio.js`, branchement de `portfolio.html`). La review Codex n'a pas pu être exécutée car le quota de reviews était atteint, et aucune approbation Codex n'est enregistrée ; la review automatique CodeRabbit était encore indiquée « en cours » au moment du merge. **T17 a été implémentée puis mergée via la PR #48** (filtres de portfolio dynamiques dérivés de `data/projects.json`, état actif accessible et état sans résultat). La review Codex n'a pas pu être exécutée car le quota de reviews était atteint, et aucune approbation Codex n'est enregistrée ; CodeRabbit était encore indiquée « en cours » au moment du merge. **T18 a été implémentée puis mergée via la PR #52** (validation côté client du formulaire : champs requis, format e-mail, messages d'erreur accessibles). **T19 a été décidée et documentée** (choix initial Netlify + Netlify Forms, **remplacé** en T30 — voir `docs/hosting-form-decision.md`). **T20 a été implémentée** (envoi formulaire AJAX, messages succès/erreur accessibles, prévention double soumission ; migré en T30 vers Web3Forms). **T22 est `Terminé`** (focus management après soumission, aria-busy sur bouton d'envoi, tabindex sur message de statut ; contraste automatisé et lecteur d'écran non exécutés ; Chrome/Firefox/Safari indisponibles). **T23–T24 sont `Terminé`** (responsive mobile ≤640px et tablette/desktop ≥641px vérifiés sur Edge aux viewports 320–1920, aucun overflow horizontal). **T25 est `Terminé`** (aucune image projet à optimiser — favicon SVG uniquement ; CSS/JS/JSON < 10 Ko ; scripts `defer` ; Lighthouse NOT RUN — Chrome indisponible). **T26 est `En review`** (Edge VERIFIÉ ; Chrome/Firefox/Safari UNAVAILABLE sur Windows). Le modèle `.github/pull_request_template.md` est maintenu comme configuration du dépôt. Le bootstrap OpenCode `AGENTS.md` est versionné et renforcé : il impose le chargement du clone local Vibe, la vérification de sa fraîcheur et la preuve de bootstrap avant toute action applicative. Le routage Vibe prévoit aussi le chargement ciblé de la guidance `token-economics` lorsque la tâche présente un coût de contexte/outillage significatif. **T21 (SEO) :** titles/descriptions/favicon déjà présents ; Open Graph (`og:type`, `og:locale`, `og:site_name`, `og:title`, `og:description`) et `robots.txt` (Allow: /) ajoutés. `canonical`, `og:url`, `og:image` et `sitemap.xml` non ajoutés faute d'URL publique de production vérifiée (aucune URL inventée). **T22 :** correctifs `novalidate`/`method`/`form-name` sur le formulaire (validation JS réellement déclenchée) et `h2` natifs sur les cartes services ; smoke a11y Edge documenté dans `docs/v1-verification.md` (contraste automatisé / SR complets : NOT RUN). **T23–T26 :** responsive sans overflow (Edge, viewports 320–1920) ; perf = assets légers, pas d'images à optimiser, Lighthouse NOT RUN ; cross-browser = Edge seulement (Chrome/Firefox/Safari UNAVAILABLE). **T27 :** `netlify.toml` (publish `.` + headers de base) = CONFIGURATION PRÉPARÉE ; URL prod / Forms ACTIVE = UNVERIFIED. **T28 :** checklist mise à jour avec preuves ; voir `docs/v1-verification.md`. **T29 :** tag `v1.0.0` non créé (recette incomplète + déploiement non vérifié).
 
 ---
 
@@ -180,6 +180,7 @@ Une branche par tâche, y compris en solo, afin que chaque changement passe par 
 | T27 | Configuration du déploiement : source, HTTPS, domaine personnalisé éventuel | En review | T19, T26 |
 | T28 | Recette finale (checklist de la section 8) | En review | T21, T22, T27 |
 | T29 | Mise en ligne v1.0 et tag `v1.0.0` | À faire | T28 |
+| T30 | Migration déploiement : Netlify → Vercel + formulaire Netlify Forms → Web3Forms | En review | T20, T27 |
 
 > T12 a été livrée et mergée via la PR #28. La page `a-propos.html` est désormais présente et reliée au header/footer.
 >
@@ -300,44 +301,44 @@ Ce qui change et pourquoi.
 
 ## 8. Déploiement
 
-**Plateforme décidée en T19 : Netlify** (plan gratuit à crédits) — voir `docs/hosting-form-decision.md` pour l'analyse complète.
+**Plateforme révisée en T30 : Vercel + Web3Forms** (décision initiale T19 = Netlify + Netlify Forms, **remplacée**) — voir `docs/hosting-form-decision.md` pour l'analyse complète.
 
-| Critère | GitHub Pages | **Netlify (choisi)** | Vercel |
+| Critère | GitHub Pages | Netlify (ancien choix) | **Vercel (choisi)** |
 |---|---|---|---|
 | Hébergement statique | Oui | Oui | Oui |
 | Déploiement depuis GitHub | Oui (branche ou workflow) | Oui (automatique) | Oui (automatique) |
-| Aperçu par Pull Request | Non (workaround possible) | **Oui (Deploy Previews natifs)** | Oui (Preview Deployments) |
+| Aperçu par Pull Request | Non (workaround possible) | Oui (Deploy Previews natifs) | Oui (Preview Deployments) |
 | HTTPS et domaine personnalisé | Oui | Oui | Oui |
-| Gestion native des formulaires | Non | **Oui (Netlify Forms, gratuit/illimité)** | Non |
-| Envoi du formulaire | Service tiers requis (ex. Formspree 50/mois gratuit) | **Netlify Forms natif** | Service tiers requis |
-| Usage commercial plan gratuit | Oui | **Oui** | **Non (Hobby = personnel seulement)** |
-| Point d'attention | Pas de PR previews natifs ; formulaire = service tiers | Tarification à crédits (300/mois gratuit) ; lock-in Forms | Plan gratuit non-commercial ; formulaire = service tiers |
+| Gestion native des formulaires | Non | Netlify Forms (n'a plus lieu d'être : Vercel Forms n'existe plus) | Non (Web3Forms, service tiers gratuit) |
+| Envoi du formulaire | Service tiers requis (ex. Formspree 50/mois gratuit) | Netlify Forms natif | **Web3Forms (250/mois gratuit, clé publique)** |
+| Usage commercial plan gratuit | Oui | Oui | **Non (Hobby = personnel seulement)** |
+| Point d'attention | Pas de PR previews natifs ; formulaire = service tiers | Tarification à crédits ; lock-in Forms | **Hobby non-commercial à arbitrer** ; clé Web3Forms à remplacer |
 
-**Décision :** Netlify offre la meilleure combinaison pour ce projet : hébergement + formulaires + PR previews sur une seule plateforme, usage commercial autorisé, formulaires gratuits et illimités sur le plan à crédits (confirmé avril 2026).
+**Décision :** Vercel héberge le site statique tel quel (preset « Other », `installCommand: ""`), avec headers de sécurité reproduits dans `vercel.json`. Le formulaire utilise **Web3Forms** (250 soumissions/mois gratuites, honeypot `botcheck`, clé d'accès publique).
 
 ### Configuration cible
 
-- Déploiement automatique à chaque merge sur `main` via Netlify (connecté au repo GitHub).
-- HTTPS activé, redirection HTTP → HTTPS (automatique sur `*.netlify.app` et domaines perso).
+- Déploiement automatique à chaque merge sur `main` via Vercel (connecté au repo GitHub).
+- HTTPS activé, redirection HTTP → HTTPS (automatique sur `*.vercel.app` et domaines perso).
 - Domaine personnalisé configuré si disponible.
-- Page 404 personnalisée (optionnelle, via `public/404.html` ou `netlify.toml`).
-- Netlify Forms activé sur le formulaire de contact (`data-netlify="true"`).
-- Notifications email configurées dans le dashboard Netlify.
+- Page 404 personnalisée (optionnelle).
+- Formulaire de contact : champs cachés Web3Forms (`access_key`, `subject`, `from_name`, `botcheck`) dans `contact.html`, envoi JSON vers `https://api.web3forms.com/submit` depuis `contact.js`.
+- ❗ **Action manuelle propriétaire avant mise en ligne** : remplacer `VOTRE_ACCESS_KEY_WEB3FORMS` par une clé réelle (web3forms.com).
 
 ### Checklist de recette (T28)
 
-Preuves détaillées : `docs/v1-verification.md`. Statuts ci-dessous = état au 2026-09-22 (mis à jour Phase 4).
+Preuves détaillées : `docs/v1-verification.md`. Statuts ci-dessous = état au 2026-09-23 (mis à jour Phase 5 / T30).
 
 - [x] Toutes les pages s'affichent sans erreur console. *(VERIFIED Edge local)*
 - [x] Navigation : liens du header et du footer, logo vers l'accueil, état actif, burger mobile. *(VERIFIED Edge ; Escape menu VERIFIED)*
 - [x] Sélecteur de services : choix, redirection, pré-remplissage correct pour chaque service. *(VERIFIED Edge : sélection, Continuer → contact.html?service=, prefill)*
-- [ ] Contact : accès direct sans paramètre, paramètre invalide, validation, envoi réel et réception du message. *(validation + prefill VERIFIED ; envoi Forms prod UNVERIFIED)*
+- [ ] Contact : accès direct sans paramètre, paramètre invalide, validation, envoi réel et réception du message. *(validation + prefill VERIFIED ; envoi Web3Forms prod UNVERIFIED — clé placeholder)*
 - [x] Portfolio : rendu des études de cas et filtres. *(VERIFIED Edge)*
 - [x] Responsive mobile (≤ 640 px) vérifié. *(VERIFIED Edge : 320, 375, 390, 480, 640 — aucun overflow)*
 - [x] Responsive tablette/desktop (≥ 641 px) vérifié. *(VERIFIED Edge : 768, 1024, 1280, 1440, 1920 — aucun overflow)*
 - [ ] Score Lighthouse acceptable (performance, accessibilité, SEO, bonnes pratiques). *(NOT RUN — Chrome/Lighthouse indisponible ; pas d'images à optimiser, assets légers)*
 - [ ] Balises SEO, favicon, `sitemap.xml` et `robots.txt` en place. *(title/description/OG/favicon/robots VERIFIED ; sitemap/canonical BLOCKED sans URL publique)*
-- [x] Aucun secret ni donnée personnelle dans le repo. *(OBSERVED)*
+- [x] Aucun secret ni donnée personnelle dans le repo. *(OBSERVED — la clé Web3Forms est volontairement publique)*
 
 ### Mise en ligne (T29)
 
