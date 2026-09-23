@@ -134,14 +134,16 @@ Ressources non utilisées : aucune détectée.
 
 Seule Edge a été exécutée. Chrome / Firefox / Safari = UNAVAILABLE.
 
-## T27 — Netlify
+## T27 / T30 — Vercel (migration depuis Netlify)
 
 | Élément | État |
 |---|---|
-| `netlify.toml` (publish `.`) | CONFIGURATION PRÉPARÉE |
+| `vercel.json` (headers sécurité, preset « Other », `installCommand: ""`) | CONFIGURATION PRÉPARÉE |
+| `netlify.toml` supprimé ; `data-netlify` / `form-name` retirés | VERIFIED (diff) |
+| Formulaire Web3Forms : `access_key` placeholder, `subject`, `botcheck`, envoi JSON | CONFIGURATION PRÉPARÉE |
 | URL publique production | UNKNOWN (non inventée) |
-| Forms ACTIVE en prod | UNVERIFIED |
-| Soumission réelle | NON EFFECTUÉE (évite données / pollution Forms) |
+| Déploiement / preview Vercel réel | UNVERIFIED |
+| Soumission réelle Web3Forms | NON EFFECTUÉE (clé placeholder non remplacée, évite pollution) |
 
 ## T28 — Recette (extrait)
 

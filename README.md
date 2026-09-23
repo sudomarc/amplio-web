@@ -27,11 +27,18 @@ Puis ouvrir `http://127.0.0.1:8765/`.
 
 ## Déploiement
 
-Cible : **Netlify** + **Netlify Forms** (voir `docs/hosting-form-decision.md` et `netlify.toml`).
+Cible : **Vercel** (voir `docs/hosting-form-decision.md` et `vercel.json`).
 
-Le formulaire `contact` utilise `data-netlify="true"`, `method="post"` et un champ `form-name`. L'envoi AJAX poste en `application/x-www-form-urlencoded` vers `/`.
+Le site est statique (HTML/CSS/JS vanilla) : Vercel le sert tel quel via le preset de framework « Other », sans étape de build. `vercel.json` reproduit les précédents headers de sécurité et désactive l'installation npm (`installCommand: ""`) car aucun outil de build n'est requis en production.
 
-Une page avec `data-netlify="true"` n'implique pas à elle seule que Forms soit **ACTIVE** en production : vérifier le dashboard Netlify après liaison du dépôt.
+Le formulaire de contact est géré par **Web3Forms** (service tiers, sans backend) :
+
+- Champ caché `access_key` dans `contact.html` — la clé est volontairement publique (pas un secret), mais la valeur `VOTRE_ACCESS_KEY_WEB3FORMS` est un **placeholder à remplacer** (création de clé sur web3forms.com).
+- L'envoi AJAX (`assets/js/contact.js`) poste en JSON vers `https://api.web3forms.com/submit`.
+- Le champ caché `botcheck` sert de honeypot anti-spam ; le filtrage côté serveur reste actif.
+- Tant que la clé placeholder n'est pas remplacée, l'envoi est désactivé côté client (message d'erreur), pour éviter toute soumission vers une clé invalide.
+
+Un lien GitHub → Vercel doit être configuré dans le dashboard Vercel pour activer les déploiements automatiques et les previews de PR. Vérifier le déploiement réel dans le dashboard après liaison.
 
 ## Maintenance
 

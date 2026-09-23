@@ -38,7 +38,6 @@ test-results/
 
 # Déploiement / hébergement — état local généré
 .vercel/
-.netlify/
 .wrangler/
 
 # LOCAL ONLY — outils IA, instructions et métadonnées d’agent
