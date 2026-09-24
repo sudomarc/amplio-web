@@ -1,11 +1,11 @@
 /* ------------------------------------------------------------------ */
-/*  Footer — Amplio Web                                                */
+/*  Footer — Nova Agency                                               */
 /*  Pied de page commun avec navigation légale. Variables de base.css.   */
 /* ------------------------------------------------------------------ */
 
 .site-footer {
   background-color: var(--color-primary);
-  padding-block: var(--space-8) var(--space-6);
+  padding-block: var(--space-12) var(--space-6);
 }
 
 .site-footer__content {
@@ -14,7 +14,7 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: var(--space-6) var(--space-8);
-  padding-block-end: var(--space-6);
+  padding-block-end: var(--space-8);
 }
 
 .site-footer__brand {
@@ -26,18 +26,63 @@
   font-family: var(--font-display);
   font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-black);
-  color: var(--color-bg);
+  color: var(--color-text-on-dark);
   text-decoration: none;
   letter-spacing: -0.01em;
 }
 
 .site-footer__logo:hover {
-  color: var(--color-accent);
+  color: var(--color-gold);
+}
+
+.site-footer__positioning {
+  margin-block: var(--space-3) 0;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-gold);
 }
 
 .site-footer__tagline {
   margin-block: var(--space-2) 0;
-  color: var(--color-surface);
+  color: var(--color-text-muted-on-dark);
+  font-size: var(--font-size-md);
+  font-style: italic;
+  font-family: var(--font-accent);
+}
+
+.site-footer__contact {
+  margin-block-start: var(--space-6);
+  padding-block-start: var(--space-4);
+  border-block-start: 1px solid var(--color-border-on-dark);
+}
+
+.site-footer__contact-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-block: var(--space-2) 0;
+  color: var(--color-text-muted-on-dark);
+  font-size: var(--font-size-sm);
+}
+
+.site-footer__contact-item a {
+  color: var(--color-text-muted-on-dark);
+  text-decoration: none;
+  transition: color var(--dur-fast) ease;
+}
+
+.site-footer__contact-item a:hover {
+  color: var(--color-gold);
+}
+
+.site-footer__contact-icon {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--color-gold);
 }
 
 .site-footer__nav {
@@ -56,19 +101,21 @@
 }
 
 .site-footer__link {
-  color: var(--color-surface);
+  color: var(--color-text-muted-on-dark);
   font-weight: var(--font-weight-medium);
   text-decoration: none;
+  transition: color var(--dur-fast) ease;
 }
 
 .site-footer__link:hover {
-  color: var(--color-accent);
+  color: var(--color-gold);
 }
 
 .site-footer__bottom {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
   gap: var(--space-3);
   padding-block-start: var(--space-4);
   border-block-start: 1px solid var(--color-primary-soft);
@@ -76,15 +123,32 @@
 
 .site-footer__bottom p {
   margin-block: 0;
-  color: var(--color-surface);
+  color: var(--color-text-muted-on-dark);
   font-size: var(--font-size-sm);
+}
+
+.site-footer__legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.site-footer__legal-link {
+  color: var(--color-text-muted-on-dark);
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+  transition: color var(--dur-fast) ease;
+}
+
+.site-footer__legal-link:hover {
+  color: var(--color-gold);
 }
 
 @media (max-width: 40rem) {
   .site-footer__content {
     flex-direction: column;
     align-items: stretch;
-    gap: var(--space-5);
+    gap: var(--space-6);
   }
 
   .site-footer__brand {
@@ -93,5 +157,16 @@
 
   .site-footer__nav {
     margin-block-start: var(--space-4);
+  }
+
+  .site-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  .site-footer__legal-links {
+    flex-direction: column;
+    gap: var(--space-1);
   }
 }

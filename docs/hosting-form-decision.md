@@ -34,7 +34,7 @@ Sources vérifiées :
 - Web3Forms : docs.web3forms.com (250 soumissions/mois, clé publique, honeypot `botcheck`, AK via email)
 - Vercel Forms natif : **n'existe plus** (`/docs/forms` → 404) — d'où le service tiers.
 
-### Pourquoi ce choix pour Amplio
+### Pourquoi ce choix pour Nova Agency (anciennement Amplio)
 
 1. **Déploiement GitHub → Vercel natif** : chaque push/PR obtient un déploiement + une preview, équivalent au workflow Netlify.
 2. **Aucun build** : les pages HTML/CSS/JS sont servies telles quelles ; `installCommand: ""` évite d'installer `playwright` (outil de QA local uniquement) en production.
@@ -45,7 +45,7 @@ Sources vérifiées :
 
 ## TRADE-OFFS (Limitations)
 
-- **Vercel Hobby = usage non-commercial** : la tarification Vercel Hobby restreint à un usage personnel. Le site d'agence Amplio est un usage commercial potentiel : un passage en plan Pro (payant) peut être requis. À arbitrer par l'entreprise avant mise en ligne publique.
+- **Vercel Hobby = usage non-commercial** : la tarification Vercel Hobby restreint à un usage personnel. Le site d'agence Nova Agency est un usage commercial potentiel : un passage en plan Pro (payant) peut être requis. À arbitrer par l'entreprise avant mise en ligne publique.
 - **Limite de soumissions Web3Forms** : 250/mois sur le plan gratuit. Au-delà, plan payant.
 - **Vendor lock-in partiel** : n'existe plus pour le formulaire (Web3Forms est indépendant de l'hébergeur) ; seul Vercel reste spécifique pour le déploiement.
 - **Clé Web3Forms publique** : sans risque (clé de receveur, non de signataire), mais le placeholder doit être remplacé avant mise en ligne.
@@ -92,6 +92,6 @@ Sources vérifiées :
 
 - **VERIFIED** : Web3Forms endpoint `https://api.web3forms.com/submit`, JSON, honeypot `botcheck`, clé publique (doc officielle).
 - **VERIFIED** : Vercel `vercel.json` supporte `installCommand` (chaine vide = skip) et `headers` (source `/(.*)`).
-- **CONFLIT / ATTENTION** : usage commercial sur Vercel Hobby non autorisé (tarification) vs site d'agence Amplio à vocation commerciale → arbitrage pro requis.
+- **CONFLIT / ATTENTION** : usage commercial sur Vercel Hobby non autorisé (tarification) vs site d'agence Nova Agency à vocation commerciale → arbitrage pro requis.
 - **UNKNOWN** : comportement exact Vercel si les soumissions/bande passante gratuites sont dépassées.
 - **UNVERIFIED** : le déploiement Vercel effectif (dashboard, URL publique) n'a pas été réalisé lors de cette tâche (pas d'accès credentials).

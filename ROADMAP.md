@@ -1,6 +1,8 @@
-# ROADMAP — Amplio Web
+# ROADMAP — Nova Web
 
-Feuille de route du site vitrine de l'agence Amplio. Ce document est la référence pour le découpage du travail, les conventions du repo et le processus de livraison. Il est mis à jour à chaque fin de tâche (colonne « Statut » de la section 4).
+Feuille de route du site vitrine de **Nova Agency** (anciennement « Amplio » — voir note d'historique ci-dessous). Ce document est la référence pour le découpage du travail, les conventions du repo et le processus de livraison. Il est mis à jour à chaque fin de tâche (colonne « Statut » de la section 4).
+
+> **Note d'historique (24 septembre 2026) :** le dépôt `amplio-web` est devenu le site officiel de **Nova / Nova Agency** (Communication · Publicité · Talents). L'identité active est Nova partout dans l'interface et la documentation produit. Les mentions d'« Amplio » dans les sections historiques (T01–T30, décisions archivées) retracent l'état précédent du projet et sont conservées comme telles.
 
 ---
 
@@ -46,7 +48,7 @@ HTML5, CSS3, JavaScript vanilla (ES6+). Aucune dépendance de build. Un simple s
 ## 2. Structure des dossiers du repo
 
 ```
-amplio-web/
+nova-web/
 ├── index.html                 # Accueil
 ├── services.html              # Services + sélecteur
 ├── portfolio.html             # Études de cas

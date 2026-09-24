@@ -46,7 +46,7 @@
   var knot = new THREE.Mesh(
     new THREE.TorusKnotGeometry(1.5, 0.42, 128, 18),
     new THREE.MeshStandardMaterial({
-      color: 0xff4d1f,
+      color: 0xc9a84c,
       metalness: 0.35,
       roughness: 0.32,
       flatShading: false
@@ -57,7 +57,7 @@
   var halo = new THREE.Mesh(
     new THREE.IcosahedronGeometry(3, 1),
     new THREE.MeshBasicMaterial({
-      color: 0x100f0c,
+      color: 0x0a0a0a,
       wireframe: true,
       transparent: true,
       opacity: 0.18
@@ -66,7 +66,7 @@
   group.add(halo);
 
   var orbitMaterial = new THREE.MeshBasicMaterial({
-    color: 0xff4d1f,
+    color: 0xc9a84c,
     transparent: true,
     opacity: 0.34,
     wireframe: true
@@ -87,7 +87,7 @@
   key.position.set(4, 5, 6);
   scene.add(key);
 
-  var rim = new THREE.PointLight(0x100f0c, 0.6);
+  var rim = new THREE.PointLight(0x0a0a0a, 0.6);
   rim.position.set(-5, -3, -4);
   scene.add(rim);
 

@@ -5,7 +5,7 @@
 
   var HOME_LIST = document.querySelector('.home-services__list');
   var HOME_VISUAL = document.querySelector('.home-services__visual');
-  var SERVICES_LIST = document.querySelector('.services-cards__list');
+  var SERVICES_GRID = document.querySelector('.services-grid');
   var SERVICES_VISUAL = document.querySelector('.services-cards__visual');
   var SELECTOR_FIELD = document.querySelector('#service-selector');
   var CONTINUE_BUTTON = document.querySelector('#service-continue');
@@ -120,31 +120,37 @@
     });
   }
 
-  /* ---------------------- Page Services : cartes ---------------------- */
+  /* ---------------------- Page Services : grille de cartes ---------------------- */
 
   function renderServicesPage(services) {
-    if (!SERVICES_LIST) {
+    if (!SERVICES_GRID) {
       return;
     }
 
     var fragment = document.createDocumentFragment();
 
     services.forEach(function (service, index) {
-      var item = document.createElement('li');
-      item.className = 'services-cards__item';
+      var card = document.createElement('article');
+      card.className = 'service-card';
+      card.dataset.serviceId = service.id;
 
-      var label = document.createElement('label');
-      label.className = 'service-card';
+      // Image de fond
+      if (service.image) {
+        var img = document.createElement('img');
+        img.className = 'service-card__image';
+        img.src = service.image;
+        img.alt = service.imageAlt || '';
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        if (service.imageWidth) img.width = service.imageWidth;
+        if (service.imageHeight) img.height = service.imageHeight;
+        card.appendChild(img);
+      }
 
-      var radio = document.createElement('input');
-      radio.className = 'service-card__radio sr-only';
-      radio.type = 'radio';
-      radio.name = 'service';
-      radio.value = service.id;
-      radio.setAttribute('aria-labelledby', 'service-card-title-' + service.id);
-      radio.setAttribute('aria-describedby', 'service-card-desc-' + service.id + ' service-card-scope-' + service.id);
+      var content = document.createElement('div');
+      content.className = 'service-card__content';
 
-      var top = document.createElement('span');
+      var top = document.createElement('div');
       top.className = 'service-card__top';
 
       var number = document.createElement('span');
@@ -173,49 +179,81 @@
       title.id = 'service-card-title-' + service.id;
       title.textContent = service.name;
 
-      var description = document.createElement('span');
+      var description = document.createElement('p');
       description.className = 'service-card__description';
       description.id = 'service-card-desc-' + service.id;
-      description.textContent = service.description;
+      description.textContent = service.summary || service.description;
 
-      var scope = document.createElement('span');
+      var scope = document.createElement('ul');
       scope.className = 'service-card__scope';
       scope.id = 'service-card-scope-' + service.id;
       scope.setAttribute('role', 'list');
 
       service.scope.forEach(function (itemName) {
-        var scopeItem = document.createElement('span');
+        var scopeItem = document.createElement('li');
         scopeItem.className = 'service-card__scope-item';
         scopeItem.setAttribute('role', 'listitem');
         scopeItem.textContent = itemName;
         scope.appendChild(scopeItem);
       });
 
-      label.appendChild(radio);
-      label.appendChild(top);
-      label.appendChild(title);
-      label.appendChild(description);
-      label.appendChild(scope);
+      // Radio button pour la sélection (visuellement masqué mais accessible)
+      var radio = document.createElement('input');
+      radio.className = 'service-card__radio sr-only';
+      radio.type = 'radio';
+      radio.name = 'service';
+      radio.value = service.id;
+      radio.setAttribute('aria-labelledby', 'service-card-title-' + service.id);
+      radio.setAttribute('aria-describedby', 'service-card-desc-' + service.id + ' service-card-scope-' + service.id);
 
-      item.appendChild(label);
-      fragment.appendChild(item);
+      content.appendChild(top);
+      content.appendChild(title);
+      content.appendChild(description);
+      content.appendChild(scope);
+      card.appendChild(content);
+      card.appendChild(radio);
 
-      label.addEventListener('mouseenter', function () {
+      // Interaction : sélection au clic sur la carte
+      card.addEventListener('click', function (e) {
+        // Ne pas déclencher si on clique sur le radio directement (géré par change)
+        if (e.target !== radio) {
+          radio.checked = true;
+          radio.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+      });
+
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('role', 'radio');
+      card.setAttribute('aria-checked', 'false');
+      card.setAttribute('aria-labelledby', 'service-card-title-' + service.id);
+
+      card.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          radio.checked = true;
+          radio.dispatchEvent(new Event('change', { bubbles: true }));
+          card.focus();
+        }
+      });
+
+      card.addEventListener('mouseenter', function () {
         setActiveVisual(SERVICES_VISUAL, service.id);
       });
-      label.addEventListener('focusin', function () {
-        label.classList.add('is-focused');
+      card.addEventListener('focusin', function () {
+        card.classList.add('is-focused');
         setActiveVisual(SERVICES_VISUAL, service.id);
       });
-      label.addEventListener('focusout', function () {
-        label.classList.remove('is-focused');
+      card.addEventListener('focusout', function () {
+        card.classList.remove('is-focused');
       });
+
+      fragment.appendChild(card);
     });
 
-    SERVICES_LIST.appendChild(fragment);
+    SERVICES_GRID.appendChild(fragment);
 
-    if (SERVICES_LIST.addEventListener) {
-      SERVICES_LIST.addEventListener('mouseleave', function () {
+    if (SERVICES_GRID.addEventListener) {
+      SERVICES_GRID.addEventListener('mouseleave', function () {
         setActiveVisual(SERVICES_VISUAL, selectedServiceId || services[0].id);
       });
     }
@@ -331,7 +369,10 @@
 
     var cards = SELECTOR_FIELD.querySelectorAll('.service-card');
     cards.forEach(function (card) {
-      card.classList.toggle('is-selected', card.querySelector('.service-card__radio').value === selectedId);
+      var radio = card.querySelector('.service-card__radio');
+      var isSelected = Boolean(radio) && radio.value === selectedId;
+      card.classList.toggle('is-selected', isSelected);
+      card.setAttribute('aria-checked', isSelected ? 'true' : 'false');
     });
 
     if (CONTINUE_BUTTON) {
@@ -391,13 +432,13 @@
     if (HOME_LIST) {
       renderError(HOME_LIST, message);
     }
-    if (SERVICES_LIST) {
-      renderError(SERVICES_LIST, message);
+    if (SERVICES_GRID) {
+      renderError(SERVICES_GRID, message);
     }
   }
 
   function init() {
-    if (!HOME_LIST && !SERVICES_LIST) {
+    if (!HOME_LIST && !SERVICES_GRID) {
       return;
     }
 

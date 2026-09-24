@@ -1,30 +1,44 @@
 /* ------------------------------------------------------------------ */
-/*  Feuille de styles globale — Amplio Web                             */
+/*  Feuille de styles globale — Nova Agency                            */
 /*  Fondation commune réutilisée par toutes les feuilles spécifiques.  */
 /* ------------------------------------------------------------------ */
 
 :root {
-  /* Couleurs — direction éditoriale chaude : encre / papier / accent publicitaire */
-  --color-primary: #100f0c;
-  --color-primary-soft: #211f1a;
-  --color-accent: #ff4d1f;
-  --color-accent-dim: #c2380f;
-  --color-ink-soft: #2b2821;
-  --color-surface-strong: #e5dcc8;
-  --color-bg: #faf7f0;
-  --color-surface: #efe9db;
-  --color-text: #14120d;
-  --color-text-muted: #5c5648;
-  --color-border: #ddd5c1;
+  /* Couleurs — Nova Agency : noir profond / or / crème / blanc */
+  --color-primary: #0a0a0a;
+  --color-primary-soft: #1a1a1a;
+  --color-primary-elevated: #262626;
+  --color-gold: #c9a84c;
+  --color-gold-bright: #d4b85c;
+  --color-gold-dim: #a88d3a;
+  --color-cream: #fdfbf5;
+  --color-cream-soft: #f5f1e8;
+  --color-cream-muted: #ebe5da;
+  --color-white: #ffffff;
+  --color-text: #0a0a0a;
+  --color-text-muted: #6b6558;
+  --color-text-on-dark: #fdfbf5;
+  --color-text-muted-on-dark: #b8b0a0;
+  --color-border: #e8e1d4;
+  --color-border-on-dark: #3d3830;
   --color-link: var(--color-primary);
-  --color-link-hover: var(--color-accent);
-  --color-focus: #ff4d1f;
-  --color-error: #dc2626;
-  --color-error-bg: #fef2f2;
-  --color-error-border: #fecaca;
-  --color-success: #16a34a;
-  --color-success-bg: #f0fdf4;
-  --color-success-border: #bbf7d0;
+  --color-link-hover: var(--color-gold);
+  --color-focus: var(--color-gold);
+  --color-error: #c0392b;
+  --color-error-bg: #fdf2f2;
+  --color-error-border: #f5c6cb;
+  --color-success: #27ae60;
+  --color-success-bg: #eafaf1;
+  --color-success-border: #a3d9a5;
+
+  /* Aliases de compatibilité — ancien système Amplio → tokens Nova.
+     À supprimer une fois portfolio/contact/about/motion entièrement migrés. */
+  --color-accent: var(--color-gold);
+  --color-accent-dim: var(--color-gold-dim);
+  --color-bg: var(--color-cream);
+  --color-surface: var(--color-cream-soft);
+  --color-surface-strong: var(--color-cream-muted);
+  --color-ink-soft: var(--color-primary-soft);
 
   /* Espacements */
   --space-1: 0.25rem;
@@ -113,7 +127,7 @@ body {
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
   color: var(--color-text);
-  background-color: var(--color-bg);
+  background-color: var(--color-cream);
 }
 
 h1,
@@ -197,7 +211,7 @@ textarea {
   padding: var(--space-2) var(--space-3);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
-  background-color: var(--color-bg);
+  background-color: var(--color-white);
 }
 
 input::placeholder,
@@ -222,11 +236,11 @@ textarea {
   z-index: 1000;
   padding: var(--space-3) var(--space-4);
   background-color: var(--color-primary);
-  color: var(--color-bg);
+  color: var(--color-text-on-dark);
   font-weight: var(--font-weight-semibold);
   text-decoration: none;
   border-radius: var(--radius);
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transition: top 0.15s ease;
 }
 
@@ -241,7 +255,7 @@ textarea {
 
 ::selection {
   background-color: var(--color-primary);
-  color: var(--color-bg);
+  color: var(--color-text-on-dark);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -291,7 +305,7 @@ textarea {
   line-height: var(--line-height-base);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-gold);
 }
 
 .eyebrow::before {
@@ -299,7 +313,7 @@ textarea {
   display: inline-block;
   width: var(--space-6);
   height: 2px;
-  background-color: var(--color-accent);
+  background-color: var(--color-gold);
 }
 
 /* Lien d'action avec flèche. */
@@ -328,19 +342,19 @@ textarea {
 /* Variante du lien flèche sur fond foncé. */
 .arrow-link--accent {
   padding-block: var(--space-1);
-  border-bottom: 2px solid var(--color-accent);
-  color: var(--color-bg);
+  border-bottom: 2px solid var(--color-gold);
+  color: var(--color-text-on-dark);
 }
 
 .arrow-link--accent:hover {
-  color: var(--color-accent);
+  color: var(--color-gold);
 }
 
 /* État d'erreur d'un bloc rendu dynamiquement. */
 .services-error {
   margin-block: var(--space-4) 0;
   padding: var(--space-4) var(--space-5);
-  background-color: var(--color-surface);
+  background-color: var(--color-cream-soft);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   color: var(--color-text-muted);
@@ -386,13 +400,20 @@ textarea {
   margin-block: 0;
   font-size: var(--font-size-5xl);
   letter-spacing: -0.02em;
-  color: var(--color-bg);
+  color: var(--color-text-on-dark);
+}
+
+.cta-band__title em {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--color-gold);
 }
 
 .cta-band__text {
   max-width: 42ch;
   margin-block: var(--space-4) 0;
-  color: var(--color-surface);
+  color: var(--color-text-muted-on-dark);
   font-size: var(--font-size-md);
 }
 
@@ -427,8 +448,8 @@ textarea {
   background-color: var(--color-primary);
   border: 1px solid var(--color-primary-soft);
   border-radius: var(--radius-xl);
-  color: var(--color-surface);
-  box-shadow: 0 1.25rem 3rem rgba(16, 15, 12, 0.22);
+  color: var(--color-text-muted-on-dark);
+  box-shadow: 0 1.25rem 3rem rgba(0, 0, 0, 0.3);
   animation: legal-note-in var(--dur-slow) var(--ease-out);
 }
 
@@ -441,18 +462,18 @@ textarea {
   margin: 0;
   font-size: var(--font-size-sm);
   line-height: var(--line-height-snug);
-  color: var(--color-surface);
+  color: var(--color-text-muted-on-dark);
 }
 
 .legal-note__link {
-  color: var(--color-bg);
+  color: var(--color-text-on-dark);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 
 .legal-note__link:hover,
 .legal-note__link:focus-visible {
-  color: var(--color-accent);
+  color: var(--color-gold);
 }
 
 .legal-note__close {
@@ -462,7 +483,7 @@ textarea {
   padding: var(--space-2) var(--space-4);
   border: 0;
   border-radius: 999px;
-  background-color: var(--color-accent);
+  background-color: var(--color-gold);
   color: var(--color-primary);
   font-family: var(--font-display);
   font-size: var(--font-size-sm);
@@ -473,7 +494,7 @@ textarea {
 
 .legal-note__close:hover,
 .legal-note__close:focus-visible {
-  background-color: var(--color-bg);
+  background-color: var(--color-gold-bright);
   transform: translateY(-1px);
 }
 
@@ -496,4 +517,72 @@ textarea {
   .legal-note {
     animation: none;
   }
+}
+
+/* ----------------------- Boutons partagés -------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+}
+
+.btn--primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-on-dark);
+}
+
+.btn--primary:hover,
+.btn--primary:focus-visible {
+  color: var(--color-text-on-dark);
+  background-color: var(--color-primary-soft);
+}
+
+.btn--secondary {
+  background-color: transparent;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transition: background-color var(--dur-fast) ease, color var(--dur-fast) ease;
+}
+
+.btn--secondary:hover {
+  background-color: var(--color-primary);
+  color: var(--color-text-on-dark);
+}
+
+.btn--accent {
+  background-color: var(--color-gold);
+  color: var(--color-primary);
+}
+
+.btn--accent:hover,
+.btn--accent:focus-visible {
+  background-color: var(--color-gold-bright);
+  color: var(--color-primary);
+}
+
+.btn--outline {
+  background-color: transparent;
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+.btn--outline:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+/* Utilitaire pour texte or */
+.text-gold {
+  color: var(--color-gold);
+}
+
+.text-gold-bright {
+  color: var(--color-gold-bright);
 }

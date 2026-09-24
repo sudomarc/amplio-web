@@ -1,62 +1,99 @@
 [
   {
-    "id": "strategie-communication",
-    "name": "Stratégie & communication",
-    "summary": "Avant les visuels, on décide ce que la marque doit faire comprendre.",
-    "description": "Avant les visuels, on clarifie le positionnement, les messages et la direction de communication.",
+    "id": "creation-publicites",
+    "name": "Création de publicités",
+    "summary": "Conception de concepts, scénarios sur mesure, tournage, réalisation, montage, voix-off, photographie publicitaire, vidéos courtes, TikTok, Reels.",
+    "description": "De l'idée au film final : nous concevons vos concepts publicitaires, écrivons vos scénarios, réalisons le tournage, assurons le montage, la voix-off et la photographie. Formats courts pour TikTok, Reels et réseaux sociaux inclus.",
     "scope": [
-      "Positionnement",
-      "Plans de communication",
-      "Conseil de marque"
-    ],
-    "image": "https://live.staticflickr.com/4816/30849317747_4abe95673d_b.jpg",
-    "imageAlt": "Équipe en séance de travail autour de notes autocollantes sur un mur.",
-    "imageWidth": 1024,
-    "imageHeight": 912
-  },
-  {
-    "id": "identite-creation",
-    "name": "Identité & création",
-    "summary": "Une identité qu'on reconnaît avant même de lire le nom.",
-    "description": "Nous construisons les signes, systèmes et directions visuelles qui donnent à la marque une présence reconnaissable.",
-    "scope": [
-      "Logo & charte",
-      "Supports print",
-      "Direction artistique"
+      "Conception de concepts",
+      "Scénarios sur mesure",
+      "Tournage et réalisation",
+      "Montage vidéo",
+      "Voix-off",
+      "Photographie publicitaire",
+      "Vidéos courtes",
+      "TikTok",
+      "Reels"
     ],
     "image": "https://live.staticflickr.com/5266/5647939487_05bd0fc3e1_b.jpg",
-    "imageAlt": "Croquis de logotypes au crayon sur un carnet de recherche graphique.",
+    "imageAlt": "Équipe de tournage sur un plateau avec caméra et éclairages",
     "imageWidth": 1024,
     "imageHeight": 809
   },
   {
-    "id": "communication-digitale",
-    "name": "Communication digitale",
-    "summary": "Une présence pensée pour être vue, comprise et partagée.",
-    "description": "Nous traduisons l'identité en expériences, contenus et présences digitales cohérentes.",
+    "id": "communication-digitale-reseaux-sociaux",
+    "name": "Communication digitale & réseaux sociaux",
+    "summary": "Création de contenus, visuels attractifs, campagnes digitales, gestion des réseaux sociaux, community management, publicités sponsorisées.",
+    "description": "Nous gérons votre présence digitale de A à Z : création de contenus et visuels, campagnes digitales, community management quotidien, et publicités sponsorisées pour amplifier votre portée.",
     "scope": [
-      "Sites web",
-      "Réseaux sociaux",
-      "Contenus"
+      "Création de contenus",
+      "Visuels attractifs",
+      "Campagnes digitales",
+      "Gestion des réseaux sociaux",
+      "Community management",
+      "Publicités sponsorisées"
     ],
     "image": "https://live.staticflickr.com/4881/45789232771_92be9698ab_b.jpg",
-    "imageAlt": "Maquette d'un site web affichée sur l'écran d'un ordinateur portable.",
+    "imageAlt": "Écran d'ordinateur montrant des tableaux de bord de réseaux sociaux et analytics",
     "imageWidth": 1024,
     "imageHeight": 714
   },
   {
-    "id": "publicite-campagnes",
-    "name": "Publicité & campagnes",
-    "summary": "Du concept au terrain, une campagne doit déclencher quelque chose.",
-    "description": "Nous imaginons les campagnes, leurs déclinaisons et leur diffusion pour transformer une idée en mouvement.",
+    "id": "mise-disposition-talents",
+    "name": "Mise à disposition de talents",
+    "summary": "Présentateurs, acteurs, voix-off, créateurs de contenu, mannequins, influenceurs, modèles photo.",
+    "description": "Notre réseau de talents formés est à votre disposition : présentateurs pour vos événements, acteurs pour vos films, voix-off pour vos publicités, créateurs de contenu pour vos réseaux, mannequins, influenceurs et modèles photo pour vos campagnes.",
     "scope": [
-      "Conception",
-      "Diffusion",
-      "Événementiel"
+      "Présentateurs",
+      "Acteurs",
+      "Voix-off",
+      "Créateurs de contenu",
+      "Mannequins",
+      "Influenceurs",
+      "Modèles photo"
     ],
     "image": "https://live.staticflickr.com/348/19056142805_d20e2b17af_b.jpg",
-    "imageAlt": "Panneaux publicitaires lumineux d'une place urbaine la nuit.",
+    "imageAlt": "Diversité de profils artistiques : acteurs, mannequins, créateurs",
     "imageWidth": 1024,
     "imageHeight": 675
+  },
+  {
+    "id": "production-audiovisuelle",
+    "name": "Production audiovisuelle",
+    "summary": "Vidéos institutionnelles, interviews, couverture événementielle, clips, contenus courts, photos professionnelles.",
+    "description": "Production complète : vidéos institutionnelles pour vos communications corporate, interviews de vos experts, couverture de vos événements, clips musicaux ou promotionnels, contenus courts pour le digital, photos professionnelles studio et reportage.",
+    "scope": [
+      "Vidéos institutionnelles",
+      "Interviews",
+      "Couverture événementielle",
+      "Clips",
+      "Contenus courts",
+      "Photos professionnelles"
+    ],
+    "image": "https://live.staticflickr.com/1796/42899835422_a6dac8bd84_b.jpg",
+    "imageAlt": "Équipe de production audiovisuelle sur un tournage événementiel",
+    "imageWidth": 1024,
+    "imageHeight": 683
+  },
+  {
+    "id": "formation-developpement-talents",
+    "name": "Formation & développement des talents",
+    "summary": "Formation pratique, coaching individuel, ateliers : présentation, jeu d'acteur, voix-off, création de contenu, suivi, accompagnement.",
+    "description": "Nous formons la nouvelle génération de talents : ateliers pratiques de présentation, coaching jeu d'acteur, technique voix-off, création de contenu digital, avec un suivi personnalisé et un accompagnement sur la durée.",
+    "scope": [
+      "Formation pratique",
+      "Coaching individuel",
+      "Ateliers",
+      "Présentation",
+      "Jeu d'acteur",
+      "Voix-off",
+      "Création de contenu",
+      "Suivi",
+      "Accompagnement"
+    ],
+    "image": "https://live.staticflickr.com/4816/30849317747_4abe95673d_b.jpg",
+    "imageAlt": "Atelier de formation avec jeunes talents en exercice pratique",
+    "imageWidth": 1024,
+    "imageHeight": 912
   }
 ]

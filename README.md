@@ -1,6 +1,8 @@
-# amplio-web
+# nova-web
 
-Site vitrine de l'agence Amplio (HTML5 / CSS3 / JavaScript vanilla, sans build).
+Site vitrine de **Nova Agency** — Communication · Publicité · Talents (HTML5 / CSS3 / JavaScript vanilla, sans build).
+
+> **Historique :** le dépôt s'appelait précédemment `amplio-web` et présentait l'agence « Amplio ». Le produit est désormais officiellement **Nova / Nova Agency** : l'interface, les contenus, les métadonnées et la documentation produit ont été migrés. Les références à « Amplio » qui subsistent dans l'historique (commits, décisions archivées) sont conservées comme trace, pas comme identité active.
 
 ## Prérequis de gouvernance
 
@@ -11,7 +13,7 @@ Ce dépôt impose le bootstrap [Vibe Coding Instructions](https://github.com/sud
 - Pages à la racine : `index.html`, `services.html`, `portfolio.html`, `contact.html`, `a-propos.html`
 - `partials/` — header / footer injectés par `assets/js/includes.js`
 - `assets/css|js|img/` — styles, scripts, favicon
-- `data/` — `services.json`, `projects.json`
+- `data/` — `services.json` (5 services Nova, source unique), `projects.json`
 - `docs/` — décisions et preuves de vérification
 - `ROADMAP.md` — source de vérité des tâches
 

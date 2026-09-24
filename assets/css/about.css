@@ -1,12 +1,12 @@
 /* ------------------------------------------------------------------ */
-/*  À propos — Amplio Web                                              */
+/*  À propos — Nova Agency                                             */
 /*  Styles spécifiques à la page À propos. Variables de base.css.      */
 /* ------------------------------------------------------------------ */
 
 /* ------------------------ En-tête de page -------------------------- */
 
 .about-hero {
-  background-color: var(--color-surface);
+  background-color: var(--color-cream-soft);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -39,7 +39,7 @@
 }
 
 .about-section--surface {
-  background-color: var(--color-surface);
+  background-color: var(--color-cream-soft);
   border-block: 1px solid var(--color-border);
 }
 
@@ -96,7 +96,7 @@
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
   letter-spacing: 0.08em;
-  color: var(--color-accent);
+  color: var(--color-gold);
 }
 
 .about-principles__title {
@@ -114,7 +114,7 @@
 .about-team {
   max-width: 62ch;
   padding: var(--space-6);
-  background-color: var(--color-surface);
+  background-color: var(--color-cream-soft);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
 }

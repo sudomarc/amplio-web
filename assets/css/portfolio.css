@@ -1,12 +1,12 @@
 /* ------------------------------------------------------------------ */
-/*  Portfolio — Amplio Web                                             */
+/*  Portfolio — Nova Agency                                            */
 /*  Styles spécifiques à la page Portfolio. Variables de base.css.     */
 /* ------------------------------------------------------------------ */
 
 /* ------------------------ En-tête de page -------------------------- */
 
 .portfolio-hero {
-  background-color: var(--color-bg);
+  background-color: var(--color-cream);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -51,7 +51,7 @@
 .portfolio-hero__meta li + li::before {
   content: "\00b7";
   margin-inline: var(--space-3);
-  color: var(--color-accent);
+  color: var(--color-gold);
 }
 
 /* ------------------------ Section des projets ---------------------- */
@@ -108,7 +108,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: var(--color-bg);
+  background-color: var(--color-cream);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   overflow: hidden;
@@ -127,7 +127,7 @@
   position: relative;
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  background-color: var(--color-surface);
+  background-color: var(--color-cream-soft);
   border-block-end: 1px solid var(--color-border);
 }
 
@@ -159,7 +159,7 @@
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
   letter-spacing: 0.08em;
-  color: var(--color-bg);
+  color: var(--color-cream);
   text-shadow: 0 1px 6px rgba(16, 15, 12, 0.5);
 }
 
@@ -180,7 +180,7 @@
   font-weight: var(--font-weight-semibold);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-gold);
 }
 
 .portfolio-card__title {
@@ -210,7 +210,7 @@
   padding: var(--space-2) var(--space-3);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
-  background-color: var(--color-bg);
+  background-color: var(--color-cream);
   color: var(--color-text);
   cursor: pointer;
   transition: border-color var(--dur-fast) ease;
@@ -223,7 +223,7 @@
 .portfolio-filter[aria-pressed="true"] {
   background-color: var(--color-primary);
   border-color: var(--color-primary);
-  color: var(--color-bg);
+  color: var(--color-cream);
   font-weight: var(--font-weight-semibold);
 }
 
@@ -287,7 +287,7 @@
   top: var(--space-5);
   right: var(--space-5);
   font-size: var(--font-size-xl);
-  color: var(--color-accent);
+  color: var(--color-gold);
   opacity: 0;
   transform: translate(-0.35rem, 0.35rem);
   transition: opacity var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
