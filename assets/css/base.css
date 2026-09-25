@@ -101,8 +101,8 @@
   --radius: 0.5rem;
   --radius-lg: 0.875rem;
   --radius-xl: 1.25rem;
-  --shadow-soft: 0 1.25rem 2.5rem rgba(10, 10, 10, 0.08);
-  --shadow-strong: 0 2rem 4rem rgba(10, 10, 10, 0.12);
+  --shadow-soft: 0 1.25rem 2.5rem rgb(var(--color-primary-rgb) / 0.08);
+  --shadow-strong: 0 2rem 4rem rgb(var(--color-primary-rgb) / 0.12);
 
   /* Mouvement — voir motion.css pour l'application */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -274,7 +274,6 @@ textarea {
 ::selection {
   background-color: var(--color-primary);
   color: var(--color-text-on-dark);
-  transition: background-color var(--dur-fast) ease, color var(--dur-fast) ease, border-color var(--dur-fast) ease;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -564,6 +563,10 @@ textarea {
   background-color: var(--color-primary-soft);
 }
 
+.btn--primary:active:not(:disabled) {
+  background-color: var(--color-primary-elevated);
+}
+
 .btn--secondary {
   background-color: transparent;
   border-color: var(--color-primary);
@@ -574,6 +577,11 @@ textarea {
 .btn--secondary:hover:not(:disabled),
 .btn--secondary:focus-visible:not(:disabled) {
   background-color: var(--color-primary);
+  color: var(--color-text-on-dark);
+}
+
+.btn--secondary:active:not(:disabled) {
+  background-color: var(--color-primary-soft);
   color: var(--color-text-on-dark);
 }
 
@@ -589,6 +597,11 @@ textarea {
   color: var(--color-primary);
 }
 
+.btn--accent:active:not(:disabled) {
+  background-color: var(--color-gold-dim);
+  color: var(--color-text-on-dark);
+}
+
 .btn--outline {
   background-color: transparent;
   border-color: var(--color-border);
@@ -600,7 +613,17 @@ textarea {
   border-color: var(--color-gold);
   color: var(--color-gold);
 }
- 
+
+.btn--outline:active:not(:disabled) {
+  background-color: var(--color-cream-soft);
+  border-color: var(--color-gold-dim);
+  color: var(--color-gold-dim);
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
 .btn:disabled {
   opacity: 0.55;
   cursor: not-allowed;
