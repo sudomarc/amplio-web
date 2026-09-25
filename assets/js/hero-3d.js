@@ -65,7 +65,7 @@
   var halo = new THREE.Mesh(
     new THREE.IcosahedronGeometry(3, 1),
     new THREE.MeshBasicMaterial({
-      color: 0x0a0a0a,
+      color: primaryColor,
       wireframe: true,
       transparent: true,
       opacity: 0.18
