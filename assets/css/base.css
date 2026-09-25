@@ -24,7 +24,11 @@
   --color-link: var(--color-primary);
   --color-link-hover: var(--color-gold);
   --color-focus: var(--color-gold);
-  --color-shadow: rgba(10, 10, 10, 0.12);
+  --color-primary-rgb: 10 10 10;
+  --color-gold-rgb: 201 168 76;
+  --color-text-on-dark-rgb: 253 251 245;
+  --color-error-on-dark-strong-rgb: 255 139 115;
+  --color-shadow: rgb(var(--color-primary-rgb) / 0.12);
   --color-error: #c0392b;
   --color-error-bg: #fdf2f2;
   --color-error-border: #f5c6cb;
@@ -254,7 +258,7 @@ textarea {
   font-weight: var(--font-weight-semibold);
   text-decoration: none;
   border-radius: var(--radius);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px rgb(var(--color-primary-rgb) / 0.3);
   transition: top 0.15s ease;
 }
 
@@ -270,6 +274,7 @@ textarea {
 ::selection {
   background-color: var(--color-primary);
   color: var(--color-text-on-dark);
+  transition: background-color var(--dur-fast) ease, color var(--dur-fast) ease, border-color var(--dur-fast) ease;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -463,7 +468,7 @@ textarea {
   border: 1px solid var(--color-primary-soft);
   border-radius: var(--radius-xl);
   color: var(--color-text-muted-on-dark);
-  box-shadow: 0 1.25rem 3rem rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1.25rem 3rem rgb(var(--color-primary-rgb) / 0.3);
   animation: legal-note-in var(--dur-slow) var(--ease-out);
 }
 
@@ -550,10 +555,11 @@ textarea {
 .btn--primary {
   background-color: var(--color-primary);
   color: var(--color-text-on-dark);
+  transition: background-color var(--dur-fast) ease, color var(--dur-fast) ease, border-color var(--dur-fast) ease;
 }
 
-.btn--primary:hover,
-.btn--primary:focus-visible {
+.btn--primary:hover:not(:disabled),
+.btn--primary:focus-visible:not(:disabled) {
   color: var(--color-text-on-dark);
   background-color: var(--color-primary-soft);
 }
@@ -565,7 +571,8 @@ textarea {
   transition: background-color var(--dur-fast) ease, color var(--dur-fast) ease;
 }
 
-.btn--secondary:hover {
+.btn--secondary:hover:not(:disabled),
+.btn--secondary:focus-visible:not(:disabled) {
   background-color: var(--color-primary);
   color: var(--color-text-on-dark);
 }
@@ -573,10 +580,11 @@ textarea {
 .btn--accent {
   background-color: var(--color-gold);
   color: var(--color-primary);
+  transition: background-color var(--dur-fast) ease, color var(--dur-fast) ease, border-color var(--dur-fast) ease;
 }
 
-.btn--accent:hover,
-.btn--accent:focus-visible {
+.btn--accent:hover:not(:disabled),
+.btn--accent:focus-visible:not(:disabled) {
   background-color: var(--color-gold-bright);
   color: var(--color-primary);
 }
@@ -587,9 +595,16 @@ textarea {
   color: var(--color-text);
 }
 
-.btn--outline:hover {
+.btn--outline:hover:not(:disabled),
+.btn--outline:focus-visible:not(:disabled) {
   border-color: var(--color-gold);
   color: var(--color-gold);
+}
+ 
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
 }
 
 /* Utilitaire pour texte or */
