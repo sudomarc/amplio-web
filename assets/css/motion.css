@@ -33,12 +33,6 @@
 
 /* ----------------------- Boutons et liens ---------------------------- */
 
-.btn {
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
-}
-
 .btn__arrow {
   display: inline-block;
   transition: transform var(--dur-base) var(--ease-out);
@@ -47,29 +41,6 @@
 .btn:hover .btn__arrow,
 .btn:focus-visible .btn__arrow {
   transform: translateX(0.35rem);
-}
-
-.btn--primary::before,
-.btn--accent::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background-color: var(--color-gold);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform var(--dur-base) var(--ease-out);
-}
-
-.btn--accent::before {
-  background-color: var(--color-primary);
-}
-
-.btn--primary:hover::before,
-.btn--primary:focus-visible::before,
-.btn--accent:hover::before,
-.btn--accent:focus-visible::before {
-  transform: scaleX(1);
 }
 
 /* ------------------------- Menu plein écran -------------------------- */
