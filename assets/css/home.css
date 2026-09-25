@@ -47,10 +47,22 @@
   margin-block: 0;
   font-size: var(--font-size-hero);
   line-height: 0.96;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .home-hero__title span {
   display: block;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* La colonne de grille ne doit jamais dépasser le viewport : le titre hero
+   contient des mots longs (« Communication ») qui, sans min-width: 0,
+   forcent la colonne et créent un overflow horizontal sur petit mobile. */
+.home-hero__container > *,
+.home-hero__content {
+  min-width: 0;
 }
 
 .home-hero__title em {
@@ -522,6 +534,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-width: 0;
   text-align: center;
   padding: var(--space-6) var(--space-4);
   background-color: var(--color-white);
@@ -565,6 +578,8 @@
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-bold);
   color: var(--color-text);
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 @media (min-width: 40rem) {

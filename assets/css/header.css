@@ -3,12 +3,14 @@
 /*  Navigation principale, logo et action secondaire.                  */
 /* ------------------------------------------------------------------ */
 
+/* Fond sombre : le logo officiel (blanc/or sur transparence) exige un
+   backdrop sombre pour rester lisible — aucune boîte ni fond ajouté autour. */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 100;
-  border-bottom: 1px solid var(--color-border);
-  background-color: rgba(253, 251, 245, 0.9);
+  border-bottom: 1px solid var(--color-border-on-dark);
+  background-color: rgba(10, 10, 10, 0.94);
   backdrop-filter: blur(8px);
 }
 
@@ -23,16 +25,19 @@
 .site-header__logo {
   display: inline-flex;
   align-items: center;
-  font-family: var(--font-display);
-  font-size: clamp(1.1rem, 1vw + 0.8rem, 1.5rem);
-  font-weight: var(--font-weight-black);
-  color: var(--color-primary);
-  letter-spacing: -0.04em;
   text-decoration: none;
 }
 
-.site-header__logo:hover {
-  color: var(--color-gold);
+/* Ratio d'origine conservé : hauteur fixée, largeur auto — jamais étiré. */
+.site-header__logo-img {
+  display: block;
+  height: 2.75rem;
+  width: auto;
+  transition: opacity var(--dur-fast) ease;
+}
+
+.site-header__logo:hover .site-header__logo-img {
+  opacity: 0.85;
 }
 
 .site-header__nav {
@@ -57,7 +62,7 @@
   display: inline-flex;
   align-items: center;
   min-height: 2.5rem;
-  color: var(--color-text);
+  color: var(--color-text-on-dark);
   font-weight: var(--font-weight-medium);
   text-decoration: none;
 }
@@ -75,7 +80,7 @@
 
 .site-header__link:hover,
 .site-header__link.is-active {
-  color: var(--color-primary);
+  color: var(--color-gold);
 }
 
 .site-header__link:hover::after,
@@ -89,10 +94,10 @@
   justify-content: center;
   min-height: 2.75rem;
   padding: 0.75rem 1.1rem;
-  border: 1px solid var(--color-primary);
+  border: 1px solid var(--color-gold);
   border-radius: 999px;
-  background-color: var(--color-primary);
-  color: var(--color-text-on-dark);
+  background-color: var(--color-gold);
+  color: var(--color-primary);
   font-weight: var(--font-weight-semibold);
   text-decoration: none;
   transition: transform var(--dur-fast) ease, background-color var(--dur-fast) ease, border-color var(--dur-fast) ease;
@@ -100,8 +105,9 @@
 
 .site-header__cta:hover,
 .site-header__cta:focus-visible {
-  background-color: var(--color-primary-soft);
-  border-color: var(--color-primary-soft);
+  background-color: var(--color-gold-bright);
+  border-color: var(--color-gold-bright);
+  color: var(--color-primary);
   transform: translateY(-1px);
 }
 
@@ -115,16 +121,16 @@
   width: 2.7rem;
   height: 2.7rem;
   padding: var(--space-2);
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-border-on-dark);
   border-radius: var(--radius-sm);
-  background-color: var(--color-cream);
+  background-color: transparent;
 }
 
 .site-header__toggle-bar {
   display: block;
   width: 100%;
   height: 2px;
-  background-color: var(--color-primary);
+  background-color: var(--color-text-on-dark);
   transition: transform var(--dur-base) var(--ease-out), opacity var(--dur-fast) ease;
 }
 
@@ -200,53 +206,19 @@
   }
 }
 
-.home-page .site-header {
-  position: absolute;
-  inset: 0 0 auto;
-  background: transparent;
-  border-bottom-color: transparent;
-}
-
-.home-page .site-header__logo,
-.home-page .site-header__link {
-  color: var(--color-text);
-}
-
-.home-page .site-header__link::after {
-  background-color: var(--color-gold);
-}
-
-.home-page .site-header__logo:hover,
-.home-page .site-header__link:hover {
-  color: var(--color-gold);
-}
+/* Le header sombre est identique sur toutes les pages, accueil inclus :
+   aucune exception transparente (le logo blanc l'exige). */
 
 @media (max-width: 40rem) {
-  .home-page .site-header.is-menu-open {
-    background-color: var(--color-primary);
+  .site-header__logo-img {
+    height: 2.25rem;
   }
+}
 
-  .home-page .site-header__toggle {
-    background-color: transparent;
-  }
-
-  .home-page .site-header.is-menu-open .site-header__logo {
-    color: var(--color-text-on-dark);
-  }
-
-  .home-page .site-header.is-menu-open .site-header__logo:hover {
-    color: var(--color-gold);
-  }
-
-  .home-page .site-header.is-menu-open .site-header__link {
-    color: var(--color-text-on-dark);
-  }
-
-  .home-page .site-header.is-menu-open .site-header__link.is-active {
-    color: var(--color-gold);
-  }
-
-  .home-page .site-header.is-menu-open .site-header__toggle-bar {
-    background-color: var(--color-text-on-dark);
+@media (prefers-reduced-motion: reduce) {
+  .site-header__logo-img,
+  .site-header__link::after,
+  .site-header__cta {
+    transition: none;
   }
 }
