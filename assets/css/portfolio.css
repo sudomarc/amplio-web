@@ -213,11 +213,13 @@
   background-color: var(--color-cream);
   color: var(--color-text);
   cursor: pointer;
-  transition: border-color var(--dur-fast) ease;
+  transition: background-color var(--dur-fast) ease, color var(--dur-fast) ease, border-color var(--dur-fast) ease;
 }
 
-.portfolio-filter:hover {
-  border-color: var(--color-text-muted);
+.portfolio-filter:hover,
+.portfolio-filter:focus-visible {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
 }
 
 .portfolio-filter[aria-pressed="true"] {
