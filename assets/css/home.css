@@ -113,66 +113,6 @@
   margin-block-start: var(--space-2);
 }
 
-/* ---------------------------- Boutons ------------------------------ */
-/* Le remplissage animé (::before) est défini dans motion.css. */
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-2);
-  padding: var(--space-3) var(--space-5);
-  border-radius: var(--radius-sm);
-  border: 1px solid transparent;
-  font-weight: var(--font-weight-semibold);
-  text-decoration: none;
-}
-
-.btn--primary {
-  background-color: var(--color-primary);
-  color: var(--color-text-on-dark);
-}
-
-.btn--primary:hover,
-.btn--primary:focus-visible {
-  color: var(--color-text-on-dark);
-  background-color: var(--color-primary-soft);
-}
-
-.btn--secondary {
-  background-color: transparent;
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-  transition: background-color var(--dur-fast) ease, color var(--dur-fast) ease;
-}
-
-.btn--secondary:hover {
-  background-color: var(--color-primary);
-  color: var(--color-text-on-dark);
-}
-
-.btn--accent {
-  background-color: var(--color-gold);
-  color: var(--color-primary);
-}
-
-.btn--accent:hover,
-.btn--accent:focus-visible {
-  background-color: var(--color-gold-bright);
-  color: var(--color-primary);
-}
-
-.btn--outline {
-  background-color: transparent;
-  border-color: var(--color-border);
-  color: var(--color-text);
-}
-
-.btn--outline:hover {
-  border-color: var(--color-gold);
-  color: var(--color-gold);
-}
-
 /* ---------------- Hero : visuel éditorial (CSS + 3D) ---------------- */
 
 .home-hero__visual {
