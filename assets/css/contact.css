@@ -67,7 +67,7 @@
 .contact-hero__aside-index {
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-bold);
-  color: var(--color-gold);
+  color: var(--color-gold-on-light);
 }
 
 .contact-hero__aside p {
@@ -82,7 +82,7 @@
   font-family: var(--font-display);
   font-size: 1.1rem;
   font-style: normal;
-  color: var(--color-gold);
+  color: var(--color-gold-on-light);
 }
 
 .contact-content {
@@ -408,7 +408,7 @@
   font-size: 0.72rem;
   font-weight: var(--font-weight-bold);
   letter-spacing: 0.1em;
-  color: var(--color-gold);
+  color: var(--color-gold-on-light);
 }
 
 .contact-info__title {
@@ -448,7 +448,7 @@
   font-family: var(--font-mono);
   font-size: 0.7rem;
   font-weight: var(--font-weight-bold);
-  color: var(--color-gold);
+  color: var(--color-gold-on-light);
 }
 
 .contact-info__step p {
