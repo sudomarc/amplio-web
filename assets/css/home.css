@@ -402,17 +402,22 @@
 }
 
 .home-services__row:hover .home-services__name,
-.home-services__row[aria-expanded="true"] .home-services__name {
-  color: var(--color-gold-on-light);
-}
+  .home-services__row[aria-expanded="true"] .home-services__name {
+    color: var(--color-gold-on-light);
+  }
 
-.home-services__row:hover .home-services__arrow,
-.home-services__row[aria-expanded="true"] .home-services__arrow,
-.home-services__row:focus-visible .home-services__arrow {
-  opacity: 1;
-  transform: translateX(0);
-  color: var(--color-gold);
-}
+  .home-services__row:hover .home-services__arrow,
+  .home-services__row[aria-expanded="true"] .home-services__arrow {
+    opacity: 1;
+    transform: translateX(0);
+    color: var(--color-gold);
+  }
+
+  .home-services__row:focus-visible .home-services__arrow {
+    opacity: 1;
+    transform: translateX(0);
+    color: var(--color-gold-on-light);
+  }
 
 .home-services__panel {
   display: grid;

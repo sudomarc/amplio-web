@@ -105,18 +105,23 @@
 }
 
 .site-footer__link,
-.site-footer__contact-item a {
-  color: var(--color-text-muted-on-dark);
-  text-decoration: none;
-  transition: color var(--dur-fast) ease;
-}
+  .site-footer__contact-item a {
+    color: var(--color-text-muted-on-dark);
+    text-decoration: none;
+    transition: color var(--dur-fast) ease;
+  }
 
-.site-footer__link:hover,
-.site-footer__contact-item a:hover,
-.site-footer__link:focus-visible,
-.site-footer__contact-item a:focus-visible {
-  color: var(--color-gold);
-}
+  .site-footer__link:hover,
+  .site-footer__contact-item a:hover {
+    color: var(--color-gold);
+  }
+
+  .site-footer__link:focus-visible,
+  .site-footer__contact-item a:focus-visible {
+    color: var(--color-gold);
+    outline: 3px solid var(--color-gold);
+    outline-offset: 2px;
+  }
 
 .site-footer__contact-item {
   display: flex;
