@@ -21,8 +21,8 @@
   inset: 0;
   pointer-events: none;
   background-image:
-    linear-gradient(to right, rgba(10, 10, 10, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(10, 10, 10, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgb(var(--color-primary-rgb) / 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(var(--color-primary-rgb) / 0.03) 1px, transparent 1px);
   background-size: 5.5rem 5.5rem;
   mask-image: linear-gradient(to bottom, black 0%, transparent 90%);
 }
@@ -247,7 +247,7 @@
   left: 1.5rem;
   background-color: var(--color-cream);
   border: 1px solid var(--color-border);
-  box-shadow: 0 4px 12px rgba(10, 10, 10, 0.08);
+  box-shadow: 0 4px 12px rgb(var(--color-primary-rgb) / 0.08);
 }
 
 .home-hero-visual__tile--outline {
@@ -363,7 +363,7 @@
   border-radius: var(--radius-xl);
   overflow: hidden;
   background-color: var(--color-cream-soft);
-  box-shadow: 0 2rem 4rem rgba(10, 10, 10, 0.12);
+  box-shadow: 0 2rem 4rem rgb(var(--color-primary-rgb) / 0.12);
 }
 
 .home-about__image-wrapper img {
@@ -545,7 +545,7 @@
 
 .home-clients__card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 32px rgba(10, 10, 10, 0.1);
+  box-shadow: 0 16px 32px rgb(var(--color-primary-rgb) / 0.1);
   border-color: var(--color-gold);
 }
 
@@ -617,7 +617,7 @@
 
 .home-work__card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 32px rgba(10, 10, 10, 0.12);
+  box-shadow: 0 16px 32px rgb(var(--color-primary-rgb) / 0.12);
 }
 
 .home-work__media {
