@@ -11,6 +11,7 @@
   --color-gold: #c9a84c;
   --color-gold-bright: #d4b85c;
   --color-gold-dim: #a88d3a;
+  --color-gold-on-light: #7a5f15;
   --color-cream: #fdfbf5;
   --color-cream-soft: #f5f1e8;
   --color-cream-muted: #ebe5da;
@@ -22,8 +23,8 @@
   --color-border: #e8e1d4;
   --color-border-on-dark: #3d3830;
   --color-link: var(--color-primary);
-  --color-link-hover: var(--color-gold);
-  --color-focus: var(--color-gold);
+  --color-link-hover: var(--color-gold-on-light);
+  --color-focus: var(--color-gold-on-light);
   --color-primary-rgb: 10 10 10;
   --color-gold-rgb: 201 168 76;
   --color-text-on-dark-rgb: 253 251 245;
@@ -323,7 +324,7 @@ textarea {
   line-height: var(--line-height-base);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--color-gold-on-light);
 }
 
 .eyebrow::before {
@@ -331,7 +332,7 @@ textarea {
   display: inline-block;
   width: var(--space-6);
   height: 2px;
-  background-color: var(--color-gold);
+  background-color: var(--color-gold-on-light);
 }
 
 /* Lien d'action avec flèche. */
@@ -365,7 +366,7 @@ textarea {
 }
 
 .arrow-link--accent:hover {
-  color: var(--color-gold);
+  color: var(--color-gold-on-light);
 }
 
 /* État d'erreur d'un bloc rendu dynamiquement. */
@@ -610,14 +611,14 @@ textarea {
 
 .btn--outline:hover:not(:disabled),
 .btn--outline:focus-visible:not(:disabled) {
-  border-color: var(--color-gold);
-  color: var(--color-gold);
+  border-color: var(--color-gold-on-light);
+  color: var(--color-gold-on-light);
 }
 
 .btn--outline:active:not(:disabled) {
   background-color: var(--color-cream-soft);
-  border-color: var(--color-gold-dim);
-  color: var(--color-gold-dim);
+  border-color: var(--color-gold-on-light);
+  color: var(--color-gold-on-light);
 }
 
 .btn:active:not(:disabled) {
