@@ -183,6 +183,7 @@ Une branche par tâche, y compris en solo, afin que chaque changement passe par 
 | T28 | Recette finale (checklist de la section 8) | En review | T21, T22, T27 |
 | T29 | Mise en ligne v1.0 et tag `v1.0.0` | À faire | T28 |
 | T30 | Migration déploiement : Netlify → Vercel + formulaire Netlify Forms → Web3Forms | En review | T20, T27 |
+| T31 | Harmonisation du système de couleurs et des états interactifs (hover, active, focus, disabled) | En review | T03, T14, T17, T18 |
 
 > T12 a été livrée et mergée via la PR #28. La page `a-propos.html` est désormais présente et reliée au header/footer.
 >
