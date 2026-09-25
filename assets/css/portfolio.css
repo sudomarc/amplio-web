@@ -51,7 +51,7 @@
 .portfolio-hero__meta li + li::before {
   content: "\00b7";
   margin-inline: var(--space-3);
-  color: var(--color-gold);
+  color: var(--color-gold-on-light);
 }
 
 /* ------------------------ Section des projets ---------------------- */
@@ -180,7 +180,7 @@
   font-weight: var(--font-weight-semibold);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--color-gold-on-light);
 }
 
 .portfolio-card__title {
@@ -218,8 +218,8 @@
 
 .portfolio-filter:hover,
 .portfolio-filter:focus-visible {
-  border-color: var(--color-gold);
-  color: var(--color-gold);
+  border-color: var(--color-gold-on-light);
+  color: var(--color-gold-on-light);
 }
 
 .portfolio-filter[aria-pressed="true"] {
@@ -289,7 +289,7 @@
   top: var(--space-5);
   right: var(--space-5);
   font-size: var(--font-size-xl);
-  color: var(--color-gold);
+  color: var(--color-gold-on-light);
   opacity: 0;
   transform: translate(-0.35rem, 0.35rem);
   transition: opacity var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
