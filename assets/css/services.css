@@ -296,6 +296,24 @@
 }
 
 @media (min-width: 64rem) {
+  /* Le panneau visuel reste sous la grille (non sticky) : à ce seuil, deux
+     colonnes de cartes suffisamment larges valent mieux qu'une mise en page
+     à deux colonnes qui comprime les cartes à trois par rangée. */
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .services-cards__visual {
+    display: block;
+    position: static;
+  }
+
+  .service-card__title {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+@media (min-width: 80rem) {
   .services-cards__layout {
     grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
     align-items: start;
@@ -307,13 +325,8 @@
   }
 
   .services-cards__visual {
-    display: block;
     position: sticky;
     top: calc(var(--space-10) + 4rem);
-  }
-
-  .service-card__title {
-    font-size: var(--font-size-2xl);
   }
 }
 

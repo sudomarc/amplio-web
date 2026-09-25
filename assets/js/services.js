@@ -130,7 +130,7 @@
     var fragment = document.createDocumentFragment();
 
     services.forEach(function (service, index) {
-      var card = document.createElement('article');
+      var card = document.createElement('label');
       card.className = 'service-card';
       card.dataset.serviceId = service.id;
 
@@ -210,31 +210,12 @@
       content.appendChild(title);
       content.appendChild(description);
       content.appendChild(scope);
-      card.appendChild(content);
       card.appendChild(radio);
+      card.appendChild(content);
 
-      // Interaction : sélection au clic sur la carte
-      card.addEventListener('click', function (e) {
-        // Ne pas déclencher si on clique sur le radio directement (géré par change)
-        if (e.target !== radio) {
-          radio.checked = true;
-          radio.dispatchEvent(new Event('change', { bubbles: true }));
-        }
-      });
-
-      card.setAttribute('tabindex', '0');
-      card.setAttribute('role', 'radio');
-      card.setAttribute('aria-checked', 'false');
-      card.setAttribute('aria-labelledby', 'service-card-title-' + service.id);
-
-      card.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          radio.checked = true;
-          radio.dispatchEvent(new Event('change', { bubbles: true }));
-          card.focus();
-        }
-      });
+      // Le <label> natif associe déjà le clic (et le clavier via le radio) à la
+      // sélection : aucun contrôle ni gestionnaire clavier/clic parallèle n'est
+      // nécessaire, ce qui évite un double contrôle focusable pour un même choix.
 
       card.addEventListener('mouseenter', function () {
         setActiveVisual(SERVICES_VISUAL, service.id);
@@ -372,7 +353,6 @@
       var radio = card.querySelector('.service-card__radio');
       var isSelected = Boolean(radio) && radio.value === selectedId;
       card.classList.toggle('is-selected', isSelected);
-      card.setAttribute('aria-checked', isSelected ? 'true' : 'false');
     });
 
     if (CONTINUE_BUTTON) {
