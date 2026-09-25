@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  var STORAGE_KEY = 'amplio:legal-note-dismissed';
+  var STORAGE_KEY = 'nova:legal-note-dismissed';
   var initialized = false;
 
   function init() {

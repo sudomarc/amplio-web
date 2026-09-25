@@ -1,4 +1,4 @@
-# Amplio Web — robots.txt
+# Nova Web — robots.txt
 # Sitemap et URL canoniques : à compléter uniquement avec une URL publique vérifiée
 # (pas d'URL inventée). Voir ROADMAP T21 / T27.
 

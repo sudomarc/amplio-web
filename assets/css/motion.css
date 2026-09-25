@@ -1,5 +1,5 @@
 /* ------------------------------------------------------------------ */
-/*  Motion — Amplio Web                                                */
+/*  Motion — Nova Agency                                               */
 /*  Système de révélation au scroll, transitions de menu et micro-      */
 /*  interactions. Chargé après les feuilles de page. Respecte           */
 /*  prefers-reduced-motion via base.css (règle globale déjà en place)   */
@@ -55,7 +55,7 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background-color: var(--color-accent);
+  background-color: var(--color-gold);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform var(--dur-base) var(--ease-out);

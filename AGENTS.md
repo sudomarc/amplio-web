@@ -1,4 +1,4 @@
-# AGENTS.md — Amplio Web
+# AGENTS.md — Nova Web
 
 Ce fichier est le **bootstrap obligatoire d'OpenCode** pour ce dépôt.
 
@@ -33,11 +33,11 @@ git -C <chemin-vibe> ls-remote origin refs/heads/main
 Pour OpenCode, le gate est un **pré-requis bloquant**, pas une recommandation.
 
 - La première phase de chaque nouvelle session **et de chaque nouvelle tâche** doit être le bootstrap Vibe.
-- Avant le bootstrap réussi, ne lance aucun test applicatif, serveur local, navigateur, linter, analyse de code, sous-agent, reviewer ou modification du dépôt Amplio.
+- Avant le bootstrap réussi, ne lance aucun test applicatif, serveur local, navigateur, linter, analyse de code, sous-agent, reviewer ou modification du dépôt Nova.
 - Le premier rapport opérationnel doit contenir : chemin absolu du clone Vibe, SHA local, SHA distant `main`, URL `origin`, et confirmation de lecture de `AGENTS.md` + `MASTER-PROMPT.md` depuis le clone local.
 - Après bootstrap, transmettre exactement cette preuve (chemin + SHA vérifié) à toute délégation.
 - Si OpenCode ne peut pas produire cette preuve, considère le gate comme non satisfait et **STOP**.
-- Ne jamais utiliser la mémoire, le contexte d'une autre session, le dépôt distant seul, une copie vendored ou un fichier local Amplio comme substitut au clone Vibe canonique.
+- Ne jamais utiliser la mémoire, le contexte d'une autre session, le dépôt distant seul, une copie vendored ou un fichier local Nova comme substitut au clone Vibe canonique.
 
 ### ROUTAGE TOKEN ECONOMY VIBE
 
@@ -82,7 +82,7 @@ Le bootstrap Vibe est une **précondition de chaque tâche**, pas seulement de c
 - Au début de chaque nouvelle tâche, revalider le clone local et son SHA courant avant toute action applicative.
 - Si le SHA du clone Vibe a changé depuis la dernière tâche, recharger les fichiers racine requis avant de continuer.
 - Ne jamais considérer une preuve de bootstrap provenant d'une autre tâche comme suffisante pour la tâche courante.
-- Le premier accès au dépôt Amplio doit servir à établir le bootstrap Vibe ; toute exploration applicative vient ensuite.
+- Le premier accès au dépôt Nova doit servir à établir le bootstrap Vibe ; toute exploration applicative vient ensuite.
 
 ## INTERDICTION DE CONTOURNEMENT PAR SOUS-AGENT
 

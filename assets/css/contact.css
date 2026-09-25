@@ -1,11 +1,11 @@
 /* ------------------------------------------------------------------ */
-/*  Contact — Amplio Web                                               */
+/*  Contact — Nova Agency                                              */
 /* ------------------------------------------------------------------ */
 
 .contact-hero {
   position: relative;
   overflow: hidden;
-  background-color: var(--color-surface);
+  background-color: var(--color-text-on-dark);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -19,7 +19,7 @@
   font-weight: var(--font-weight-black);
   line-height: 0.8;
   letter-spacing: -0.07em;
-  color: var(--color-surface-strong);
+  color: var(--color-cream-muted);
   pointer-events: none;
 }
 
@@ -59,7 +59,7 @@
   padding: var(--space-4) var(--space-5);
   border: 1px solid var(--color-primary);
   border-radius: 999px;
-  background-color: var(--color-bg);
+  background-color: var(--color-cream);
   font-family: var(--font-mono);
   color: var(--color-primary);
 }
@@ -67,7 +67,7 @@
 .contact-hero__aside-index {
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-bold);
-  color: var(--color-accent);
+  color: var(--color-gold);
 }
 
 .contact-hero__aside p {
@@ -82,11 +82,11 @@
   font-family: var(--font-display);
   font-size: 1.1rem;
   font-style: normal;
-  color: var(--color-accent);
+  color: var(--color-gold);
 }
 
 .contact-content {
-  background-color: var(--color-bg);
+  background-color: var(--color-cream);
   padding-block: clamp(4rem, 8vw, 8rem);
 }
 
@@ -115,7 +115,7 @@
   width: 12rem;
   height: 12rem;
   border-radius: 999px;
-  background-color: var(--color-accent);
+  background-color: var(--color-gold);
   opacity: 0.95;
 }
 
@@ -140,7 +140,7 @@
   padding: 0.35rem 0.6rem;
   border: 1px solid rgba(250, 247, 240, 0.18);
   border-radius: 999px;
-  color: var(--color-surface);
+  color: var(--color-text-on-dark);
   font-family: var(--font-mono);
   font-size: 0.7rem;
   font-weight: var(--font-weight-semibold);
@@ -159,20 +159,20 @@
 }
 
 .contact-form__header .eyebrow {
-  color: var(--color-accent);
+  color: var(--color-gold);
 }
 
 .contact-form__title {
   margin-block: var(--space-3) 0;
   font-size: clamp(2rem, 4vw, 3.25rem);
   letter-spacing: -0.035em;
-  color: var(--color-bg);
+  color: var(--color-cream);
 }
 
 .contact-form__intro {
   max-width: 42ch;
   margin-block: var(--space-4) 0;
-  color: var(--color-surface);
+  color: var(--color-text-on-dark);
   font-size: var(--font-size-md);
 }
 
@@ -202,11 +202,11 @@
   font-weight: var(--font-weight-semibold);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-surface);
+  color: var(--color-text-on-dark);
 }
 
 .contact-form__field label span[aria-hidden="true"] {
-  color: var(--color-accent);
+  color: var(--color-gold);
 }
 
 .contact-form__field input,
@@ -217,7 +217,7 @@
   border: 1px solid rgba(250, 247, 240, 0.18);
   border-radius: 1rem;
   background-color: var(--color-primary-soft);
-  color: var(--color-bg);
+  color: var(--color-cream);
   font-size: var(--font-size-base);
   transition: border-color var(--dur-fast) ease, box-shadow var(--dur-fast) ease, background-color var(--dur-fast) ease, transform var(--dur-fast) ease;
 }
@@ -228,22 +228,22 @@
 
 .contact-form__field select option {
   background-color: var(--color-primary);
-  color: var(--color-bg);
+  color: var(--color-cream);
 }
 
 .contact-form__field input:focus,
 .contact-form__field select:focus,
 .contact-form__field textarea:focus {
   outline: none;
-  border-color: var(--color-accent);
+  border-color: var(--color-gold);
   background-color: var(--color-ink-soft);
-  box-shadow: 0 0 0 4px rgba(255, 77, 31, 0.16);
+  box-shadow: 0 0 0 4px rgba(201, 168, 76, 0.16);
   transform: translateY(-1px);
 }
 
 .contact-form__field input::placeholder,
 .contact-form__field textarea::placeholder {
-  color: var(--color-surface);
+  color: var(--color-text-on-dark);
   opacity: 0.66;
 }
 
@@ -266,7 +266,7 @@
   font-weight: var(--font-weight-regular);
   letter-spacing: 0;
   text-transform: none;
-  color: var(--color-surface);
+  color: var(--color-text-on-dark);
   line-height: var(--line-height-base);
 }
 
@@ -285,13 +285,13 @@
 
 .contact-form__consent-label input[type="checkbox"]:focus {
   outline: none;
-  border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px rgba(255, 77, 31, 0.16);
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.16);
 }
 
 .contact-form__consent-label input[type="checkbox"]:checked {
-  background-color: var(--color-accent);
-  border-color: var(--color-accent);
+  background-color: var(--color-gold);
+  border-color: var(--color-gold);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FAF7F0' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
   background-size: 70%;
   background-position: center;
@@ -299,13 +299,13 @@
 }
 
 .contact-form__consent-text a {
-  color: var(--color-bg);
+  color: var(--color-cream);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 
 .contact-form__consent-text a:hover {
-  color: var(--color-accent);
+  color: var(--color-gold);
 }
 
 .contact-form__actions {
@@ -328,7 +328,7 @@
   padding: var(--space-4) var(--space-6);
   border: 0;
   border-radius: 999px;
-  background-color: var(--color-accent);
+  background-color: var(--color-gold);
   color: var(--color-primary);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-base);
@@ -341,7 +341,7 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background-color: var(--color-bg);
+  background-color: var(--color-cream);
   border-radius: inherit;
   transform: scaleX(0);
   transform-origin: left;
@@ -351,7 +351,7 @@
 .contact-form__submit:hover:not(:disabled),
 .contact-form__submit:focus-visible:not(:disabled) {
   transform: translateY(-2px);
-  background-color: var(--color-bg);
+  background-color: var(--color-cream);
 }
 
 .contact-form__submit::before {
@@ -385,7 +385,7 @@
 
 .contact-form__actions-note {
   margin: 0;
-  color: var(--color-surface);
+  color: var(--color-text-on-dark);
   font-family: var(--font-mono);
   font-size: 0.72rem;
   letter-spacing: 0.06em;
@@ -397,7 +397,7 @@
   overflow: hidden;
   min-height: 100%;
   padding: clamp(1.5rem, 4vw, 3rem);
-  background-color: var(--color-surface);
+  background-color: var(--color-text-on-dark);
   border: 1px solid var(--color-border);
   border-radius: 2rem;
 }
@@ -408,7 +408,7 @@
   font-size: 0.72rem;
   font-weight: var(--font-weight-bold);
   letter-spacing: 0.1em;
-  color: var(--color-accent);
+  color: var(--color-gold);
 }
 
 .contact-info__title {
@@ -448,7 +448,7 @@
   font-family: var(--font-mono);
   font-size: 0.7rem;
   font-weight: var(--font-weight-bold);
-  color: var(--color-accent);
+  color: var(--color-gold);
 }
 
 .contact-info__step p {
@@ -466,7 +466,7 @@
   font-size: 12rem;
   font-weight: var(--font-weight-black);
   line-height: 0.8;
-  color: var(--color-surface-strong);
+  color: var(--color-cream-muted);
   pointer-events: none;
 }
 
@@ -474,24 +474,24 @@
   min-height: 1.1rem;
   margin: 0;
   font-size: var(--font-size-sm);
-  color: #ffb4a2;
+  color: var(--color-error-on-dark);
   transition: opacity var(--dur-fast) ease;
 }
 
 .contact-form__field--invalid input,
 .contact-form__field--invalid select,
 .contact-form__field--invalid textarea {
-  border-color: #ff8b73;
+  border-color: var(--color-error-on-dark-strong);
 }
 
 .contact-form__field--invalid input:focus,
 .contact-form__field--invalid select:focus,
 .contact-form__field--invalid textarea:focus {
-  box-shadow: 0 0 0 4px rgba(255, 139, 115, 0.15);
+  box-shadow: 0 0 0 4px rgba(255, 139, 115, 0.15); /* rgba twin of --color-error-on-dark-strong for alpha blending */
 }
 
 .contact-form__field--invalid .contact-form__consent-label input[type="checkbox"] {
-  border-color: #ff8b73;
+  border-color: var(--color-error-on-dark-strong);
 }
 
 .contact-form__field--invalid .contact-form__consent-label input[type="checkbox"]:focus {
