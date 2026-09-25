@@ -366,7 +366,7 @@ textarea {
 }
 
 .arrow-link--accent:hover {
-  color: var(--color-gold-on-light);
+  color: var(--color-gold);
 }
 
 /* État d'erreur d'un bloc rendu dynamiquement. */
