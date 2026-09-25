@@ -474,24 +474,24 @@
   min-height: 1.1rem;
   margin: 0;
   font-size: var(--font-size-sm);
-  color: #ffb4a2;
+  color: var(--color-error-on-dark);
   transition: opacity var(--dur-fast) ease;
 }
 
 .contact-form__field--invalid input,
 .contact-form__field--invalid select,
 .contact-form__field--invalid textarea {
-  border-color: #ff8b73;
+  border-color: var(--color-error-on-dark-strong);
 }
 
 .contact-form__field--invalid input:focus,
 .contact-form__field--invalid select:focus,
 .contact-form__field--invalid textarea:focus {
-  box-shadow: 0 0 0 4px rgba(255, 139, 115, 0.15);
+  box-shadow: 0 0 0 4px rgba(255, 139, 115, 0.15); /* rgba twin of --color-error-on-dark-strong for alpha blending */
 }
 
 .contact-form__field--invalid .contact-form__consent-label input[type="checkbox"] {
-  border-color: #ff8b73;
+  border-color: var(--color-error-on-dark-strong);
 }
 
 .contact-form__field--invalid .contact-form__consent-label input[type="checkbox"]:focus {
