@@ -84,9 +84,14 @@
 }
 
 .site-header__link:hover::after,
-.site-header__link.is-active::after {
-  right: 0;
-}
+  .site-header__link.is-active::after {
+    right: 0;
+  }
+
+  .site-header__link:focus-visible {
+    outline: 3px solid var(--color-gold);
+    outline-offset: 2px;
+  }
 
 .site-header__cta {
   display: inline-flex;
