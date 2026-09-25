@@ -594,8 +594,8 @@ textarea {
 
 .btn--accent:hover:not(:disabled),
 .btn--accent:focus-visible:not(:disabled) {
-  background-color: var(--color-gold-bright);
-  color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--color-gold);
 }
 
 .btn--accent:active:not(:disabled) {
