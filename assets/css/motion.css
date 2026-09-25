@@ -70,8 +70,6 @@ body.has-menu-open {
 
 @media (prefers-reduced-motion: reduce) {
   .site-header__menu li,
-  .btn--primary::before,
-  .btn--accent::before,
   .btn__arrow {
     transition: none !important;
   }
