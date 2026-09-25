@@ -99,7 +99,7 @@
 
 .service-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 24px 48px rgba(10, 10, 10, 0.16);
+  box-shadow: 0 24px 48px rgb(var(--color-primary-rgb) / 0.16);
   border-color: var(--color-gold);
 }
 
@@ -110,7 +110,7 @@
 
 .service-card.is-selected {
   border-color: var(--color-gold);
-  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.2), 0 24px 48px rgba(10, 10, 10, 0.16);
+  box-shadow: 0 0 0 3px rgb(var(--color-gold-rgb) / 0.2), 0 24px 48px rgb(var(--color-primary-rgb) / 0.16);
 }
 
 .service-card__image {
