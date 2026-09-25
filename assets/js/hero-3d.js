@@ -30,6 +30,14 @@
 
   var THREE = window.THREE;
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var rootStyles = window.getComputedStyle(document.documentElement);
+  var goldColor = rootStyles.getPropertyValue('--color-gold').trim();
+  var primaryColor = rootStyles.getPropertyValue('--color-primary').trim();
+
+  if (!goldColor || !primaryColor) {
+    container.setAttribute('data-hero-3d-fallback', 'true');
+    return;
+  }
 
   var scene = new THREE.Scene();
   var camera = new THREE.PerspectiveCamera(38, 1, 0.1, 100);
@@ -46,7 +54,7 @@
   var knot = new THREE.Mesh(
     new THREE.TorusKnotGeometry(1.5, 0.42, 128, 18),
     new THREE.MeshStandardMaterial({
-      color: 0xc9a84c,
+      color: goldColor,
       metalness: 0.35,
       roughness: 0.32,
       flatShading: false
@@ -57,7 +65,7 @@
   var halo = new THREE.Mesh(
     new THREE.IcosahedronGeometry(3, 1),
     new THREE.MeshBasicMaterial({
-      color: 0x0a0a0a,
+      color: primaryColor,
       wireframe: true,
       transparent: true,
       opacity: 0.18
@@ -66,7 +74,7 @@
   group.add(halo);
 
   var orbitMaterial = new THREE.MeshBasicMaterial({
-    color: 0xc9a84c,
+    color: goldColor,
     transparent: true,
     opacity: 0.34,
     wireframe: true
@@ -87,7 +95,7 @@
   key.position.set(4, 5, 6);
   scene.add(key);
 
-  var rim = new THREE.PointLight(0x0a0a0a, 0.6);
+  var rim = new THREE.PointLight(primaryColor, 0.6);
   rim.position.set(-5, -3, -4);
   scene.add(rim);
 

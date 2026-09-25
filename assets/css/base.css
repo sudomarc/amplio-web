@@ -11,6 +11,7 @@
   --color-gold: #c9a84c;
   --color-gold-bright: #d4b85c;
   --color-gold-dim: #a88d3a;
+  --color-gold-on-light: #7a5f15;
   --color-cream: #fdfbf5;
   --color-cream-soft: #f5f1e8;
   --color-cream-muted: #ebe5da;
@@ -22,9 +23,13 @@
   --color-border: #e8e1d4;
   --color-border-on-dark: #3d3830;
   --color-link: var(--color-primary);
-  --color-link-hover: var(--color-gold);
-  --color-focus: var(--color-gold);
-  --color-shadow: rgba(10, 10, 10, 0.12);
+  --color-link-hover: var(--color-gold-on-light);
+  --color-focus: var(--color-gold-on-light);
+  --color-primary-rgb: 10 10 10;
+  --color-gold-rgb: 201 168 76;
+  --color-text-on-dark-rgb: 253 251 245;
+  --color-error-on-dark-strong-rgb: 255 139 115;
+  --color-shadow: rgb(var(--color-primary-rgb) / 0.12);
   --color-error: #c0392b;
   --color-error-bg: #fdf2f2;
   --color-error-border: #f5c6cb;
@@ -97,8 +102,8 @@
   --radius: 0.5rem;
   --radius-lg: 0.875rem;
   --radius-xl: 1.25rem;
-  --shadow-soft: 0 1.25rem 2.5rem rgba(10, 10, 10, 0.08);
-  --shadow-strong: 0 2rem 4rem rgba(10, 10, 10, 0.12);
+  --shadow-soft: 0 1.25rem 2.5rem rgb(var(--color-primary-rgb) / 0.08);
+  --shadow-strong: 0 2rem 4rem rgb(var(--color-primary-rgb) / 0.12);
 
   /* Mouvement — voir motion.css pour l'application */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -254,7 +259,7 @@ textarea {
   font-weight: var(--font-weight-semibold);
   text-decoration: none;
   border-radius: var(--radius);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px rgb(var(--color-primary-rgb) / 0.3);
   transition: top 0.15s ease;
 }
 
@@ -319,7 +324,7 @@ textarea {
   line-height: var(--line-height-base);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--color-gold-on-light);
 }
 
 .eyebrow::before {
@@ -327,7 +332,7 @@ textarea {
   display: inline-block;
   width: var(--space-6);
   height: 2px;
-  background-color: var(--color-gold);
+  background-color: var(--color-gold-on-light);
 }
 
 /* Lien d'action avec flèche. */
@@ -463,7 +468,7 @@ textarea {
   border: 1px solid var(--color-primary-soft);
   border-radius: var(--radius-xl);
   color: var(--color-text-muted-on-dark);
-  box-shadow: 0 1.25rem 3rem rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1.25rem 3rem rgb(var(--color-primary-rgb) / 0.3);
   animation: legal-note-in var(--dur-slow) var(--ease-out);
 }
 
@@ -550,12 +555,17 @@ textarea {
 .btn--primary {
   background-color: var(--color-primary);
   color: var(--color-text-on-dark);
+  transition: background-color var(--dur-fast) ease, color var(--dur-fast) ease, border-color var(--dur-fast) ease;
 }
 
-.btn--primary:hover,
-.btn--primary:focus-visible {
+.btn--primary:hover:not(:disabled),
+.btn--primary:focus-visible:not(:disabled) {
   color: var(--color-text-on-dark);
   background-color: var(--color-primary-soft);
+}
+
+.btn--primary:active:not(:disabled) {
+  background-color: var(--color-primary-elevated);
 }
 
 .btn--secondary {
@@ -565,20 +575,32 @@ textarea {
   transition: background-color var(--dur-fast) ease, color var(--dur-fast) ease;
 }
 
-.btn--secondary:hover {
+.btn--secondary:hover:not(:disabled),
+.btn--secondary:focus-visible:not(:disabled) {
   background-color: var(--color-primary);
+  color: var(--color-text-on-dark);
+}
+
+.btn--secondary:active:not(:disabled) {
+  background-color: var(--color-primary-soft);
   color: var(--color-text-on-dark);
 }
 
 .btn--accent {
   background-color: var(--color-gold);
   color: var(--color-primary);
+  transition: background-color var(--dur-fast) ease, color var(--dur-fast) ease, border-color var(--dur-fast) ease;
 }
 
-.btn--accent:hover,
-.btn--accent:focus-visible {
+.btn--accent:hover:not(:disabled),
+.btn--accent:focus-visible:not(:disabled) {
   background-color: var(--color-gold-bright);
   color: var(--color-primary);
+}
+
+.btn--accent:active:not(:disabled) {
+  background-color: var(--color-gold-dim);
+  color: var(--color-text-on-dark);
 }
 
 .btn--outline {
@@ -587,9 +609,26 @@ textarea {
   color: var(--color-text);
 }
 
-.btn--outline:hover {
-  border-color: var(--color-gold);
-  color: var(--color-gold);
+.btn--outline:hover:not(:disabled),
+.btn--outline:focus-visible:not(:disabled) {
+  border-color: var(--color-gold-on-light);
+  color: var(--color-gold-on-light);
+}
+
+.btn--outline:active:not(:disabled) {
+  background-color: var(--color-cream-soft);
+  border-color: var(--color-gold-on-light);
+  color: var(--color-gold-on-light);
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
 }
 
 /* Utilitaire pour texte or */

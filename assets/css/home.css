@@ -21,8 +21,8 @@
   inset: 0;
   pointer-events: none;
   background-image:
-    linear-gradient(to right, rgba(10, 10, 10, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(10, 10, 10, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgb(var(--color-primary-rgb) / 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(var(--color-primary-rgb) / 0.03) 1px, transparent 1px);
   background-size: 5.5rem 5.5rem;
   mask-image: linear-gradient(to bottom, black 0%, transparent 90%);
 }
@@ -69,7 +69,7 @@
   font-family: var(--font-accent);
   font-style: italic;
   font-weight: 500;
-  color: var(--color-gold);
+  color: var(--color-gold-on-light);
 }
 
 .home-hero__intro {
@@ -102,7 +102,7 @@
 }
 
 .home-hero__process span[aria-hidden="true"] {
-  color: var(--color-gold);
+  color: var(--color-gold-on-light);
 }
 
 .home-hero__actions {
@@ -111,66 +111,6 @@
   align-items: center;
   gap: var(--space-4);
   margin-block-start: var(--space-2);
-}
-
-/* ---------------------------- Boutons ------------------------------ */
-/* Le remplissage animé (::before) est défini dans motion.css. */
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-2);
-  padding: var(--space-3) var(--space-5);
-  border-radius: var(--radius-sm);
-  border: 1px solid transparent;
-  font-weight: var(--font-weight-semibold);
-  text-decoration: none;
-}
-
-.btn--primary {
-  background-color: var(--color-primary);
-  color: var(--color-text-on-dark);
-}
-
-.btn--primary:hover,
-.btn--primary:focus-visible {
-  color: var(--color-text-on-dark);
-  background-color: var(--color-primary-soft);
-}
-
-.btn--secondary {
-  background-color: transparent;
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-  transition: background-color var(--dur-fast) ease, color var(--dur-fast) ease;
-}
-
-.btn--secondary:hover {
-  background-color: var(--color-primary);
-  color: var(--color-text-on-dark);
-}
-
-.btn--accent {
-  background-color: var(--color-gold);
-  color: var(--color-primary);
-}
-
-.btn--accent:hover,
-.btn--accent:focus-visible {
-  background-color: var(--color-gold-bright);
-  color: var(--color-primary);
-}
-
-.btn--outline {
-  background-color: transparent;
-  border-color: var(--color-border);
-  color: var(--color-text);
-}
-
-.btn--outline:hover {
-  border-color: var(--color-gold);
-  color: var(--color-gold);
 }
 
 /* ---------------- Hero : visuel éditorial (CSS + 3D) ---------------- */
@@ -247,7 +187,7 @@
   left: 1.5rem;
   background-color: var(--color-cream);
   border: 1px solid var(--color-border);
-  box-shadow: 0 4px 12px rgba(10, 10, 10, 0.08);
+  box-shadow: 0 4px 12px rgb(var(--color-primary-rgb) / 0.08);
 }
 
 .home-hero-visual__tile--outline {
@@ -363,7 +303,7 @@
   border-radius: var(--radius-xl);
   overflow: hidden;
   background-color: var(--color-cream-soft);
-  box-shadow: 0 2rem 4rem rgba(10, 10, 10, 0.12);
+  box-shadow: 0 2rem 4rem rgb(var(--color-primary-rgb) / 0.12);
 }
 
 .home-about__image-wrapper img {
@@ -440,7 +380,7 @@
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
   letter-spacing: 0.08em;
-  color: var(--color-gold);
+  color: var(--color-gold-on-light);
 }
 
 .home-services__name {
@@ -463,7 +403,7 @@
 
 .home-services__row:hover .home-services__name,
 .home-services__row[aria-expanded="true"] .home-services__name {
-  color: var(--color-gold);
+  color: var(--color-gold-on-light);
 }
 
 .home-services__row:hover .home-services__arrow,
@@ -545,8 +485,8 @@
 
 .home-clients__card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 32px rgba(10, 10, 10, 0.1);
-  border-color: var(--color-gold);
+  box-shadow: 0 16px 32px rgb(var(--color-primary-rgb) / 0.1);
+  border-color: var(--color-gold-on-light);
 }
 
 .home-clients__icon {
@@ -617,7 +557,7 @@
 
 .home-work__card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 32px rgba(10, 10, 10, 0.12);
+  box-shadow: 0 16px 32px rgb(var(--color-primary-rgb) / 0.12);
 }
 
 .home-work__media {
@@ -653,7 +593,7 @@
   font-weight: var(--font-weight-semibold);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--color-gold-on-light);
 }
 
 .home-work__title {

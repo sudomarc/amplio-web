@@ -99,8 +99,8 @@
 
 .service-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 24px 48px rgba(10, 10, 10, 0.16);
-  border-color: var(--color-gold);
+  box-shadow: 0 24px 48px rgb(var(--color-primary-rgb) / 0.16);
+  border-color: var(--color-gold-on-light);
 }
 
 .service-card:has(.service-card__radio:focus-visible) {
@@ -109,8 +109,8 @@
 }
 
 .service-card.is-selected {
-  border-color: var(--color-gold);
-  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.2), 0 24px 48px rgba(10, 10, 10, 0.16);
+  border-color: var(--color-gold-on-light);
+  box-shadow: 0 0 0 3px rgb(var(--color-gold-rgb) / 0.2), 0 24px 48px rgb(var(--color-primary-rgb) / 0.16);
 }
 
 .service-card__image {
@@ -145,7 +145,7 @@
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
   letter-spacing: 0.08em;
-  color: var(--color-gold);
+  color: var(--color-gold-on-light);
 }
 
 .service-card__top-indicators {
@@ -203,7 +203,7 @@
 
 .service-card:hover .service-card__title,
 .service-card.is-selected .service-card__title {
-  color: var(--color-gold);
+  color: var(--color-gold-on-light);
 }
 
 .service-card__description {
@@ -243,7 +243,7 @@
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background-color: var(--color-gold);
+  background-color: var(--color-gold-on-light);
   flex-shrink: 0;
 }
 

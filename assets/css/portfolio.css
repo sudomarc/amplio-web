@@ -51,7 +51,7 @@
 .portfolio-hero__meta li + li::before {
   content: "\00b7";
   margin-inline: var(--space-3);
-  color: var(--color-gold);
+  color: var(--color-gold-on-light);
 }
 
 /* ------------------------ Section des projets ---------------------- */
@@ -118,7 +118,7 @@
 .portfolio-card:hover,
 .portfolio-card:focus-within {
   transform: translateY(-6px);
-  box-shadow: 0 24px 48px rgba(16, 15, 12, 0.16);
+  box-shadow: 0 24px 48px rgb(var(--color-primary-rgb) / 0.16);
 }
 
 /* --------------------- Couverture visuelle (image) ------------------ */
@@ -147,7 +147,7 @@
 .portfolio-card__scrim {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(16, 15, 12, 0) 45%, rgba(16, 15, 12, 0.75) 100%);
+  background: linear-gradient(180deg, rgb(var(--color-primary-rgb) / 0) 45%, rgb(var(--color-primary-rgb) / 0.75) 100%);
 }
 
 .portfolio-card__number {
@@ -160,7 +160,7 @@
   font-weight: var(--font-weight-semibold);
   letter-spacing: 0.08em;
   color: var(--color-cream);
-  text-shadow: 0 1px 6px rgba(16, 15, 12, 0.5);
+  text-shadow: 0 1px 6px rgb(var(--color-primary-rgb) / 0.5);
 }
 
 /* --------------------------- Corps de carte ------------------------ */
@@ -180,7 +180,7 @@
   font-weight: var(--font-weight-semibold);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--color-gold-on-light);
 }
 
 .portfolio-card__title {
@@ -213,11 +213,13 @@
   background-color: var(--color-cream);
   color: var(--color-text);
   cursor: pointer;
-  transition: border-color var(--dur-fast) ease;
+  transition: background-color var(--dur-fast) ease, color var(--dur-fast) ease, border-color var(--dur-fast) ease;
 }
 
-.portfolio-filter:hover {
-  border-color: var(--color-text-muted);
+.portfolio-filter:hover,
+.portfolio-filter:focus-visible {
+  border-color: var(--color-gold-on-light);
+  color: var(--color-gold-on-light);
 }
 
 .portfolio-filter[aria-pressed="true"] {
@@ -287,7 +289,7 @@
   top: var(--space-5);
   right: var(--space-5);
   font-size: var(--font-size-xl);
-  color: var(--color-gold);
+  color: var(--color-gold-on-light);
   opacity: 0;
   transform: translate(-0.35rem, 0.35rem);
   transition: opacity var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
