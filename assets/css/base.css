@@ -24,6 +24,7 @@
   --color-link: var(--color-primary);
   --color-link-hover: var(--color-gold);
   --color-focus: var(--color-gold);
+  --color-shadow: rgba(10, 10, 10, 0.12);
   --color-error: #c0392b;
   --color-error-bg: #fdf2f2;
   --color-error-border: #f5c6cb;
@@ -96,6 +97,8 @@
   --radius: 0.5rem;
   --radius-lg: 0.875rem;
   --radius-xl: 1.25rem;
+  --shadow-soft: 0 1.25rem 2.5rem rgba(10, 10, 10, 0.08);
+  --shadow-strong: 0 2rem 4rem rgba(10, 10, 10, 0.12);
 
   /* Mouvement — voir motion.css pour l'application */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -183,6 +186,15 @@ a {
 
 a:hover {
   color: var(--color-link-hover);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
 }
 
 img,
