@@ -69,7 +69,7 @@
   font-family: var(--font-accent);
   font-style: italic;
   font-weight: 500;
-  color: var(--color-gold);
+  color: var(--color-gold-on-light);
 }
 
 .home-hero__intro {
@@ -102,7 +102,7 @@
 }
 
 .home-hero__process span[aria-hidden="true"] {
-  color: var(--color-gold);
+  color: var(--color-gold-on-light);
 }
 
 .home-hero__actions {
@@ -380,7 +380,7 @@
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
   letter-spacing: 0.08em;
-  color: var(--color-gold);
+  color: var(--color-gold-on-light);
 }
 
 .home-services__name {
@@ -403,7 +403,7 @@
 
 .home-services__row:hover .home-services__name,
 .home-services__row[aria-expanded="true"] .home-services__name {
-  color: var(--color-gold);
+  color: var(--color-gold-on-light);
 }
 
 .home-services__row:hover .home-services__arrow,
@@ -486,7 +486,7 @@
 .home-clients__card:hover {
   transform: translateY(-4px);
   box-shadow: 0 16px 32px rgb(var(--color-primary-rgb) / 0.1);
-  border-color: var(--color-gold);
+  border-color: var(--color-gold-on-light);
 }
 
 .home-clients__icon {
@@ -593,7 +593,7 @@
   font-weight: var(--font-weight-semibold);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--color-gold-on-light);
 }
 
 .home-work__title {
