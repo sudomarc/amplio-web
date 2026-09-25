@@ -103,8 +103,7 @@
   border-color: var(--color-gold);
 }
 
-.service-card:has(.service-card__radio:focus-visible),
-.service-card.is-focused {
+.service-card:has(.service-card__radio:focus-visible) {
   outline: 3px solid var(--color-focus);
   outline-offset: 2px;
 }
@@ -254,32 +253,10 @@
   pointer-events: none;
 }
 
-/* --------------------------- Panneau visuel ------------------------ */
-
-.services-cards__visual {
-  position: relative;
-  display: none;
-  aspect-ratio: 4 / 3;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  background-color: var(--color-cream-soft);
-}
-
-.services-cards__visual img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity var(--dur-slow) ease;
-}
-
-.services-cards__visual img.is-active {
-  opacity: 1;
-}
-
 /* --------------------------- Responsive ---------------------------- */
+/*  Mobile : 1 colonne. Tablette (≥40rem) : 2 colonnes.
+    Desktop (≥64rem) : 3 colonnes — la dernière rangée (2 cartes)
+    respire sans panneau visuel redondant (les cartes ont leurs images). */
 
 @media (min-width: 40rem) {
   .services-hero__container {
@@ -296,16 +273,8 @@
 }
 
 @media (min-width: 64rem) {
-  /* Le panneau visuel reste sous la grille (non sticky) : à ce seuil, deux
-     colonnes de cartes suffisamment larges valent mieux qu'une mise en page
-     à deux colonnes qui comprime les cartes à trois par rangée. */
   .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .services-cards__visual {
-    display: block;
-    position: static;
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .service-card__title {
@@ -313,28 +282,10 @@
   }
 }
 
-@media (min-width: 80rem) {
-  .services-cards__layout {
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-    align-items: start;
-    gap: var(--space-10);
-  }
-
-  .services-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .services-cards__visual {
-    position: sticky;
-    top: calc(var(--space-10) + 4rem);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .service-selector__continue::before,
-  .services-cards__visual img,
   .service-card,
-  .service-card__image {
+  .service-card__image,
+  .service-card__title {
     transition: none;
   }
 }

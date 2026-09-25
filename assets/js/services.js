@@ -6,7 +6,6 @@
   var HOME_LIST = document.querySelector('.home-services__list');
   var HOME_VISUAL = document.querySelector('.home-services__visual');
   var SERVICES_GRID = document.querySelector('.services-grid');
-  var SERVICES_VISUAL = document.querySelector('.services-cards__visual');
   var SELECTOR_FIELD = document.querySelector('#service-selector');
   var CONTINUE_BUTTON = document.querySelector('#service-continue');
   var SELECTOR_STATUS = document.querySelector('#service-selection-status');
@@ -216,28 +215,12 @@
       // Le <label> natif associe déjà le clic (et le clavier via le radio) à la
       // sélection : aucun contrôle ni gestionnaire clavier/clic parallèle n'est
       // nécessaire, ce qui évite un double contrôle focusable pour un même choix.
-
-      card.addEventListener('mouseenter', function () {
-        setActiveVisual(SERVICES_VISUAL, service.id);
-      });
-      card.addEventListener('focusin', function () {
-        card.classList.add('is-focused');
-        setActiveVisual(SERVICES_VISUAL, service.id);
-      });
-      card.addEventListener('focusout', function () {
-        card.classList.remove('is-focused');
-      });
+      // Le focus clavier est signalé en CSS via :has(:focus-visible).
 
       fragment.appendChild(card);
     });
 
     SERVICES_GRID.appendChild(fragment);
-
-    if (SERVICES_GRID.addEventListener) {
-      SERVICES_GRID.addEventListener('mouseleave', function () {
-        setActiveVisual(SERVICES_VISUAL, selectedServiceId || services[0].id);
-      });
-    }
   }
 
   /* --------------------- Accueil : liste interactive ------------------- */
@@ -370,10 +353,6 @@
         ? 'Service sélectionné : ' + service.name + '.'
         : 'Aucun service sélectionné pour le moment.';
     }
-
-    if (selectedId) {
-      setActiveVisual(SERVICES_VISUAL, selectedId);
-    }
   }
 
   function initSelector(services) {
@@ -426,7 +405,6 @@
       .then(validateServices)
       .then(function (services) {
         renderServicesPage(services);
-        renderVisualPanel(SERVICES_VISUAL, services);
         renderHomeServices(services);
         renderVisualPanel(HOME_VISUAL, services);
         initSelector(services);
